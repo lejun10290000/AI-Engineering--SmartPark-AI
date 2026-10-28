@@ -76,7 +76,7 @@ The cross-group reflection in the observation sheet must be completed after hear
 
 ### Part B Reflection
 
-The model-to-output-check-to-response interaction deserves particular attention because the map links it to possible hallucination (F3), a missed safety issue (F4) and overtrust when advice is mistaken for an external action (F6). This suggests prioritising answer accuracy, safety validation and clear statements about what the system has or has not done. These are plausible failure scenarios, not observed incidents.
+The **model-to-output validation interaction** has the greatest concentration of related failure points in this map: a hallucinated claim (F3), a missed safety issue (F4), and a user mistaking advice for a completed external action (F6). Engineering effort should therefore concentrate on checking generated responses, applying safety checks, and clearly communicating whether the system has actually completed an action. This connects to Topic 1 quality dimensions: **accuracy and reliability** (reduce unsupported answers), **safety** (reduce harmful outputs), and **transparency** (make the system’s capabilities and action status clear). These are plausible failure scenarios shown in a conceptual map, not incidents proven to have occurred.
 
 ## Part C — Individual Project Scope
 
