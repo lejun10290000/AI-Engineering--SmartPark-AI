@@ -47,11 +47,18 @@ Drivers or visitors who need to find an available parking space, and parking ope
 
 ## Data Sources (at least two)
 
+### Public image datasets for computer-vision experiments
+
 1. **PKLot parking-lot database** — https://web.inf.ufpr.br/vri/databases/parking-lot-database/
 2. **CNRPark / CNRPark+EXT dataset** — https://cnrpark.it/
 3. **Project-collected footage:** images and video captured from the miniature parking prototype, with manually labelled parking-bay occupancy and vehicle positions.
 
-Check each dataset's licence and terms before use. Project-collected footage can be used to test the miniature setup, with manually labelled occupancy and vehicle positions.
+### Public technical documents used to inform the design
+
+- **Lin, Rivano and Le Mouël (2017), *A Survey of Smart Parking Solutions*** — public paper PDF: https://perso.citi.insa-lyon.fr/flemouel/Research/Publications/Journals/2017/TITS2017.pdf
+- **de Almeida et al. (2015), *PKLot—A Robust Dataset for Parking Lot Classification*** — public paper PDF: https://www.inf.ufpr.br/lesoliveira/download/ESWA2015.pdf
+
+The image datasets are intended for computer-vision experiments. The papers are background documents for reviewing the engineering context and selecting evaluation approaches; they are not claimed to be training data for the vision model. Check each dataset's access terms and licence before use.
 
 ## Similar to EduAdvisor
 
