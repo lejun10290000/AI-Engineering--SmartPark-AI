@@ -74,7 +74,9 @@ The cross-group reflection in the observation sheet must be completed after hear
 - [System map — PNG](docs/week1_system_map.png) (submission image)
 - [Editable Draw.io source](docs/week1_system_map.drawio)
 
-**Part B reflection (based on the current map):** The model-to-output-check-to-response interaction deserves particular attention because the map links it to possible hallucination (F3), a missed safety issue (F4) and overtrust when advice is mistaken for an external action (F6). This suggests prioritising answer accuracy, safety validation and clear statements about what the system has or has not done. These are plausible failure scenarios, not observed incidents.
+### Part B Reflection
+
+The model-to-output-check-to-response interaction deserves particular attention because the map links it to possible hallucination (F3), a missed safety issue (F4) and overtrust when advice is mistaken for an external action (F6). This suggests prioritising answer accuracy, safety validation and clear statements about what the system has or has not done. These are plausible failure scenarios, not observed incidents.
 
 ## Part C — Individual Project Scope
 
