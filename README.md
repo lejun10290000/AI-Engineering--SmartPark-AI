@@ -60,7 +60,7 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 
 | Week | Focus | Deliverable | Status |
 |------|-------|-------------|--------|
-| W1 | System map + project scope | Part A evidence, Part B map, Part C scope, README | Core files present; reflections pending |
+| W1 | System map + project scope | Part A evidence, Part B map, Part C scope, README | Core files present; Part A cross-group reflection pending |
 
 ## Part A — Group Observation and Evidence
 
