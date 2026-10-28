@@ -57,8 +57,9 @@ Drivers or visitors who need to find an available parking space, and parking ope
 
 - **Lin, Rivano and Le Mouël (2017), *A Survey of Smart Parking Solutions*** — public paper PDF: https://perso.citi.insa-lyon.fr/flemouel/Research/Publications/Journals/2017/TITS2017.pdf
 - **de Almeida et al. (2015), *PKLot—A Robust Dataset for Parking Lot Classification*** — public paper PDF: https://www.inf.ufpr.br/lesoliveira/download/ESWA2015.pdf
+- **Amato et al. (2017), *Deep Learning for Decentralized Parking Lot Occupancy Detection*** — public research preprint PDF: https://openportal.isti.cnr.it/data/2017/366883/2017_366883.preprint.pdf
 
-The image datasets are intended for computer-vision experiments. The papers are background documents for reviewing the engineering context and selecting evaluation approaches; they are not claimed to be training data for the vision model. Check each dataset's access terms and licence before use.
+The image datasets are intended for computer-vision experiments. The papers are public background documents for reviewing the engineering context and selecting evaluation approaches; they are not claimed to be training data for the vision model. Check each dataset's access terms and licence before use.
 
 ## Similar to EduAdvisor
 
