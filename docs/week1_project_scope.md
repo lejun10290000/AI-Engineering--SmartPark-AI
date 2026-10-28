@@ -1,78 +1,77 @@
-# Week 1 Project Scope — SortSmart AI
+# Week 1 Project Scope — SmartPark AI
 
 **Assignment:** AI Engineering, Topic 1 Lab, Part C (individual)  
-**Project name:** SortSmart AI — Document-Grounded Household Waste Sorting Assistant  
-**Domain:** Environmental sustainability / household waste management / AI information retrieval  
-**Status:** Preliminary scope; refine in Topic 2.
+**Project name:** SmartPark AI — Computer Vision-Based Parking Occupancy Detection and Vehicle Tracking  
+**Domain:** Artificial intelligence / computer vision / smart transportation  
+**Status:** Preliminary scope; refine as the project develops.
 
 ## Problem Statement
-Users may struggle to interpret whether everyday items are recyclable, residual waste or e-waste, particularly where the item is contaminated, made of mixed materials or subject to different local collection conditions. Government guidance is distributed across documents and webpages, and some source-separation guidance is written for municipal officers rather than household questions. SortSmart AI proposes a small AI-powered website to interpret **text descriptions** of items and return short, source-grounded explanations, uncertainty warnings and links to official sources. It will **not** guarantee that a particular facility accepts an item.
 
-## Evidence of the Problem (two credible references)
-**Evidence 1 (national context):** OpenDOSM reports Malaysia's 2024 national recycling rate as 37.90%. This supports the importance of waste-management improvement but does not by itself demonstrate individual user confusion.  
-**Source:** Department of Statistics Malaysia, *SDG 12-5-1: National Recycling Rate*, data through 2024: https://open.dosm.gov.my/data-catalogue/sdg_12-5-1
+Drivers in busy parking facilities may spend time searching for available parking spaces, while parking operators need an efficient way to monitor occupancy. SmartPark AI proposes a computer-vision prototype that detects occupied and vacant parking bays, tracks vehicles, and provides simple parking guidance. The system will be demonstrated using a miniature parking layout rather than a live shopping-centre deployment.
 
-**Evidence 2 (need for source separation):** JPSPN's municipal solid waste source-separation guideline explains that separating waste at source can improve recovery of recyclables and reduce disposal, and that actual plans must consider local conditions. The guideline was issued in 2006, so rules must be checked against newer and local guidance.  
-**Source:** JPSPN, *Guidelines for Source Separation of Municipal Solid Wastes* (July 2006): https://jpspn.kpkt.gov.my/jpspn/resources/Images%20JPSPN/Sumber%20Rujukan/Garis%20Panduan%20Teknikal/Guidelines_for_Source_Separation_of_Municipal_Solid_Wastes.pdf
+## Evidence of the Problem
 
-**Additional safety evidence:** DOE explains that electronic waste can contain hazardous substances and should go to registered collection centres.  
-**Source:** DOE, E-Waste FAQ: https://ewaste.doe.gov.my/index.php/faq/
+**Evidence 1 — Smart parking context:** Lin, Rivano and Le Mouël review smart parking solutions and the technologies, functions and challenges involved in helping drivers find suitable parking. This provides general context for the project; it does not independently measure the experience of a particular car park.  
+**Source:** Lin, T., Rivano, H. and Le Mouël, F. (2017), *A Survey of Smart Parking Solutions*, IEEE Transactions on Intelligent Transportation Systems, 18(12), 3229–3253. https://doi.org/10.1109/TITS.2017.2685143
+
+**Evidence 2 — Camera-based occupancy detection:** The PKLot study introduces a labelled parking-lot image dataset and investigates classification of parking spaces as vacant or occupied, supporting the feasibility of image-based occupancy experiments.  
+**Source:** de Almeida, P. R. L. et al. (2015), *PKLot—A Robust Dataset for Parking Lot Classification*, Expert Systems with Applications, 42(11), 4937–4949. https://doi.org/10.1016/j.eswa.2015.02.009
 
 ## Initial Related Work / Existing Approaches (at least three)
-1. **JPSPN source-separation technical guidelines**  
-   Source: https://jpspn.kpkt.gov.my/jpspn/resources/Images%20JPSPN/Sumber%20Rujukan/Garis%20Panduan%20Teknikal/Guidelines_for_Source_Separation_of_Municipal_Solid_Wastes.pdf  
-   Key limitation: Written mainly for local authorities; long and not a conversational lookup experience for household users; dated 2006.
-2. **Department of Environment household e-waste FAQ**  
-   Source: https://ewaste.doe.gov.my/index.php/faq/  
-   Key limitation: Authoritative for e-waste but not a unified helper for plastics, paper, glass, food waste and e-waste together.
-3. **JPSPN general FAQ about waste-management services**  
-   Source: https://jpspn.kpkt.gov.my/index.php/pages/view/72  
-   Key limitation: A static FAQ may not address descriptions such as mixed-material packaging, dirty containers or uncertain local rules.
 
-These are **existing solutions/resources**, not peer-reviewed comparisons. Topic 2 may add research studies.
+1. **PKLot parking occupancy dataset and classification study**  
+   **Source:** Paper: https://doi.org/10.1016/j.eswa.2015.02.009 ; official dataset page: https://web.inf.ufpr.br/vri/databases/parking-lot-database/  
+   **Key limitation:** It provides labelled parking imagery for occupancy research but does not itself deliver an integrated vehicle-tracking and parking-guidance application.
+
+2. **CNRPark / CNRPark+EXT parking occupancy datasets**  
+   **Source:** https://cnrpark.it/  
+   **Key limitation:** The datasets focus on visual parking-space occupancy; application-specific vehicle tracking and destination-based guidance require additional development.
+
+3. **Ultralytics YOLO object-detection framework**  
+   **Source:** https://docs.ultralytics.com/  
+   **Key limitation:** Object detection can locate objects in images, but parking-bay occupancy logic, persistent tracking and user guidance need additional system components.
 
 ## Engineering Gap / Limitation
-Public information is fragmented and varies by waste stream, document age and jurisdiction. The gap to investigate is whether a **retrieval-augmented natural-language interface** can provide relevant, citation-grounded disposal guidance across documents while refusing to guess about hazardous or locally uncertain cases.
+
+**Gap / Limitation:** A practical prototype is needed to integrate parking-bay occupancy detection, vehicle tracking and basic guidance in one workflow. This project will investigate that integration in a controlled miniature environment; it will not claim that the prototype is ready for deployment in a real car park.
 
 ## Initial Project Objectives
-- **O1:** To investigate challenges in household waste identification, source accessibility and the limits of existing waste guidance.
-- **O2:** To develop a document-grounded AI web application that processes users' text descriptions and delivers supported waste sorting explanations with citations.
-- **O3:** To evaluate classification/answer correctness, citation support, response latency and safety/uncertainty handling.
+
+- **O1:** To design and develop a computer-vision prototype that detects occupied and vacant parking bays in a miniature parking layout.
+- **O2:** To implement vehicle tracking and simple guidance towards an available parking bay.
+- **O3:** To evaluate the prototype using detection accuracy and tracking/guidance performance.
 
 ## Target Users
-Household residents and university students in Malaysia, initially piloted with Kuala Lumpur examples. Users must verify municipality-specific collection rules.
 
-## Data Sources (at least two public documents)
-1. **JPSPN, Guidelines for Source Separation of Municipal Solid Wastes (PDF, 2006)** — https://jpspn.kpkt.gov.my/jpspn/resources/Images%20JPSPN/Sumber%20Rujukan/Garis%20Panduan%20Teknikal/Guidelines_for_Source_Separation_of_Municipal_Solid_Wastes.pdf
-2. **KPKT, Media statement on a food-waste awareness campaign (PDF, 2024)** — https://www.kpkt.gov.my/kpkt/resources/user_1/media_akhbar/2024/SM_PENDUDUK_CAKNA_KEMPEN_HARGAI_MAKANAN_ELAK_PEMBAZIRAN.pdf
-3. **DOE, E-waste FAQ (official web document)** — https://ewaste.doe.gov.my/index.php/faq/
+Drivers or visitors who need to find an available parking space, and parking operators who need to monitor parking-bay occupancy.
 
-The sources are linked rather than copied; check use and redistribution permissions. Before development, verify currency, applicability, and completeness for target items.
+## Data Sources (at least two)
+
+1. **PKLot parking-lot database** — https://web.inf.ufpr.br/vri/databases/parking-lot-database/
+2. **CNRPark / CNRPark+EXT dataset** — https://cnrpark.it/
+3. **Project-collected footage:** images and video captured from the miniature parking prototype, with manually labelled parking-bay occupancy and vehicle positions.
+
+Check each dataset's licence and terms before use. Project-collected footage can be used to test the miniature setup, with manually labelled occupancy and vehicle positions.
 
 ## Similar to EduAdvisor
-Both propose a document-grounded AI assistant with source retrieval, a conversational interface, guardrails, a feedback mechanism and measurable answer quality.
+
+Both projects apply AI to a practical user problem and aim to provide useful decision support through a system prototype.
 
 ## Different from EduAdvisor
-SortSmart AI addresses waste classification and disposal guidance rather than academic policies. Its answers must handle material ambiguity, safety risks (e.g. batteries), varied collection rules and the age of official guidance.
+
+SmartPark AI focuses on computer vision for parking occupancy and vehicle tracking, rather than education-related recommendations or advising. Its intended output is guidance towards an available parking bay.
 
 ## Responsible AI Risks (at least two)
-1. **Incorrect/hallucinated guidance:** May make users dispose of items wrongly. Mitigation: require supporting sources; say when evidence is missing; human-verified test cases.
-2. **Safety / hazardous items:** Wrong battery or e-waste advice may endanger people/environment. Mitigation: direct to DOE/authorised collectors, avoid unverified handling procedures.
-3. **Locality and stale information:** A rule valid in one region or year may be misapplied. Mitigation: specify jurisdiction, label document dates, and defer on uncertain local rules.
-4. **Privacy:** Users might share unnecessary location details. Mitigation: request only general locality, avoid storing personal addresses.
 
-## Proposed One-Semester MVP
-**In scope:** text-input web page, limited document ingestion, retrieval/search, cited responses, category suggestion, safety/uncertainty notices and curated evaluation.  
-**Out of scope:** image-recognition training, automated bin control, definitive legal compliance, live collection-centre availability and nationwide real-time pickup scheduling.
+1. **Incorrect occupancy detection:** A vacant bay may be reported as occupied, or an occupied bay as vacant, leading to unreliable guidance. Test against labelled examples and communicate that the prototype may make mistakes.
+2. **Vehicle-tracking errors:** A vehicle may be associated with the wrong position or parking bay, causing confusing guidance. Evaluate tracking consistency and avoid presenting uncertain locations as confirmed.
+3. **Privacy:** Camera footage may capture unnecessary visual information. Use a controlled miniature environment, minimise collection and avoid storing irrelevant imagery.
 
-**Initial evaluation metrics:** label accuracy on annotated text-item queries; citation relevance/faithfulness; percentage of ambiguous or hazardous prompts safely escalated; latency in seconds.
+## Proposed Evaluation
 
+Create a small labelled set of parking images or video frames. Evaluate occupancy-detection accuracy, vehicle-tracking consistency, parking-guidance correctness and response time. Describe the testing setup and limitations, and do not treat miniature-prototype results as proof of performance in a real car park.
 
-## Source Verification and Scope Quality Check (27 October 2026)
+## Scope for the Initial Prototype
 
-- **OpenDOSM national recycling rate:** Official data catalogue shows **37.90%** for 2024 (dataset updated October 2026): https://open.dosm.gov.my/data-catalogue/sdg_12-5-1 . This is useful national context, **not evidence proving any individual's difficulty identifying waste**.
-- **JPSPN source-separation guidance:** Official technical PDF is accessible and on topic: https://jpspn.kpkt.gov.my/jpspn/resources/Images%20JPSPN/Sumber%20Rujukan/Garis%20Panduan%20Teknikal/Guidelines_for_Source_Separation_of_Municipal_Solid_Wastes.pdf . **It dates to 2006.** Check newer municipal/local guidance before using disposal rules as current instructions.
-- **KPKT 2024 food-waste release:** Official 17 March 2024 SWCorp media statement is accessible: https://www.kpkt.gov.my/kpkt/resources/user_1/media_akhbar/2024/SM_PENDUDUK_CAKNA_KEMPEN_HARGAI_MAKANAN_ELAK_PEMBAZIRAN.pdf . This is credible evidence of a waste-management concern, but **it is a campaign/food-waste statement, not an exhaustive practical material-sorting manual**.
-- **Department of Environment household e-waste FAQ:** Official website supports referring e-waste to registered collection centres: https://ewaste.doe.gov.my/index.php/faq/ . Confirm current item eligibility and local collection availability rather than assuming all centres take all electronics.
-
-**Assessment:** The preliminary project fits the requirement for two or more publicly accessible documents and a feasible document-grounded AI use case. The student should verify course acceptance and should prioritise up-to-date local collection guidance for the later application; this Week 1 scoping evidence should not be mistaken for a finished, jurisdiction-specific disposal knowledge base.
+**In scope:** camera-based parking-bay occupancy detection, vehicle tracking within a miniature layout, and basic guidance to an available bay.  
+**Out of scope:** deployment in a real shopping centre, guaranteed real-time availability in public car parks, and claims of production-level reliability.
