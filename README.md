@@ -59,7 +59,7 @@ Prepare a labelled set of images or video frames from the miniature parking layo
 - `docs/week1_project_scope.md` — individual Part C project scope
 - `docs/week1_observation_sheet.md` — inherited group Part A material; review it against the assignment and actual evidence
 - `docs/week1_system_map.png` — inherited Part B system map; verify whether it belongs in the individual submission
-- Other inherited files may still refer to SortSmart AI. Review them and clearly distinguish group Part A/B evidence from this individual SmartPark AI project.
+- Review inherited group files and clearly distinguish required Part A/B evidence from this individual SmartPark AI project.
 
 ## Scope Note
 
