@@ -39,7 +39,12 @@ Drivers or visitors who need to find an available parking space, and parking ope
 - **CNRPark / CNRPark+EXT dataset** — https://cnrpark.it/
 - **Project-collected footage:** images and video from the miniature parking prototype, with manually labelled bay occupancy and vehicle positions.
 
-**Public technical references:** the smart-parking survey PDF is available at https://perso.citi.insa-lyon.fr/flemouel/Research/Publications/Journals/2017/TITS2017.pdf ; the PKLot paper is described at https://doi.org/10.1016/j.eswa.2015.02.009 ; and the model framework documentation is at https://docs.ultralytics.com/. The datasets provide computer-vision examples; the publications/documentation support design decisions. Check dataset licences and access terms before use.
+**Public technical documents used to inform the design:**
+- Lin, Rivano and Le Mouël (2017), *A Survey of Smart Parking Solutions* — public PDF: https://perso.citi.insa-lyon.fr/flemouel/Research/Publications/Journals/2017/TITS2017.pdf
+- de Almeida et al. (2015), *PKLot—A Robust Dataset for Parking Lot Classification* — public PDF: https://www.inf.ufpr.br/lesoliveira/download/ESWA2015.pdf
+- Amato et al. (2017), *Deep Learning for Decentralized Parking Lot Occupancy Detection* — public preprint PDF: https://openportal.isti.cnr.it/data/2017/366883/2017_366883.preprint.pdf
+
+The image datasets are intended for computer-vision experiments. The papers are background documents for reviewing the engineering context and evaluation approaches; they are not claimed to be training data for the vision model. Check dataset licences and access terms before use.
 
 ## Responsible AI Risks
 
