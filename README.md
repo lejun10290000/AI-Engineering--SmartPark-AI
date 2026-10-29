@@ -63,12 +63,6 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 | W1 | System map + project scope | Part A evidence, Part B map, Part C scope, README | Core files present; cross-group reflection omitted per lecturer guidance |
 
 
-### Part B Reflection
-
-The **model-to-output validation interaction** has the greatest concentration of related failure points in this map: a hallucinated claim (F3), a missed safety issue (F4), and a user mistaking advice for a completed external action (F6). Engineering effort should therefore concentrate on checking generated responses, applying safety checks, and clearly communicating whether the system has actually completed an action. This connects to Topic 1 quality dimensions: **accuracy and reliability** (reduce unsupported answers), **safety** (reduce harmful outputs), and **transparency** (make the system’s capabilities and action status clear). These are plausible failure scenarios shown in a conceptual map, not incidents proven to have occurred.
-
-**Part B files:** [System map PNG](docs/week1_system_map.png) · [Editable Draw.io source](docs/week1_system_map.drawio) · [Map explanation and reflection notes](docs/week1_system_map_notes.md)
-
 ## Part C — Individual Project Scope
 
 - [Full Part C scope](docs/week1_project_scope.md)
