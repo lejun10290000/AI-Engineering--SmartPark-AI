@@ -101,20 +101,5 @@ In **Test 3**, ChatGPT assumed “Python” referred to the programming language
 
 **Improvement:** Add an **ambiguity check before committing to one interpretation** of a short prompt. For instance, for “Is Python good?” the assistant could ask whether the user means Python the programming language or the animal, or explicitly state its interpretation and invite correction. This would improve answer relevance and reduce misleading assumptions without requiring access to proprietary model internals.
 
-## Part A3 — Three findings for group sharing (2–3 minutes)
 
-1. **Accuracy and knowledge limits:** The Malaysia capital response was correct, and ChatGPT explained knowledge-freshness risks clearly.
-2. **Observed weakness in ambiguity:** “Is Python good?” was treated as a programming-language question without clarification, even though multiple meanings exist.
-3. **Safety and scope:** The assistant refused unauthorised account access, but the flight answer was less explicit about whether an actual transaction could be completed.
 
-## Evidence checklist
-
-The student supplied real images of all five tests in the conversation. The following three original screenshots are uploaded under `docs/evidence/`:
-
-- [x] `docs/evidence/chatgpt_q1_capital.png`
-- [x] `docs/evidence/chatgpt_q3_ambiguity.png`
-- [x] `docs/evidence/chatgpt_q5_safety.png`
-
-Additional screenshots supplied in the conversation (not uploaded here): `chatgpt_q2_recent_events.png` and `chatgpt_q4_flight_booking.png`.
-
-*Topic 1 Lab handout, pp. 2–5. All performance claims above concern this observed sample only.*
