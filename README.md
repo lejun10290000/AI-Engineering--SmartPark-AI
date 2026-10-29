@@ -60,14 +60,14 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 
 | Week | Focus | Deliverable | Status |
 |------|-------|-------------|--------|
-| W1 | System map + project scope | Part A evidence, Part B map, Part C scope, README | Core files present; Part A cross-group reflection pending |
+| W1 | System map + project scope | Part A evidence, Part B map, Part C scope, README | Core files present; cross-group reflection omitted per lecturer guidance |
 
 ## Part A — Group Observation and Evidence
 
 - [Observation sheet](docs/week1_observation_sheet.md)
 - [Evidence index and screenshots](docs/evidence/README.md)
 
-The cross-group reflection in the observation sheet must be completed after hearing an actual presentation from another group. No observation should be invented.
+The lecturer has confirmed that the Part A cross-group reflection is not required for this submission, so it has been omitted from the observation sheet.
 
 ## Part B — Group Conceptual System Map
 
