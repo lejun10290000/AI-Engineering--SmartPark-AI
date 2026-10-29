@@ -82,5 +82,6 @@ docs/
 ├── evidence/                    # Part A screenshots and index
 ├── week1_system_map.png         # Part B submission image
 ├── week1_system_map.drawio      # Part B editable source
+├── week1_system_map_notes.md    # Part B explanation and reflection
 └── week1_project_scope.md       # Part C — individual SmartPark AI scope
 ```
