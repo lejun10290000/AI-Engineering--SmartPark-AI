@@ -4,9 +4,8 @@
 **Assigned lab group:** ChatGPT   
 **Group members (6):** Chek Chee Him; Ng Pi Zhen; Chua Le Jun; Woo Yong Kang; Lee Yong Xiang; Lai Yan Qi.  
 **Observation date:** 27 October 2026  
-**Evidence:** Student-provided screenshots of the five prescribed prompts; 5 prompts tested; no timing, model/version or session settings independently recorded. **Three screenshots (Q1, Q3, Q5) are uploaded in `docs/evidence/`.**
+**Evidence:** Student-provided screenshots of the five prescribed prompts; 5 prompts tested; no timing, model/version or session settings independently recorded. **Three screenshots (Q1, Q3, Q5) are uploaded
 
-> **Provenance:** The analysis below is based on the student's *actual screenshots uploaded to the conversation*, replacing our earlier sample responses. The screenshots show the responses, but cannot establish how often the system behaves this way, whether browsing was used, which specific model/configuration was selected, or whether all prompts were in separate conversations. No fabricated latency, screenshots or group findings are included.
 
 ## 1. What problem does this system solve? Who benefits?
 
