@@ -1,7 +1,7 @@
 # AI Engineering — Topic 1 Lab: Part A Observation Sheet
 
 **System name:** ChatGPT (OpenAI)  
-**Assigned lab group:** ChatGPT (Groups 1–2 assignment category; exact group number is not recorded here)  
+**Assigned lab group:** ChatGPT   
 **Group members (6):** Chek Chee Him; Ng Pi Zhen; Chua Le Jun; Woo Yong Kang; Lee Yong Xiang; Lai Yan Qi.  
 **Observation date:** 27 October 2026  
 **Evidence:** Student-provided screenshots of the five prescribed prompts; 5 prompts tested; no timing, model/version or session settings independently recorded. **Three screenshots (Q1, Q3, Q5) are uploaded in `docs/evidence/`.**
