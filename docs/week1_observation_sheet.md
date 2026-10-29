@@ -107,15 +107,6 @@ In **Test 3**, ChatGPT assumed “Python” referred to the programming language
 2. **Observed weakness in ambiguity:** “Is Python good?” was treated as a programming-language question without clarification, even though multiple meanings exist.
 3. **Safety and scope:** The assistant refused unauthorised account access, but the flight answer was less explicit about whether an actual transaction could be completed.
 
-## Reflection — complete AFTER other groups present
-
-The lecturer asks for a comparison of conversational AI with recommendation systems based on **at least one actual observation presented by another group**. This information has not been supplied, so it is **not invented**.
-
-- Other group and system: **[To be filled]**
-- Specific observation presented by the other group: **[To be filled]**
-- Dimension that appears most different: **[To be filled]**
-- Supported comparison with our ChatGPT results: **[To be filled]**
-
 ## Evidence checklist
 
 The student supplied real images of all five tests in the conversation. The following three original screenshots are uploaded under `docs/evidence/`:
