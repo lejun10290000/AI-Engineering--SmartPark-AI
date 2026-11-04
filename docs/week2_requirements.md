@@ -99,3 +99,14 @@ The requirements below convert the Responsible AI risks identified in the Week 1
 - When a vehicle track is lost or ambiguous, the system should communicate uncertainty rather than present an unverified position as reliable.
 - Use controlled miniature scenes and minimise retained footage. Do not collect personal information that is not needed for the project.
 - These thresholds are initial targets for the prototype. Record actual results and any limitations; do not report proposed thresholds as achieved performance.
+
+---
+
+# Section 4 — Reflection
+
+**Reflection question:** Which Responsible AI requirement in your project will be the most difficult to measure or enforce technically? Why?
+
+I think **RAI2 — Vehicle-tracking errors** will be the most difficult requirement to measure and enforce technically. In the miniature parking layout, a toy vehicle may be temporarily hidden by another vehicle or an object, move close to another vehicle, or leave and re-enter the camera view. During these situations, the system may lose the vehicle's track or accidentally associate its position with the wrong vehicle. It can therefore be difficult to determine whether the reported position is still reliable, especially while the vehicle is temporarily not visible.
+
+To evaluate this requirement, I will need manually annotated video clips showing each vehicle's identity and position, including clips with temporary occlusion and movement near other vehicles. Comparing the system's tracking results with these annotations will take time and may require careful frame-by-frame checking. The important control is not necessarily to prevent every temporary tracking error, but to ensure that the system does not provide position-dependent guidance when a vehicle's track is uncertain or unconfirmed. This is technically challenging because the system must recognise when its own tracking result is unreliable and communicate that uncertainty instead of presenting an incorrect position as fact.
+
