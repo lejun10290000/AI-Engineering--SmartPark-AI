@@ -20,3 +20,11 @@ The following criteria select important, testable requirements from the existing
 - Use held-out images and clips that were not used to tune or develop the system. Keep the manual labels, test scenarios and measured results as evidence.
 - Record the camera, processing device, input resolution and lighting conditions for each test. If the setup changes materially, repeat the evaluation.
 - Thresholds are proposed acceptance targets. Report actual measured values honestly and do not claim that SmartPark AI has met a threshold until it has been tested.
+
+---
+
+## Reflection
+
+The most important evaluation criterion is **parking-bay occupancy correctness (FR1, NFR2 and RAI1)**. SmartPark AI is intended to help drivers find an available parking bay, so the system must first distinguish occupied bays from vacant ones reliably. If an occupied bay is incorrectly reported as vacant, a driver may be directed to a space that is already taken. This would reduce user trust and make the guidance less useful, even if vehicle tracking and processing speed perform well.
+
+For this reason, I prioritise the **macro-F1 score of at least 0.90** together with **zero false-vacant events** in the labelled occupied-bay test sample. Macro-F1 checks performance across both occupied and vacant classes, while the false-vacant measure focuses on the error that could cause the most direct inconvenience to drivers. These criteria also support parking operators by providing more dependable occupancy information. In short, accurate occupancy information is the foundation of the system's usefulness; the later availability and guidance functions depend on it.
