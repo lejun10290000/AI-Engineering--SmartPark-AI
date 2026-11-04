@@ -66,7 +66,7 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 ## Week 2 — Application Architecture
 
 - [Combined architecture, ADR and requirements traceability](docs/week2_architecture_decisions.md)
-- [Rendered architecture diagram (SVG)](docs/week2_architecture.svg)
+- [Architecture diagram (PNG)](docs/week2_architecture_v1.png)
 - [Editable architecture source (Draw.io)](docs/week2_architecture.drawio)
 
 The combined document contains the simple and requirements-driven architecture, the requirement-support analysis, architecture decisions and accepted trade-offs, the requirements traceability matrix, final review checklist and architecture reflection.
@@ -91,6 +91,6 @@ docs/
 ├── week2_requirements.md        # Week 2 — Sections 0–4 requirements
 ├── week2_evaluation_criteria.md # Week 2 — evaluation criteria
 ├── week2_architecture_decisions.md # Week 2 — architecture, ADR and traceability
-├── week2_architecture.svg          # Week 2 — rendered architecture diagram
+├── week2_architecture_v1.png       # Week 2 — architecture diagram (PNG)
 └── week2_architecture.drawio       # Week 2 — editable architecture source
 ```
