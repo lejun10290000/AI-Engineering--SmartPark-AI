@@ -51,4 +51,28 @@
 | **FR4** | Provide an occupancy state containing vacant bays, then test a layout in which all bays are occupied. | The system returns at least one vacant bay in the first case and reports that no available bay is identified in the second case. |
 | **FR5** | Request guidance to a bay returned as vacant. | The system displays the correct bay identifier and location or a simple direction matching the miniature layout. |
 
-**Requirements note:** These are initial, testable functional requirements derived from the Week 1 scope. They describe what SmartPark AI must do, not the model, libraries, camera hardware or software architecture used to implement it. Numerical performance targets and detailed non-functional requirements remain to be defined during later requirements and evaluation work.
+**Requirements note:** These are initial, testable functional requirements derived from the Week 1 scope. They describe what SmartPark AI must do, not the model, libraries, camera hardware or software architecture used to implement it. The initial non-functional requirements and measurable prototype targets are specified in Section 2. Their suitability should be reviewed after the test hardware and camera configuration are fixed.
+
+
+---
+
+# Non-Functional Requirements — SmartPark AI
+
+**Section:** 2 — Non-Functional Requirements  
+**Version:** 1.0
+
+The following are initial acceptance targets for the miniature parking prototype. Measurements must be collected under a documented test setup. The thresholds are proposed targets, not claims that the prototype has already achieved them.
+
+| # | Quality Attribute | Requirement | Measurement Method | Metric | Threshold |
+|---|---|---|---|---|---|
+| **NFR1** | **Performance** | The system shall produce an updated parking-occupancy and vehicle-position result within a reasonable delay after receiving an input frame. | Record the time when each test frame is received and when its corresponding occupancy and tracking result becomes available. Repeat across at least 100 test frames using the same documented camera and processing setup. | 95th-percentile frame-to-result latency (seconds). | **≤ 2.0 seconds** for at least 95% of measured frames. |
+| **NFR2** | **Correctness — Occupancy Detection** | The system shall correctly classify defined parking bays as occupied or vacant on held-out test images from the miniature layout. | Compare predictions against manually labelled ground-truth images. Use at least 100 held-out frames containing both occupied and vacant bays, and calculate the macro-F1 score across the two classes. | Macro-F1 score for occupied and vacant classes. | **≥ 0.90** macro-F1 on the held-out test set. |
+| **NFR3** | **Tracking Consistency** | The system shall maintain the correct temporary track association for a visible vehicle as it moves through the miniature layout. | Manually annotate vehicle identities and visible positions in at least five recorded test clips. Compare the system's track assignments with the annotations. | Correct track-association rate: correctly associated visible vehicle frames divided by all annotated visible vehicle frames. | **≥ 90%** correct track association across the evaluated clips. |
+| **NFR4** | **Operational Reliability** | The system shall complete repeated prototype test sequences without crashing, losing its input stream, or failing to provide an output. | Run at least 20 repeatable test sequences covering vehicle movement, bay entry/exit and occupancy/guidance output. Record each completed run and any crash, input loss or missing result. | Successful test-run rate: completed runs without a listed failure divided by total runs. | **≥ 95%** successful runs (at least 19 of 20 runs). |
+
+## NFR Measurement Notes
+
+- Record the camera, processing device, input resolution, lighting conditions and test-data split used for each evaluation. These details are not fixed in the Week 1 scope and must not be assumed.
+- Use test images and clips that are separate from any data used to tune or develop the system, so the evaluation is not based only on examples the system has already seen.
+- Report the actual measured values, sample sizes and test conditions. Do not describe a proposed threshold as an achieved result.
+- If the final hardware or test setup changes materially, repeat the measurements and review whether the proposed thresholds remain appropriate.
