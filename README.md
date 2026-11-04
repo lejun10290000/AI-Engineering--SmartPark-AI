@@ -63,6 +63,14 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 | W1 | System map + project scope | Part A evidence, Part B map, Part C scope, README | Core files present; cross-group reflection omitted per lecturer guidance |
 
 
+## Week 2 — Application Architecture
+
+- [Architecture overview and requirement traceability](docs/week2_architecture.md)
+- [Rendered architecture diagram (SVG)](docs/week2_architecture.svg)
+- [Editable architecture source (Draw.io)](docs/week2_architecture.drawio)
+
+The architecture begins with the simple user → application → AI capability → response flow, then adds only the components justified by SmartPark AI's functional, non-functional and Responsible AI requirements.
+
 ## Part C — Individual Project Scope
 
 - [Full Part C scope](docs/week1_project_scope.md)
@@ -81,5 +89,8 @@ docs/
 ├── week1_system_map_notes.md    # Part B explanation and reflection
 ├── week1_project_scope.md       # Part C — individual SmartPark AI scope
 ├── week2_requirements.md        # Week 2 — Sections 0–4 requirements
-└── week2_evaluation_criteria.md # Week 2 — evaluation criteria
+├── week2_evaluation_criteria.md # Week 2 — evaluation criteria
+├── week2_architecture.md        # Week 2 — architecture overview and traceability
+├── week2_architecture.svg       # Week 2 — rendered architecture diagram
+└── week2_architecture.drawio    # Week 2 — editable architecture source
 ```
