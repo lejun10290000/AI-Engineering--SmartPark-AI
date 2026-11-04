@@ -39,10 +39,10 @@ The simple flow (Driver / Operator → SmartPark Application → Parking AI Capa
 ## 3. Requirements-driven architecture
 
 
-![SmartPark AI requirements-driven application architecture](week2_architecture.svg)
+![SmartPark AI requirements-driven application architecture](week2_architecture_v1.png)
 
 **Editable source:** [week2_architecture.drawio](week2_architecture.drawio)  
-**Rendered diagram:** [week2_architecture.svg](week2_architecture.svg)
+**PNG diagram:** [week2_architecture_v1.png](week2_architecture_v1.png)
 
 The extended architecture adds only the capabilities justified by the project requirements:
 
