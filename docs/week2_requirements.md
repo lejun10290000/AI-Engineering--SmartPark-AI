@@ -76,3 +76,26 @@ The following are initial acceptance targets for the miniature parking prototype
 - Use test images and clips that are separate from any data used to tune or develop the system, so the evaluation is not based only on examples the system has already seen.
 - Report the actual measured values, sample sizes and test conditions. Do not describe a proposed threshold as an achieved result.
 - If the final hardware or test setup changes materially, repeat the measurements and review whether the proposed thresholds remain appropriate.
+
+---
+
+# Responsible AI Requirements — SmartPark AI
+
+**Section:** 3 — Responsible AI Requirements  
+**Version:** 1.0
+
+The requirements below convert the Responsible AI risks identified in the Week 1 project scope into observable controls. The thresholds are proposed acceptance criteria for the miniature prototype, not measured results.
+
+| # | Responsible AI Risk | Requirement | Measurement Method | Metric | Threshold |
+|---|---|---|---|---|---|
+| **RAI1** | **Incorrect occupancy detection — misleading availability information** | The system shall not present or recommend a parking bay as **vacant** when the bay is labelled occupied in the test ground truth. If the occupancy status cannot be determined, the system shall show it as **unknown** and exclude it from the available-bay recommendations. | Test at least 100 labelled occupied-bay observations, including cases with different vehicle positions and lighting. Compare the displayed status and recommendations with the manually labelled ground truth. | Number of false-vacant status or recommendation events among labelled occupied-bay observations. | **0 false-vacant events** in the test sample. Uncertain bays must be shown as unknown, not vacant. |
+| **RAI2** | **Vehicle-tracking errors — incorrect position may lead to confusing guidance** | The system shall identify an uncertain or lost vehicle track as **unconfirmed** and shall not use that unconfirmed track to provide position-dependent vehicle guidance until the track is re-established. | Run at least 20 controlled video clips that include vehicle movement, temporary occlusion and vehicles leaving the camera view. Compare guidance events with manually checked vehicle tracks and positions. | Number of guidance events issued using an incorrect, mismatched or unconfirmed vehicle track. | **0 guidance events** based on an incorrect, mismatched or unconfirmed track in the test clips. |
+| **RAI3** | **Privacy — camera footage may capture unnecessary visual information** | The system shall limit retained project footage to the miniature parking scene needed for occupancy and vehicle-position evaluation. It shall not retain identifiable images of people or unrelated personal information captured incidentally in the camera view. | Review at least 100 sampled captured or stored frames/files, including test cases where a person or unrelated personal information is incidentally visible outside the miniature parking area. Check whether such content is retained in the project dataset or outputs. | Number of retained frames/files containing identifiable people or unrelated personal information. | **0 retained privacy-violating frames/files** in the reviewed sample. Incidental content must be excluded or removed before project data is retained. |
+
+## Responsible AI Evaluation Notes
+
+- Keep the test labels, test scenarios and review results so each RAI requirement can be checked later.
+- A bay with an uncertain occupancy result must not be treated as vacant merely to provide a recommendation.
+- When a vehicle track is lost or ambiguous, the system should communicate uncertainty rather than present an unverified position as reliable.
+- Use controlled miniature scenes and minimise retained footage. Do not collect personal information that is not needed for the project.
+- These thresholds are initial targets for the prototype. Record actual results and any limitations; do not report proposed thresholds as achieved performance.
