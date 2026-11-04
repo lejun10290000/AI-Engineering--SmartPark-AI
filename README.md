@@ -65,12 +65,11 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 
 ## Week 2 — Application Architecture
 
-- [Architecture overview and requirement check](docs/week2_architecture.md)
-- [Architecture Decision Record (ADR) and traceability matrix](docs/week2_architecture_decisions.md)
+- [Combined architecture, ADR and requirements traceability](docs/week2_architecture_decisions.md)
 - [Rendered architecture diagram (SVG)](docs/week2_architecture.svg)
 - [Editable architecture source (Draw.io)](docs/week2_architecture.drawio)
 
-The architecture begins with the simple user → application → AI capability → response flow, then adds only the components justified by SmartPark AI's functional, non-functional and Responsible AI requirements. The ADR records the alternatives and trade-offs behind those additions, while the traceability matrix connects objectives, requirements, evaluation criteria, architecture elements and later evidence.
+The combined document contains the simple and requirements-driven architecture, the requirement-support analysis, architecture decisions and accepted trade-offs, the requirements traceability matrix, final review checklist and architecture reflection.
 
 ## Part C — Individual Project Scope
 
@@ -91,8 +90,7 @@ docs/
 ├── week1_project_scope.md       # Part C — individual SmartPark AI scope
 ├── week2_requirements.md        # Week 2 — Sections 0–4 requirements
 ├── week2_evaluation_criteria.md # Week 2 — evaluation criteria
-├── week2_architecture.md           # Week 2 — conceptual architecture and requirement check
-├── week2_architecture_decisions.md # Week 2 — ADR and requirements traceability matrix
+├── week2_architecture_decisions.md # Week 2 — architecture, ADR and traceability
 ├── week2_architecture.svg          # Week 2 — rendered architecture diagram
 └── week2_architecture.drawio       # Week 2 — editable architecture source
 ```
