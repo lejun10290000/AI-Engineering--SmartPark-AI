@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1450" viewBox="0 0 2000 1450">
+<defs>
+  <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#475569"/></marker>
+  <marker id="arrowOrange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#C2410C"/></marker>
+  <marker id="arrowSlate" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#64748B"/></marker>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;fill:#273651}
+    .title{font-size:36px;font-weight:700;fill:#182447}
+    .subtitle{font-size:18px;fill:#65748F}
+    .section{font-size:25px;font-weight:700;fill:#182447}
+    .boxTitle{font-size:22px;font-weight:700}
+    .body{font-size:18px}
+    .small{font-size:16px}
+    .muted{fill:#65748F}
+    .blue{fill:#2563EB}.pink{fill:#DB2777}.purple{fill:#6D28D9}.green{fill:#15803D}.orange{fill:#C2410C}.slate{fill:#64748B}
+    .flow{stroke:#475569;stroke-width:6;fill:none;marker-end:url(#arrow)}
+    .support{stroke:#64748B;stroke-width:5;stroke-dasharray:12 9;fill:none;marker-end:url(#arrowSlate)}
+    .privacyFlow{stroke:#C2410C;stroke-width:6;fill:none;marker-end:url(#arrowOrange)}
+  </style>
+</defs>
+<rect width="2000" height="1450" fill="#FFFFFF"/>
+<!-- Header -->
+<rect x="30" y="24" width="1940" height="88" rx="22" fill="#F4F0FF" stroke="#6D28D9" stroke-width="4"/>
+<text class="title" x="1000" y="64" text-anchor="middle">SMARTPARK AI — REQUIREMENTS-DRIVEN APPLICATION ARCHITECTURE</text>
+<text class="subtitle" x="1000" y="94" text-anchor="middle">Begin with the basic interaction. Add only capabilities justified by FR, NFR and Responsible AI requirements.</text>
+
+<!-- Simple architecture -->
+<rect x="35" y="135" width="1930" height="260" rx="22" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+<text class="section" x="70" y="175">V1 (SIMPLE) — USER QUERY → APPLICATION → AI CAPABILITY → RESPONSE</text>
+<text class="subtitle" x="70" y="208">A minimum starting point for the driver / operator interaction</text>
+
+<rect x="70" y="235" width="405" height="117" rx="18" fill="#EFF6FF" stroke="#2563EB" stroke-width="3"/>
+<text class="boxTitle blue" x="272" y="272" text-anchor="middle">DRIVER / OPERATOR</text>
+<text class="body" x="272" y="309" text-anchor="middle">Requests an available bay</text><text class="body" x="272" y="334" text-anchor="middle">or views parking occupancy</text>
+
+<rect x="555" y="235" width="405" height="117" rx="18" fill="#FDF2F8" stroke="#DB2777" stroke-width="3"/>
+<text class="boxTitle pink" x="757" y="272" text-anchor="middle">SMARTPARK APPLICATION</text>
+<text class="body" x="757" y="309" text-anchor="middle">Receives the request and</text><text class="body" x="757" y="334" text-anchor="middle">presents the result</text>
+
+<rect x="1040" y="235" width="405" height="117" rx="18" fill="#EFF6FF" stroke="#2563EB" stroke-width="3"/>
+<text class="boxTitle blue" x="1242" y="272" text-anchor="middle">PARKING AI CAPABILITY</text>
+<text class="body" x="1242" y="309" text-anchor="middle">Analyses the parking scene</text><text class="body" x="1242" y="334" text-anchor="middle">and determines occupancy</text>
+
+<rect x="1525" y="235" width="405" height="117" rx="18" fill="#F5F3FF" stroke="#6D28D9" stroke-width="3"/>
+<text class="boxTitle purple" x="1727" y="272" text-anchor="middle">RESPONSE</text>
+<text class="body" x="1727" y="309" text-anchor="middle">Occupancy result or</text><text class="body" x="1727" y="334" text-anchor="middle">available-bay guidance</text>
+
+<path class="flow" d="M475 293 H548"/><path class="flow" d="M960 293 H1033"/><path class="flow" d="M1445 293 H1518"/>
+
+<!-- Why more components -->
+<rect x="35" y="415" width="1930" height="77" rx="18" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
+<text x="65" y="448" font-size="22" font-weight="700" class="orange">WHY ADD COMPONENTS?</text>
+<text x="420" y="446" font-size="18" fill="#7C2D12">The simple flow omits camera input, bay boundaries and tracking across video frames.</text>
+<text x="420" y="474" font-size="18" fill="#7C2D12">It also omits vacant-only selection, uncertainty handling and privacy controls for retained footage.</text>
+
+<!-- Requirements-driven runtime -->
+<rect x="35" y="515" width="1930" height="502" rx="22" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
+<text class="section" x="70" y="552">V1 (REQUIREMENTS-DRIVEN) — COMPONENTS ADDED ONLY WHERE JUSTIFIED</text>
+<text class="subtitle" x="70" y="583">Runtime flow for the miniature parking prototype</text>
+
+<rect x="65" y="635" width="235" height="130" rx="18" fill="#EFF6FF" stroke="#2563EB" stroke-width="3"/>
+<text class="boxTitle blue" x="182" y="674" text-anchor="middle">USER</text>
+<text class="body" x="182" y="716" text-anchor="middle">Driver / visitor</text><text class="body" x="182" y="741" text-anchor="middle">Parking operator</text>
+
+<rect x="345" y="635" width="285" height="130" rx="18" fill="#FDF2F8" stroke="#DB2777" stroke-width="3"/>
+<text class="boxTitle pink" x="487" y="674" text-anchor="middle">SMARTPARK APP / UI</text>
+<text class="body" x="487" y="716" text-anchor="middle">Request a vacant bay</text><text class="body" x="487" y="741" text-anchor="middle">View current occupancy</text>
+
+<rect x="675" y="635" width="305" height="130" rx="18" fill="#EFF6FF" stroke="#2563EB" stroke-width="3"/>
+<text class="boxTitle blue" x="827" y="674" text-anchor="middle">VISION AI CAPABILITY</text>
+<text class="body" x="827" y="716" text-anchor="middle">FR1: bay occupancy</text><text class="body" x="827" y="741" text-anchor="middle">FR2: vehicle tracking</text>
+
+<rect x="1025" y="635" width="330" height="130" rx="18" fill="#F5F3FF" stroke="#6D28D9" stroke-width="3"/>
+<text x="1190" y="674" text-anchor="middle" font-size="18" font-weight="700" class="purple">PARKING STATE &amp; GUIDANCE</text>
+<text class="body" x="1190" y="716" text-anchor="middle">FR3: update bay status</text><text class="body" x="1190" y="741" text-anchor="middle">FR4–FR5: choose and guide</text>
+
+<rect x="1400" y="635" width="535" height="130" rx="18" fill="#FFF7ED" stroke="#C2410C" stroke-width="3"/>
+<text x="1667" y="674" text-anchor="middle" font-size="21" font-weight="700" class="orange">RESPONSIBLE CHECKS &amp; RESPONSE</text>
+<text class="small" x="1425" y="712">RAI1: never recommend occupied or unknown bays</text>
+<text class="small" x="1425" y="736">RAI2: no guidance from an unconfirmed vehicle track</text>
+<text class="small" x="1425" y="757">Show bay ID + location / direction, or no available bay</text>
+
+<path class="flow" d="M300 700 H338"/><path class="flow" d="M630 700 H668"/><path class="flow" d="M980 700 H1018"/><path class="flow" d="M1355 700 H1393"/>
+<rect x="845" y="604" width="305" height="34" rx="12" fill="#F0FDF4"/>
+<text x="997" y="628" text-anchor="middle" font-size="16" font-weight="700" class="green">detections + temporary tracks</text>
+
+<!-- Supporting inputs and controls -->
+<rect x="70" y="835" width="290" height="130" rx="18" fill="#F0FDF4" stroke="#15803D" stroke-width="3"/>
+<text class="boxTitle green" x="215" y="874" text-anchor="middle">CAMERA INPUT</text>
+<text class="body" x="215" y="916" text-anchor="middle">Images / video frames from</text><text class="body" x="215" y="941" text-anchor="middle">the miniature parking scene</text>
+
+<rect x="420" y="835" width="340" height="130" rx="18" fill="#FFF7ED" stroke="#C2410C" stroke-width="3"/>
+<text class="boxTitle orange" x="590" y="874" text-anchor="middle">PRIVACY BOUNDARY</text>
+<text class="small" x="590" y="912" text-anchor="middle">RAI3: retain only required miniature-scene data;</text>
+<text class="small" x="590" y="937" text-anchor="middle">exclude incidental personal information</text>
+
+<rect x="960" y="835" width="390" height="130" rx="18" fill="#F8FAFC" stroke="#64748B" stroke-width="3"/>
+<text class="boxTitle slate" x="1155" y="874" text-anchor="middle">DEFINED PARKING LAYOUT</text>
+<text class="body" x="1155" y="916" text-anchor="middle">Bay IDs, boundaries and positions</text><text class="body" x="1155" y="941" text-anchor="middle">for occupancy and guidance</text>
+
+<path class="flow" d="M360 900 H413"/>
+<path class="privacyFlow" d="M760 865 L820 768"/>
+<rect x="720" y="790" width="153" height="32" rx="12" fill="#FFF7ED"/>
+<text x="796" y="812" text-anchor="middle" font-size="16" font-weight="700" class="orange">filtered frames</text>
+<path class="support" d="M1155 835 L1185 768"/>
+<rect x="1250" y="790" width="160" height="32" rx="12" fill="#F8FAFC"/>
+<text x="1330" y="812" text-anchor="middle" font-size="16" font-weight="700" class="slate">bay definitions</text>
+
+<!-- Evaluation lane -->
+<rect x="35" y="1040" width="1930" height="252" rx="22" fill="#F8FAFC" stroke="#64748B" stroke-width="3" stroke-dasharray="12 9"/>
+<text class="section" x="70" y="1082" font-size="23">EVALUATION — TESTING SUPPORT, NOT AN EXTRA USER-FACING RUNTIME FEATURE</text>
+
+<rect x="70" y="1110" width="565" height="145" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+<text x="352" y="1148" text-anchor="middle" font-size="21" font-weight="700" class="slate">LABELLED TEST INPUTS</text>
+<text class="body" x="352" y="1191" text-anchor="middle">Held-out frames, annotated video clips,</text><text class="body" x="352" y="1217" text-anchor="middle">repeatable parking scenarios</text>
+
+<rect x="720" y="1110" width="565" height="145" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+<text x="1002" y="1148" text-anchor="middle" font-size="21" font-weight="700" class="slate">MEASURE ACTUAL RESULTS</text>
+<text class="body" x="1002" y="1191" text-anchor="middle">Macro-F1, track association, latency,</text><text class="body" x="1002" y="1217" text-anchor="middle">successful runs and RAI control checks</text>
+
+<rect x="1370" y="1110" width="560" height="145" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+<text x="1650" y="1148" text-anchor="middle" font-size="21" font-weight="700" class="slate">COMPARE WITH TARGETS</text>
+<text class="body" x="1650" y="1191" text-anchor="middle">FR / NFR / RAI thresholds and evaluation</text><text class="body" x="1650" y="1217" text-anchor="middle">criteria from the project documents</text>
+
+<path class="flow" d="M635 1182 H712"/><path class="flow" d="M1285 1182 H1362"/>
+
+<!-- Legend -->
+<rect x="35" y="1310" width="1930" height="110" rx="18" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<text x="65" y="1352" font-size="18" font-weight="700" fill="#182447">LEGEND</text>
+
+<rect x="195" y="1335" width="36" height="36" rx="8" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+<text x="243" y="1360" class="small">User / AI capability</text>
+<rect x="530" y="1335" width="36" height="36" rx="8" fill="#FDF2F8" stroke="#DB2777" stroke-width="2"/>
+<text x="578" y="1360" class="small">Application / interface</text>
+<rect x="870" y="1335" width="36" height="36" rx="8" fill="#F0FDF4" stroke="#15803D" stroke-width="2"/>
+<text x="918" y="1360" class="small">Input / state data</text>
+<rect x="1200" y="1335" width="36" height="36" rx="8" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text x="1248" y="1360" class="small">Privacy / Responsible AI control</text>
+<rect x="1620" y="1335" width="36" height="36" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+<text x="1668" y="1360" class="small">Decision / response</text>
+
+<path class="flow" d="M195 1396 H260" style="stroke-width:4"/><text x="278" y="1402" class="small">Main information flow</text>
+<path class="support" d="M660 1396 H725" style="stroke-width:4"/><text x="743" y="1402" class="small">Supporting data flow</text>
+<text x="1200" y="1402" class="small muted">V1 is conceptual; no specific models or frameworks are selected.</text>
+</svg>
