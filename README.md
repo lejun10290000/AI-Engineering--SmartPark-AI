@@ -1,4 +1,4 @@
-# SmartPark AI — AI Engineering, Topic 1 Lab
+# SmartPark AI — AI Engineering Project
 
 > SmartPark AI is a proposed computer-vision prototype that detects parking-bay occupancy, tracks vehicles and provides basic parking guidance for drivers and parking operators.
 
@@ -60,16 +60,19 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 
 | Week | Focus | Deliverable | Status |
 |------|-------|-------------|--------|
-| W1 | System map + project scope | Part A evidence, Part B map, Part C scope, README | Core files present; cross-group reflection omitted per lecturer guidance |
+| W1 | Project framing and system map | Part A observation evidence, Part B system map and individual Part C project scope | Complete |
+| W2 | Requirements, evaluation and V1 architecture | Requirements specification, evaluation criteria, architecture diagram, ADR and traceability | Complete |
 
 
-## Week 2 — Application Architecture
+## Week 2 — Requirements, Evaluation and Architecture
 
-- [Combined architecture, ADR and requirements traceability](docs/week2_architecture_decisions.md)
-- [Architecture diagram (PNG)](docs/week2_architecture_v1.png)
-- [Editable architecture source (Draw.io)](docs/week2_architecture.drawio)
+- [Project framing, application scope and requirements specification (Sections 0–4)](docs/week2_requirements.md)
+- [Evaluation criteria and reflection](docs/week2_evaluation_criteria.md)
+- [V1 architecture, architecture decisions, trade-offs and requirements traceability](docs/week2_architecture_decisions.md)
+- [V1 architecture diagram (PNG)](docs/week2_architecture_v1.png)
+- [Editable V1 architecture source (Draw.io)](docs/week2_architecture.drawio)
 
-The combined document contains the simple and requirements-driven architecture, the requirement-support analysis, architecture decisions and accepted trade-offs, the requirements traceability matrix, final review checklist and architecture reflection.
+The Week 2 documents connect the project objectives to functional, non-functional and Responsible AI requirements; define measurable evaluation criteria; and explain the conceptual architecture, supporting components, architecture decisions, accepted trade-offs and traceability to later evidence.
 
 ## Part C — Individual Project Scope
 
