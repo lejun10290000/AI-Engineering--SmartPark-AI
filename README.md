@@ -80,5 +80,6 @@ docs/
 ├── week1_system_map.drawio      # Part B editable source
 ├── week1_system_map_notes.md    # Part B explanation and reflection
 ├── week1_project_scope.md       # Part C — individual SmartPark AI scope
-└── week2_requirements.md        # Week 2 — Section 0 scope checkpoint
+├── week2_requirements.md        # Week 2 — Sections 0–4 requirements
+└── week2_evaluation_criteria.md # Week 2 — evaluation criteria
 ```
