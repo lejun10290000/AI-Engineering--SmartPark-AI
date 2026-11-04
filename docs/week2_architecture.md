@@ -79,3 +79,7 @@ The current scope does not justify choosing a particular foundation model, objec
 ## 6. Architecture boundary
 
 This is a conceptual architecture for a controlled miniature parking prototype. It does not claim production deployment in a shopping centre or public car park. The system provides parking information and simple guidance; it does not identify real drivers, control vehicles or guarantee real-world parking availability.
+
+## 7. Architecture decisions
+
+The design choices, alternatives considered, accepted trade-offs and initial requirements traceability matrix are recorded separately in [week2_architecture_decisions.md](week2_architecture_decisions.md). This decision record explains why the additional architecture components are justified by the project requirements.
