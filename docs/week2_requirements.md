@@ -25,3 +25,30 @@
 - This checkpoint translates the Week 1 project scope into an initial application boundary; it is not a claim that the system has already been implemented.
 - Public datasets are supporting data for experiments. They do not guarantee that a model trained or tested on real-car images will perform equally well on miniature toy-car footage.
 - The exact camera arrangement, processing hardware, budget, bay-layout representation and numerical acceptance thresholds remain to be specified in later requirements work.
+
+---
+
+# Requirements Specification — SmartPark AI
+
+**Section:** 1 — Functional Requirements  
+**Version:** 1.0
+
+| # | Requirement — The system SHALL | Scope Boundary — SHALL NOT (where relevant) |
+|---|---|---|
+| **FR1** | The system shall identify each predefined parking bay in the miniature layout and report its current occupancy status as **occupied** or **vacant** from the analysed camera image or video frame. The result must be checkable against a manually labelled test image or frame. | The system SHALL NOT report occupancy for areas or parking bays outside the defined miniature parking layout. |
+| **FR2** | The system shall detect vehicles within the monitored miniature layout and maintain a separate temporary track for each detected vehicle across consecutive video frames, updating the vehicle's reported position as it moves. This can be tested by moving one or more toy vehicles through the camera view and checking whether their tracks and positions are updated. | The system SHALL NOT identify a real driver, determine a person's identity, or claim to recognise a vehicle's real-world identity. |
+| **FR3** | The system shall update the occupancy status of a defined parking bay when a tracked vehicle is detected entering or leaving that bay. This can be tested by recording the bay status before vehicle entry, after entry and after the vehicle leaves. | The system SHALL NOT mark a bay as occupied solely because a vehicle passes nearby without entering the marked bay. |
+| **FR4** | When parking availability is requested, the system shall identify and return at least one parking bay whose latest recorded occupancy status is **vacant**. When no bay is recorded as vacant, it shall report that no available bay is identified. | The system SHALL NOT recommend a bay whose latest recorded status is **occupied**. |
+| **FR5** | After an available bay is identified, the system shall provide basic guidance by showing the selected bay's identifier and location on the miniature parking layout, or by indicating a simple direction towards that bay. The guidance can be checked against the defined layout and the selected bay. | The system SHALL NOT control or steer a vehicle, make autonomous driving decisions, or claim to provide real-world navigation for a public car park. |
+
+## Initial Functional Requirement Test Scenarios
+
+| Requirement | Example test scenario | Expected observable result |
+|---|---|---|
+| **FR1** | Submit a labelled frame showing one occupied bay and one vacant bay. | The system reports the correct occupied/vacant status for each defined bay. |
+| **FR2** | Move a toy vehicle through the miniature layout across consecutive video frames. | The system detects the vehicle and updates its temporary track and position while it remains visible. |
+| **FR3** | Move a toy vehicle into a marked bay and then move it out. | The bay changes to occupied after entry and to vacant after the vehicle leaves. |
+| **FR4** | Provide an occupancy state containing vacant bays, then test a layout in which all bays are occupied. | The system returns at least one vacant bay in the first case and reports that no available bay is identified in the second case. |
+| **FR5** | Request guidance to a bay returned as vacant. | The system displays the correct bay identifier and location or a simple direction matching the miniature layout. |
+
+**Requirements note:** These are initial, testable functional requirements derived from the Week 1 scope. They describe what SmartPark AI must do, not the model, libraries, camera hardware or software architecture used to implement it. Numerical performance targets and detailed non-functional requirements remain to be defined during later requirements and evaluation work.
