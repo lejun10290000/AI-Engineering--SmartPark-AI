@@ -16,7 +16,26 @@ The driver or visitor requests an available parking bay, or the parking operator
 
 This is a useful starting point, but it is not sufficiently explicit to support all requirements. The system also needs camera images or video, a defined miniature parking layout, vehicle tracking across frames, a way to maintain current bay/track state, vacant-only selection and responsible handling of uncertain results and captured footage.
 
-## 2. Requirements-driven architecture
+## 2. Simple Architecture Requirement Check
+
+The simple flow (Driver / Operator → SmartPark Application → Parking AI Capability → Response) is a useful starting point, but by itself it does not describe every behaviour and quality target in Part A or the evaluation criteria in Part B. The following check identifies what each important requirement needs and whether the simple flow is enough.
+
+| Requirement ID | What does the requirement need? | Architecture Response |
+|---|---|---|
+| **FR1, NFR2, RAI1** — Occupancy detection and correctness | The system must classify each defined bay as occupied or vacant, achieve the proposed macro-F1 target, and avoid presenting an occupied or uncertain bay as vacant. | **Simple flow: not sufficient by itself.** Add **camera input** for image/video frames, a **defined parking-layout/bay map** to identify each bay, and a **vision occupancy capability**. Add a **responsible output check** so occupied or unknown bays cannot be recommended as vacant. Evaluate using held-out labelled frames, macro-F1 (target ≥ 0.90) and false-vacant events (target 0). |
+| **FR2, NFR3, RAI2** — Vehicle tracking and uncertainty handling | The system must maintain a temporary track for each visible vehicle across frames, meet the proposed track-association target, and avoid position-dependent guidance when a track is uncertain or unconfirmed. | **Simple flow: not sufficient.** A one-off query-to-response flow does not represent continuity across video frames. Add **sequential video-frame input** and **temporary vehicle-track state** to maintain vehicle positions. Add a **track-confidence/uncertainty control** that marks lost or mismatched tracks as unconfirmed and blocks guidance based on them. Evaluate with annotated clips (tracking target ≥ 90%; zero guidance events from incorrect/unconfirmed tracks). |
+| **FR3** — Bay occupancy updates | The system must update a bay's status when a tracked vehicle enters or leaves that defined bay, rather than treating a vehicle passing nearby as occupying it. | **Simple flow: not sufficient.** Add **bay-boundary mapping** and **parking-state update logic** that relates a tracked vehicle's position to a defined bay and records the occupied/vacant transition. |
+| **FR4, FR5** — Availability selection and parking guidance | The system must select a bay whose latest status is vacant, report when no vacant bay is identified, and show the selected bay's identifier and location or a simple direction. | **Simple flow: partially sufficient.** It can represent a request and response, but it does not define how a safe bay is selected. Add **availability-selection and guidance capability** using the current parking state and defined layout. Exclude occupied and unknown bays; return a clear no-available-bay response when appropriate. Evaluate with controlled layout scenarios (target ≥ 95% correct decisions/guidance and zero occupied-bay recommendations). |
+| **NFR1** — Processing latency | The system must return occupancy and vehicle-position results within the proposed 95th-percentile latency target of ≤ 2.0 seconds. | **Simple flow: sufficient as a high-level path, but not measurable on its own.** Add **measurement points/timestamps** at frame receipt and result availability, plus an evaluation process to calculate 95th-percentile latency over at least 100 frames. This is test instrumentation, not a new user-facing runtime feature. |
+| **NFR4** — Operational reliability | The full prototype must complete repeated test sequences without crashing, losing its input stream or failing to provide an output. | **Simple flow: not sufficient to express the operational quality.** Add **input-stream/status monitoring** and clear handling of unavailable input or missing results, along with a **repeatable test process**. Evaluate at least 20 sequences; the proposed target is ≥ 95% successful runs (at least 19 of 20). |
+| **RAI3** — Privacy and data minimisation | The system must retain only footage needed for the miniature parking evaluation and must not retain incidental identifiable people or unrelated personal information. | **Simple flow: not sufficient.** Add a **privacy boundary/data-handling control** around captured and retained footage: limit collection to the miniature scene, exclude or remove incidental personal information, and review retained samples. The proposed review threshold is zero privacy-violating retained files in the sample. |
+
+**Decision:** Keep the simple user → application → AI capability → response flow as the overall starting point. Extend it with camera input, a defined bay layout, temporary tracking/parking state, availability and guidance logic, responsible output checks, and privacy handling because the requirements justify them. Use timestamps, monitoring and labelled test material to evaluate quality; do not turn every measurement activity into a separate runtime component.
+
+---
+
+## 3. Requirements-driven architecture
+
 
 ![SmartPark AI requirements-driven application architecture](week2_architecture.svg)
 
@@ -36,7 +55,7 @@ The extended architecture adds only the capabilities justified by the project re
 
 The evaluation area in the diagram is shown separately from the runtime flow. It represents the test process used to measure requirements, not another user-facing application feature.
 
-## 3. Requirement traceability
+## 4. Requirement traceability
 
 | Requirement / objective | Architecture element | Why it is needed |
 |---|---|---|
@@ -53,10 +72,10 @@ The evaluation area in the diagram is shown separately from the runtime flow. It
 | RAI2 — incorrect vehicle position | Track state and responsible output checks | Unconfirmed or mismatched tracks must not be used for position-dependent guidance. |
 | RAI3 — unnecessary personal information | Privacy boundary | Retained footage must be limited to the miniature scene needed for evaluation. |
 
-## 4. What is deliberately not added yet
+## 5. What is deliberately not added yet
 
 The current scope does not justify choosing a particular foundation model, object-detection framework, database, cloud service, camera model, authentication system, payment facility, GPS navigation service or autonomous vehicle-control component. These are implementation or additional product decisions, not necessary parts of the initial requirements-driven architecture. The hardware arrangement and processing platform remain to be decided.
 
-## 5. Architecture boundary
+## 6. Architecture boundary
 
 This is a conceptual architecture for a controlled miniature parking prototype. It does not claim production deployment in a shopping centre or public car park. The system provides parking information and simple guidance; it does not identify real drivers, control vehicles or guarantee real-world parking availability.
