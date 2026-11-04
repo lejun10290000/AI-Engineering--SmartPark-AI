@@ -83,3 +83,10 @@ This is a conceptual architecture for a controlled miniature parking prototype. 
 ## 7. Architecture decisions
 
 The design choices, alternatives considered, accepted trade-offs and initial requirements traceability matrix are recorded separately in [week2_architecture_decisions.md](week2_architecture_decisions.md). This decision record explains why the additional architecture components are justified by the project requirements.
+
+## 8. Reflection — Architecture Trade-off
+
+The architecture decision with the most important trade-off is **ADR-02: maintaining a defined parking layout and current parking-state information before selecting an available bay**. This decision is driven mainly by **FR3, FR4 and FR5**, which require the system to update a bay's occupancy when a vehicle enters or leaves, select a bay whose latest status is vacant, and provide guidance to that bay. **RAI1** also drives this decision because an occupied or uncertain bay must not be presented as vacant.
+
+The simpler alternative would be to send the vision result directly to the user or let an operator choose a bay manually. I selected the additional parking-layout and state capability because raw detections alone do not provide enough structured information to determine which specific bay is available and where it is located. The accepted trade-off is **greater application complexity**: the system must maintain bay identifiers, boundaries and current occupancy states, and it must handle stale or uncertain information. This adds logic and testing effort, but it supports more useful bay-specific guidance and reduces the risk of recommending an occupied or uncertain bay. I consider this trade-off worthwhile because reliable availability information is central to the intended benefit of SmartPark AI.
+
