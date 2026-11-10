@@ -62,6 +62,7 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 |------|-------|-------------|--------|
 | W1 | Project framing and system map | Part A observation evidence, Part B system map and individual Part C project scope | Complete |
 | W2 | Requirements, evaluation and V1 architecture | Requirements specification, evaluation criteria, architecture diagram, ADR and traceability | Complete |
+| W3 | Data inventory, preparation and V1 pipeline | Data inventory, pipeline diagram and decisions; Colab runtime artefact transfer pending | In progress |
 
 
 ## Week 2 — Requirements, Evaluation and Architecture
@@ -73,6 +74,16 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 - [Editable V1 architecture source (Draw.io)](docs/week2_architecture.drawio)
 
 The Week 2 documents connect the project objectives to functional, non-functional and Responsible AI requirements; define measurable evaluation criteria; and explain the conceptual architecture, supporting components, architecture decisions, accepted trade-offs and traceability to later evidence.
+
+## Week 3 — Data Preparation and V1 Pipeline
+
+- [Data inventory and Part B/C execution record](docs/week3_data_inventory.md)
+- [Executed V1 image pipeline workflow](docs/week3_pipeline_diagram.png)
+- [Pipeline decisions, stage contracts and traceability](docs/week3_pipeline_decisions.md)
+
+**Selected pathway:** C — Computer Vision / Images. The six lecturer-supplied synthetic shape images were processed in Colab. Cells 7, 8C and 9 completed; six prepared images were produced and the repeatability smoke check passed. These are data-preparation results only, not SmartPark model-performance results.
+
+**Step C4 artefact transfer:** The Colab notebook (`notebooks/week3_pipeline.ipynb`), Part B manifest (`data/week3_manifest.json`), Part B prepared outputs and Part C `data/pipeline_v1/images/` files must be copied from the Colab runtime before those runtime artefacts can be marked as committed. Check course redistribution terms before committing the synthetic source archive or raw dataset.
 
 ## Part C — Individual Project Scope
 
