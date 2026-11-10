@@ -129,13 +129,16 @@ The execution screenshots evidence the console messages and successful run. The 
 - [x] Record the selected source, transformation and Part B comparison.
 - [x] State ETL and batch-processing decisions with rationale.
 - [x] Record stage contracts, output paths and provenance/access caveats.
-- [x] Export and commit the Colab notebook and permitted runtime artefacts as part of Step C4 (raw course source archive omitted because redistribution rights were not verified).
-- [x] Verify the uploaded files and links in the GitHub repository.
+- [x] Commit the Colab notebook; verify the existing pipeline diagram.
+- [ ] Commit the Part B/Part C manifests and prepared image outputs from the C4 export bundle.
+- [x] Omit the raw course source archive because redistribution rights were not verified.
+- [x] Verify the notebook, documentation and pipeline diagram in the GitHub repository.
+- [ ] Verify the individual data manifests and prepared image files after upload.
 
 
 ## 10. Step C4 — Repository Transfer Record
 
-The Colab notebook and supplied C4 artefact ZIP were used to populate the repository paths:
+The supplied Colab notebook was committed and the existing pipeline diagram was verified. The C4 artefact ZIP contains the remaining data files, but those are not yet individually committed to the repository:
 
 - `notebooks/week3_pipeline.ipynb` — portable notebook with the 17 original cells retained; transient outputs and execution counters cleared.
 - `data/week3_manifest.json` — Part B source-to-prepared lineage records.
@@ -143,6 +146,6 @@ The Colab notebook and supplied C4 artefact ZIP were used to populate the reposi
 - `data/pipeline_v1/images/` — six Part C prepared images and the pipeline manifest.
 - `docs/week3_data_inventory.md`, `docs/week3_pipeline_diagram.png`, and this file — Week 3 documentation.
 
-The source archive and raw course images were not committed because their redistribution permissions were not verified. The committed prepared images are outputs of the course-supplied synthetic shape dataset and must not be represented as real SmartPark parking-scene data.
+The original source archive and raw course images were not committed because their redistribution permissions were not verified. The prepared outputs remain inside the supplied C4 ZIP and are not yet present as individual repository files. They are outputs of the course-supplied synthetic shape dataset and must not be represented as real SmartPark parking-scene data.
 
-**C4 status:** Artefact transfer and repository-path verification are complete. Cell 7, Cell 8C and Cell 9 execution evidence is recorded above. The Cell 9 result is a repeatability smoke check within the supplied Colab runtime, not proof of full reproducibility across environments.
+**C4 status:** Partially complete. The notebook and pipeline diagram are present in GitHub; the Part B/Part C manifests and prepared image files still require upload and path verification. Cell 7, Cell 8C and Cell 9 execution evidence is recorded above. The Cell 9 result is a repeatability smoke check within the supplied Colab runtime, not proof of full reproducibility across environments.
