@@ -1,7 +1,7 @@
 # Week 3 Data Inventory — SmartPark AI
 
 **Project:** SmartPark AI — AI-Based Computer Vision for Smart Parking  
-**Version:** 1.1  
+**Version:** 1.2  
 **Date:** 10 November 2026  
 **Practice source:** `Topic_3_Dummy_Datasets.zip` supplied for Topic 3  
 **Selected pathway:** C — Computer Vision (`03_images/`)
@@ -31,21 +31,20 @@
 | Label file | `labels.csv` |
 | Label columns | `filename`, `shape_label`, `colour` |
 | Label categories | Shape: `circle`, `square`; colour: `red`, `blue` |
-| Image format / mode | PNG, RGB (to be confirmed by the Step A3 inspection cell) |
-| Image dimensions | Variable; record the exact per-file dimensions printed by Colab in Section 7 |
+| Image format / mode | PNG, RGB |
+| Image dimensions | Variable: width 92–152 px; height 97–132 px |
 | Source type | Synthetic practice dataset supplied by the lecturer |
 | Real-world coverage | No vehicles, number plates, parking bays, camera viewpoints, timestamps, or tracking IDs |
 
 ## 3. Initial data observations and preparation considerations
 
-1. The expected practice subset contains six images and a label file. Confirm the actual number of rows in `labels.csv` using the Step A3 inspection output.
-2. The `filename` column is the key used to associate each image with its label.
-3. Inspect the dimensions of every image. If dimensions differ, a later model-training pipeline may need a consistent input size; resizing should be documented and applied consistently.
-4. Confirm image mode and pixel dimensions during ingestion rather than assuming every image has the same shape.
-5. Preserve the original `shape_label` and `colour` columns. Do not relabel circles or squares as cars or parking states.
-6. Check that every filename in `labels.csv` exists and that every image has a matching label before processing.
-7. Keep the original files in `data/raw/`; save resized or otherwise transformed copies in `data/processed/`. Do not overwrite the supplied originals.
-8. Six images are far too few and too simple for a meaningful SmartPark model evaluation. Any result from this dataset must be described as a data-preparation exercise only.
+1. The practice subset contains six images and six corresponding label rows. The `filename` column is the key used to associate each image with its label.
+2. The images have different dimensions. A later model-training pipeline may need a consistent input size, but resizing should be documented and applied consistently.
+3. The images are RGB. Confirm image mode and pixel dimensions during ingestion rather than assuming every image has the same shape.
+4. Preserve the original `shape_label` and `colour` columns. Do not relabel circles or squares as cars or parking states.
+5. Check that every filename in `labels.csv` exists and that every image has a matching label before processing.
+6. Keep the original files in `data/raw/`; save resized or otherwise transformed copies in `data/processed/`. Do not overwrite the supplied originals.
+7. Six images are far too few and too simple for a meaningful SmartPark model evaluation. Any result from this dataset must be described as a data-preparation exercise only.
 
 ## 4. What actual project data will replace the practice data?
 
@@ -85,48 +84,75 @@ Pathway C (Computer Vision) is the closest match to SmartPark AI because the pro
 | Main data type | Unstructured image data |
 | Supporting metadata | Structured CSV label data (`labels.csv`) |
 | Image file type | PNG |
-| Image representation | Pixel data; image mode and dimensions are checked programmatically |
+| Image representation | Pixel data; RGB image mode |
 | Metadata fields | `filename`, `shape_label`, `colour` |
 
 The project requires image data because SmartPark AI uses camera imagery as the input to its parking-scene vision capability. The CSV file is supporting structured metadata that associates each image filename with its shape and colour labels. The processing route is therefore image inspection with CSV metadata validation, rather than treating the selected source as a document, audio, or time-series dataset.
 
-### 7.2 Inspection evidence to capture from Colab
+### 7.2 Inspection evidence
 
-Run the Step A3 inspection cell in the notebook. It should read `labels.csv`, list image dimensions and modes, display at least two representative images, and compare the CSV filenames with the actual PNG filenames.
+The supplied archive was inspected. Its `03_images/labels.csv` contains six records and the six corresponding PNG files were opened to inspect their dimensions, format, and mode.
 
-Record the actual output in the table below. Do not copy example dimensions from instructions or estimate values.
+| File | CSV shape label | CSV colour | Format | Mode | Dimensions (width × height) |
+|---|---|---|---|---|---|
+| `shape_01.png` | circle | red | PNG | RGB | 92 × 97 |
+| `shape_02.png` | square | blue | PNG | RGB | 104 × 104 |
+| `shape_03.png` | circle | blue | PNG | RGB | 116 × 111 |
+| `shape_04.png` | square | red | PNG | RGB | 128 × 118 |
+| `shape_05.png` | circle | red | PNG | RGB | 140 × 125 |
+| `shape_06.png` | square | blue | PNG | RGB | 152 × 132 |
 
-| Inspection item | Result |
-|---|---|
-| Dataset directory exists | Record the Boolean result printed by Colab |
-| Number of CSV label records | Record the value printed by Colab |
-| CSV columns | Expected fields: `filename`, `shape_label`, `colour`; confirm from output |
-| Number of PNG images found | Record the value printed by Colab |
-| Image format and mode | Record the values printed for each image (expected format: PNG; verify mode) |
-| Per-image dimensions | Copy the exact dimensions printed for `shape_01.png`–`shape_06.png` |
-| Filename-to-image consistency | Record the Boolean result printed by Colab |
-| Representative samples | Display and inspect at least `shape_01.png` and `shape_02.png` |
+**Inspection summary:**
 
-**Evidence status:** The inspection procedure and fields to record are defined here. The actual Colab execution output and screenshots must be added after the notebook cell has been run; they are not claimed as verified in this document.
+- Number of PNG images: 6.
+- Number of CSV label records: 6.
+- CSV columns: `filename`, `shape_label`, `colour`.
+- Shape categories: `circle` and `square`.
+- Colour categories: `red` and `blue`.
+- All six CSV filenames have matching image files in the supplied archive.
+- Two representative samples to display in Colab: `shape_01.png` and `shape_02.png`.
 
-### 7.3 Representative records
+These findings describe inspection of the supplied archive. Run the notebook inspection cell in the Colab workspace as well and retain its output/screenshots as execution evidence.
 
-1. **`shape_01.png`:** Inspect the displayed image and record its actual shape label, colour label, dimensions, format, and mode using the image inspection output and corresponding CSV row.
-2. **`shape_02.png`:** Inspect the displayed image and record its actual shape label, colour label, dimensions, format, and mode using the image inspection output and corresponding CSV row.
-
-These are representative practice records only. Their labels describe geometric shapes and colours, not vehicles or parking occupancy.
-
-### 7.4 Initial findings and limitations
+### 7.3 Initial findings and limitations
 
 - The images are unstructured visual inputs, while `labels.csv` is structured metadata.
-- The filenames provide the link between image files and CSV records; this mapping must be checked before any later processing.
-- Different image dimensions, if confirmed by Colab, may require a consistent resizing step in Part B. Preserve the originals and document any transformation.
+- The filenames provide the link between image files and CSV records; this mapping was checked against the supplied archive.
+- Image dimensions vary, so a consistent resizing step may be required in Part B. Preserve the originals and document any transformation.
 - The label vocabulary (`circle` / `square` and colour values) is not a SmartPark target label set.
 - The still images do not provide frame order, timestamps, or persistent vehicle identifiers, so they cannot support vehicle tracking.
 - The subset does not contain bay boundaries or `occupied` / `vacant` / `unknown` labels, so it cannot validate occupancy detection or safe parking recommendations.
 - File existence alone is not proof of successful ingestion. The CSV reading, image opening, representative image display, and filename consistency check provide the required initial inspection evidence.
 
-### 7.5 Step A3 conclusion
+### 7.4 Step A3 conclusion
 
-Pathway C is the most relevant practice pathway for SmartPark AI because the proposed system processes camera images. Initial inspection must confirm that the image files can be opened and that their labels can be matched correctly through the CSV metadata. The dummy subset supports practice with image and metadata inspection only. Actual parking-scene data from the miniature prototype will be required to train, test, and evaluate vehicle detection, occupancy detection, and tracking.
+Pathway C is the most relevant practice pathway for SmartPark AI because the proposed system processes camera images. The inspected archive confirms that the six PNG images can be opened and matched with the CSV metadata. The dummy subset supports practice with image and metadata inspection only. Actual parking-scene data from the miniature prototype will be required to train, test, and evaluate vehicle detection, occupancy detection, and tracking.
 
+## 8. Step A4 — Data Inventory Checkpoint
+
+The inventory below records the source identity, intended purpose, provenance, access conditions, and inspection evidence. The two entries distinguish the complete teaching pack from the specific image subset selected for this project.
+
+| Source ID | Filename / URL | Type and purpose | Version / date / owner | Access / rights | Inspection evidence |
+|---|---|---|---|---|---|
+| **S01** | `Topic_3_Dummy_Datasets.zip` (Topic 3 course-provided archive) | Synthetic teaching dataset pack; contains six optional pathways. Used as the source archive for the selected Computer Vision practice data. | Version/date not stated in the archive. Supplied for Topic 3. Owner/provider: course lecturer or course materials; individual name not specified. | Obtained through the course-provided materials. The archive README identifies the contents as synthetically generated for teaching. No separate licence file or explicit redistribution licence was found in the archive; follow course-portal terms and do not assume public redistribution rights. | Archive contents and `topic3_dummy_datasets/README.md` inspected. README confirms that examples are synthetic and must not be used to claim domain accuracy or model performance. |
+| **S02** | `topic3_dummy_datasets/03_images/shape_01.png`–`shape_06.png`; `topic3_dummy_datasets/03_images/labels.csv` | Unstructured PNG images with structured CSV labels. Selected Pathway C practice subset for image loading, visual inspection, label matching, and basic preprocessing. | Inherits S01 provenance. Individual file version/date and creator are not stated in the archive. | Same course-provided teaching-use conditions as S01. No separate image-subset licence was found. Do not publish or redistribute the files separately unless permitted by the course terms. | Six PNG images opened; all are RGB. Dimensions range from 92 × 97 to 152 × 132 pixels. CSV contains six matching filename records with `filename`, `shape_label`, and `colour` columns. Two representative samples: `shape_01.png` (red circle) and `shape_02.png` (blue square). |
+
+### 8.1 Requirement justification
+
+- **FR1 — Parking-bay occupancy detection:** S02 is selected as a temporary image-processing practice source because FR1 requires visual input. Its shape labels are not occupancy labels, so it cannot train or validate parking-bay occupancy detection.
+- **FR2 — Vehicle tracking:** S02 does not contain sequential frames, timestamps, or vehicle IDs. A separate overhead-camera video/image-sequence dataset will be required for this requirement.
+- **RAI1 — Safe parking guidance:** S02 does not contain occupied/vacant/unknown bay states or confidence information. Actual labelled parking-scene data and uncertainty handling will be required to assess this requirement.
+
+### 8.2 Raw and prepared data storage
+
+| Storage location | Contents / status |
+|---|---|
+| `data/raw/Topic_3_Dummy_Datasets.zip` | Original supplied ZIP archive, if retained after extraction. |
+| `data/raw/topic3_dummy_datasets/03_images/` | Extracted original PNG images and `labels.csv`; retain unchanged as raw input. |
+| `data/processed/` | Reserved for outputs created by Part B, such as consistently resized images and any prepared manifest. No prepared output is claimed at this checkpoint unless it has actually been generated. |
+
+**Storage rule:** Keep source files unchanged in the raw area. Write transformed files to the processed area and record the transformation, output filename, and source relationship. Do not count the ZIP archive and its extracted copies as two independent datasets.
+
+### 8.3 Step A4 checkpoint conclusion
+
+S01 identifies the provenance and access limitations of the lecturer-provided practice archive. S02 identifies the exact image subset selected for SmartPark AI and records its data type, purpose, and inspection evidence. The selection is justified by FR1's need for image input, but the synthetic shapes are only a temporary practice dataset. Actual miniature-parking camera data will be needed for project-level evaluation. Raw source files and future prepared outputs are kept distinct so that every transformation remains traceable.
