@@ -1,0 +1,18 @@
+{
+ "pipeline_version":"week3-v1","generated_at_utc":"2026-11-10T15:06:17.111700+00:00","data_type":"images",
+ "configuration":{"resize":[224,224],"convert_rgb":true,"preserve_aspect_ratio":true,"padding_colour":[255,255,255]},
+ "processing_method":"convert_rgb=True; aspect_ratio_preserving_resize=(224,224); padding_colour=[255,255,255]",
+ "sources":[
+ {"path":"topic3_dummy_datasets/03_images/shape_01.png","sha256":"17a1e28280144daee387c32b2012bfc61e723a87ce1a800accdfac3e674b5bb6"},
+ {"path":"topic3_dummy_datasets/03_images/shape_02.png","sha256":"dfa0925ff27bea94c60974b8fba381796981f0b5a44c9521840bd8dac749bf4f"},
+ {"path":"topic3_dummy_datasets/03_images/shape_03.png","sha256":"bb10030d1f0b64edb708459dad523a318ee2d75d282256ebb4620d4f3700c604"},
+ {"path":"topic3_dummy_datasets/03_images/shape_04.png","sha256":"2514fccc54d18b11837c437c31346d57e152014a1b15f3e5351b1fe9c7fa9a3c"},
+ {"path":"topic3_dummy_datasets/03_images/shape_05.png","sha256":"94d4f11507479c60a641b743d0665bec8b41e7299871c2c6b6ebe549b2ca52f1"},
+ {"path":"topic3_dummy_datasets/03_images/shape_06.png","sha256":"5908f2d0dabc2479d2740d4df8abe62785aa10aa6f34e7b838c58cf6e71ebd14"}],
+ "outputs":["prepared_001.png","prepared_002.png","prepared_003.png","prepared_004.png","prepared_005.png","prepared_006.png"],
+ "source_output_mapping":[
+ {"source":"shape_01.png","output":"prepared_001.png"},{"source":"shape_02.png","output":"prepared_002.png"},{"source":"shape_03.png","output":"prepared_003.png"},{"source":"shape_04.png","output":"prepared_004.png"},{"source":"shape_05.png","output":"prepared_005.png"},{"source":"shape_06.png","output":"prepared_006.png"}],
+ "inspection":{"image_count":6,"sample":[{"name":"shape_01.png","size":[92,97],"mode":"RGB"},{"name":"shape_02.png","size":[104,104],"mode":"RGB"},{"name":"shape_03.png","size":[116,111],"mode":"RGB"}]},
+ "validation":{"output_count":6,"output_bytes":[5490,1190,4433,1049,3504,954]},
+ "source_version":"Not verified","access_rights":"Not verified - check before sharing"
+}
