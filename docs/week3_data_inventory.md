@@ -304,14 +304,14 @@ The Colab paths under `/content/week3_project/` are temporary runtime paths. The
 
 ## 12. Step C4 — Repository Artefact Transfer Record
 
-The supplied Colab notebook has been committed to `notebooks/week3_pipeline.ipynb`; the existing pipeline diagram is present at `docs/week3_pipeline_diagram.png`. The C4 export bundle contains the remaining manifests and prepared images, but those files have not yet been added individually to the repository. The notebook is retained as supplied; execution results are documented in Sections 10–11 and in `docs/week3_pipeline_decisions.md`.
+The supplied Colab notebook, Part B and Part C manifests, both pipeline diagrams, and all 12 prepared PNG outputs are committed individually to the repository. The notebook is retained as supplied; execution results are documented in Sections 10–11 and in `docs/week3_pipeline_decisions.md`.
 
 | Artefact | Repository path | Transfer record |
 |---|---|---|
 | Runnable notebook | `notebooks/week3_pipeline.ipynb` | Committed; 17 cells retained |
 | Part B lineage manifest | `data/week3_manifest.json` | Committed |
 | Part B image manifest | `data/processed/image_manifest.csv` | Committed; 1,850 bytes |
-| Part B prepared images | `data/processed/images/` | Six PNGs in C4 export; repository upload pending |
+| Part B prepared images | `data/processed/images/` | Six prepared PNGs committed and verified |
 | Part C prepared images | `data/pipeline_v1/images/` | Six PNGs in C4 export; repository upload pending |
 | Part C pipeline manifest | `data/pipeline_v1/images/pipeline_manifest.json` | Committed |
 | Pipeline diagram | `docs/week3_pipeline_diagram.png` | Existing repository diagram retained |
