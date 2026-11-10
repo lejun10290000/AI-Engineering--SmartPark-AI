@@ -143,7 +143,7 @@ The supplied Colab notebook, manifests, both pipeline diagrams and all 12 prepar
 - `notebooks/week3_pipeline.ipynb` — portable notebook with the 17 original cells retained; transient outputs and execution counters cleared.
 - `data/week3_manifest.json` — Part B source-to-prepared lineage records.
 - `data/processed/image_manifest.csv` — Part B image manifest (committed). All six prepared images are committed and verified.
-- `data/pipeline_v1/images/pipeline_manifest.json` — Part C pipeline manifest (committed). The six prepared images are still in the C4 export bundle and are not yet committed.
+- `data/pipeline_v1/images/pipeline_manifest.json` — Part C pipeline manifest (committed). All six prepared images are committed and verified.
 - `docs/week3_data_inventory.md`, `docs/week3_pipeline_diagram.png`, and this file — Week 3 documentation.
 
 The original source archive and raw course images were not committed because their redistribution permissions were not verified. All 12 prepared outputs are present as individual repository files and verified on `main`. They are outputs of the course-supplied synthetic shape dataset and must not be represented as real SmartPark parking-scene data.
