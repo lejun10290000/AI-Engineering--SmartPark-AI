@@ -130,17 +130,17 @@ The execution screenshots evidence the console messages and successful run. The 
 - [x] State ETL and batch-processing decisions with rationale.
 - [x] Record stage contracts, output paths and provenance/access caveats.
 - [x] Commit the Colab notebook; verify the existing pipeline diagram.
-- [ ] Commit the Part B/Part C manifests and prepared image outputs from the C4 export bundle.
+- [x] Commit the Part B/Part C manifests and prepared image outputs from the C4 export bundle.
 - [x] Omit the raw course source archive because redistribution rights were not verified.
 - [x] Verify the notebook, documentation and pipeline diagram in the GitHub repository.
-- [ ] Verify the individual data manifests and prepared image files after upload.
+- [x] Verify the individual data manifests and prepared image files after upload.
 
 
 ## 10. Step C4 — Repository Transfer Record
 
 The supplied Colab notebook, manifests, both pipeline diagrams and all 12 prepared PNG outputs are committed and verified individually in the repository.
 
-- `notebooks/week3_pipeline.ipynb` — portable notebook with the 17 original cells retained; transient outputs and execution counters cleared.
+- `notebooks/week3_pipeline.ipynb` — portable notebook with the 17 original cells and execution outputs retained to show the observed run results.
 - `data/week3_manifest.json` — Part B source-to-prepared lineage records.
 - `data/processed/image_manifest.csv` — Part B image manifest (committed). All six prepared images are committed and verified.
 - `data/pipeline_v1/images/pipeline_manifest.json` — Part C pipeline manifest (committed). All six prepared images are committed and verified.
@@ -148,4 +148,4 @@ The supplied Colab notebook, manifests, both pipeline diagrams and all 12 prepar
 
 The original source archive and raw course images were not committed because their redistribution permissions were not verified. All 12 prepared outputs are present as individual repository files and verified on `main`. They are outputs of the course-supplied synthetic shape dataset and must not be represented as real SmartPark parking-scene data.
 
-**C4 status:** Partially complete. The notebook and pipeline diagram are present in GitHub; the Part B/Part C manifests and prepared image files still require upload and path verification. Cell 7, Cell 8C and Cell 9 execution evidence is recorded above. The Cell 9 result is a repeatability smoke check within the supplied Colab runtime, not proof of full reproducibility across environments.
+**C4 status:** Complete. The notebook, Part B/Part C manifests, all 12 prepared image files and pipeline diagrams are committed and their repository paths have been verified on `main`. Cell 7, Cell 8C and Cell 9 execution evidence is recorded above. The Cell 9 result is a repeatability smoke check within the supplied Colab runtime, not proof of full reproducibility across environments.
