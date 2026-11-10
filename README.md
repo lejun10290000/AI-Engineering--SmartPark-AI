@@ -78,7 +78,8 @@ The Week 2 documents connect the project objectives to functional, non-functiona
 ## Week 3 — Data Preparation and V1 Pipeline
 
 - [Data inventory and Part B/C execution record](docs/week3_data_inventory.md)
-- [Executed V1 image pipeline workflow](docs/week3_pipeline_diagram.png)
+- [Executed V1 image pipeline workflow (PNG)](docs/week3_pipeline_diagram.png)
+- [Editable V1 pipeline workflow (SVG)](docs/week3_pipeline_diagram.svg)
 - [Pipeline decisions, stage contracts and traceability](docs/week3_pipeline_decisions.md)
 
 **Selected pathway:** C — Computer Vision / Images. The six lecturer-supplied synthetic shape images were processed in Colab. Cells 7, 8C and 9 completed; six prepared images were produced and the repeatability smoke check passed. These are data-preparation results only, not SmartPark model-performance results.
