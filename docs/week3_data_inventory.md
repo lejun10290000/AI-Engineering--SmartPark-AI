@@ -312,7 +312,7 @@ The supplied Colab notebook, Part B and Part C manifests, both pipeline diagrams
 | Part B lineage manifest | `data/week3_manifest.json` | Committed |
 | Part B image manifest | `data/processed/image_manifest.csv` | Committed; 1,850 bytes |
 | Part B prepared images | `data/processed/images/` | Six prepared PNGs committed and verified |
-| Part C prepared images | `data/pipeline_v1/images/` | Six PNGs in C4 export; repository upload pending |
+| Part C prepared images | `data/pipeline_v1/images/` | Six prepared PNGs committed and verified |
 | Part C pipeline manifest | `data/pipeline_v1/images/pipeline_manifest.json` | Committed |
 | Pipeline diagram | `docs/week3_pipeline_diagram.png` | Existing repository diagram retained |
 | Pipeline decisions | `docs/week3_pipeline_decisions.md` | Updated with C2/C3 decisions and execution evidence |
