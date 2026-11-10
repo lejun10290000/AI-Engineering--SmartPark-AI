@@ -156,3 +156,72 @@ The inventory below records the source identity, intended purpose, provenance, a
 ### 8.3 Step A4 checkpoint conclusion
 
 S01 identifies the provenance and access limitations of the lecturer-provided practice archive. S02 identifies the exact image subset selected for SmartPark AI and records its data type, purpose, and inspection evidence. The selection is justified by FR1's need for image input, but the synthetic shapes are only a temporary practice dataset. Actual miniature-parking camera data will be needed for project-level evaluation. Raw source files and future prepared outputs are kept distinct so that every transformation remains traceable.
+
+## 9. Part B — Step B1: Selected Data Preparation Pathway
+
+### 9.1 Pathway decision
+
+| Field | Decision |
+|---|---|
+| Selected pathway | **C — Computer Vision (images)** |
+| Source folder | `data/raw/topic3_dummy_datasets/03_images/` |
+| Input files | Six PNG images and `labels.csv` |
+| Loading / image library | Pillow (PIL); pandas for the CSV label metadata |
+| Required operations | Read and verify images; inspect dimensions and modes; convert to RGB; resize to a consistent illustrative size; retain source identity; export prepared images and a manifest |
+| Prepared artefacts | `data/processed/images/` and `data/processed/image_manifest.csv` |
+| Configuration used in this lab | 224 × 224 pixels; RGB; aspect-ratio-preserving resize with white padding |
+
+### 9.2 Justification
+
+Computer Vision is selected because SmartPark AI's primary input is camera imagery. The project's parking-bay occupancy detection requirement (FR1) needs visual information from an overhead camera. The image pathway is therefore the closest match to the intended data modality.
+
+The other pathways (PDF/TXT, CSV/Excel as a standalone data pathway, JSON/API, audio, and time-series) are not selected for this preparation exercise because they are not the primary input modality of the chosen practice source. The CSV file in `03_images/` is used only as supporting label metadata for the images; it is not a reason to run the separate tabular pathway.
+
+### 9.3 Scope and limitations
+
+The six supplied images are synthetic geometric shapes, not vehicles or parking scenes. Their labels describe shape and colour, not vehicle identity or occupied/vacant parking-bay states. This pathway practises image ingestion and preparation only; it does not train or evaluate SmartPark AI. Actual overhead-camera images/video and suitable annotations must replace the dummy images for project-level development and evaluation.
+
+## 10. Part B — Step B3: Prepared Output Validation and Decision Comparison
+
+### 10.1 Basic output validation
+
+The Colab B3 validation cell was run after the selected Pathway C preparation. The observed output was:
+
+| Validation item | Observed result | Status |
+|---|---:|---|
+| Prepared manifest | `data/processed/image_manifest.csv` | Pass |
+| Manifest file size | 1,850 bytes | Pass — non-empty |
+| Prepared image records | 6 | Pass |
+| Images present | 6 of 6 | Pass |
+| Images readable | 6 of 6 | Pass |
+| Output dimensions | 224 × 224 pixels for all six images | Pass |
+| Output colour mode | RGB for all six images | Pass |
+| Basic validation failures | 0 | Pass |
+
+The validation output showed that each prepared file existed, was readable, and had the expected dimensions and colour mode. This is a basic output contract check; it is not a comprehensive assessment of image quality or model performance.
+
+### 10.2 Preparation configuration comparison
+
+The same representative source image, `shape_01.png` (original dimensions 92 × 97 pixels), was used to compare two resizing configurations.
+
+| Comparison | Approach A — Direct resize | Approach B — Aspect-ratio-preserving resize |
+|---|---|---|
+| Operation | Resize directly to 224 × 224 | Fit image within 224 × 224 and pad remaining space with white |
+| Output dimensions | 224 × 224 | 224 × 224 |
+| Aspect ratio | May change the original proportions | Preserves the original proportions |
+| Visual observation | The image is stretched to fill the square output | The circular shape retains its proportions, with padding where required |
+| Decision | Not selected | **Selected** |
+
+The actual exported prepared image was visually inspected and matched Approach B.
+
+### 10.3 Selected approach, benefit, and accepted limitation
+
+**Selected approach:** Approach B — aspect-ratio-preserving resize with white padding.
+
+**Benefit:** The operation produces a consistent 224 × 224 input size while preserving the original image proportions. This avoids unnecessary geometric distortion of the synthetic shapes and is a sensible practice configuration for this dataset.
+
+**Accepted limitation:** Padding adds white background pixels and can reduce the proportion of the output image occupied by the object. The 224 × 224 size is an illustrative lab configuration, not a universal requirement for SmartPark AI. For real object detection or segmentation, any resizing or padding must also be reflected consistently in bounding-box or mask annotations.
+
+### 10.4 B3 conclusion
+
+All six prepared images passed the observed basic validation checks: they existed, were readable, used RGB mode, and measured 224 × 224 pixels. The manifest was present and non-empty at 1,850 bytes. Approach B was selected because it preserves image proportions while standardising the input dimensions. These results demonstrate successful preparation of the synthetic practice images only; they do not demonstrate vehicle detection, parking occupancy detection, or tracking performance.
