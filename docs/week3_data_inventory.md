@@ -304,7 +304,7 @@ The Colab paths under `/content/week3_project/` are temporary runtime paths. The
 
 ## 12. Step C4 — Repository Artefact Transfer Record
 
-The supplied Colab notebook and C4 export bundle were transferred to the repository structure below. The notebook is committed with code/source cells retained and transient Colab outputs cleared to keep the notebook portable; the execution results are documented in Sections 10–11 and in `docs/week3_pipeline_decisions.md`.
+The supplied Colab notebook has been committed to `notebooks/week3_pipeline.ipynb`; the existing pipeline diagram is present at `docs/week3_pipeline_diagram.png`. The C4 export bundle contains the remaining manifests and prepared images, but those files have not yet been added individually to the repository. The notebook is retained as supplied; execution results are documented in Sections 10–11 and in `docs/week3_pipeline_decisions.md`.
 
 | Artefact | Repository path | Transfer record |
 |---|---|---|
@@ -319,4 +319,4 @@ The supplied Colab notebook and C4 export bundle were transferred to the reposit
 
 **Transfer boundary:** The original course ZIP and raw source images were not added to the public repository because the course redistribution rights were not verified. The prepared practice outputs and manifests are included as the exported artefacts. Confirm that the course permits public submission of these prepared outputs before using the public repository as the final submission location.
 
-**Final validation status:** The supplied Colab evidence reports Cell 7 ready, Cell 8C successful with 6 inputs and 6 outputs, and Cell 9 passing the repeatability smoke check. This confirms the recorded run and matching fingerprints/mappings; it is not a full cross-environment reproducibility test or a data-quality/model-performance evaluation.
+**Repository validation status:** The notebook and pipeline diagram are present in GitHub. The C4 ZIP contains the Part B/Part C manifests and prepared image outputs, but they remain to be committed as individual files. The supplied Colab evidence reports Cell 7 ready, Cell 8C successful with 6 inputs and 6 outputs, and Cell 9 passing the repeatability smoke check. This confirms the recorded run and matching fingerprints/mappings; it is not a full cross-environment reproducibility test or a data-quality/model-performance evaluation.
