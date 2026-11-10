@@ -62,7 +62,7 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 |------|-------|-------------|--------|
 | W1 | Project framing and system map | Part A observation evidence, Part B system map and individual Part C project scope | Complete |
 | W2 | Requirements, evaluation and V1 architecture | Requirements specification, evaluation criteria, architecture diagram, ADR and traceability | Complete |
-| W3 | Data inventory, preparation and V1 pipeline | Data inventory and decisions updated; binary/runtime artefact transfer and diagram verification still pending | In progress |
+| W3 | Data inventory, preparation and V1 pipeline | Data inventory, decisions, pipeline diagram and runnable Colab notebook committed; exported data manifests and prepared image outputs still need individual repository upload | In progress |
 
 
 ## Week 2 — Requirements, Evaluation and Architecture
@@ -83,7 +83,7 @@ The Week 2 documents connect the project objectives to functional, non-functiona
 
 **Selected pathway:** C — Computer Vision / Images. The six lecturer-supplied synthetic shape images were processed in Colab. Cells 7, 8C and 9 completed; six prepared images were produced and the repeatability smoke check passed. These are data-preparation results only, not SmartPark model-performance results.
 
-**Step C4 artefact transfer:** The Colab notebook (`notebooks/week3_pipeline.ipynb`), Part B lineage manifest (`data/week3_manifest.json`), Part B image manifest and six prepared images (`data/processed/`), and Part C six prepared images plus `pipeline_manifest.json` (`data/pipeline_v1/images/`) are available in the supplied Colab export bundle, but have not yet been committed to this repository. The original course ZIP/raw source images should not be committed until redistribution rights are verified.
+**Step C4 artefact transfer:** The runnable Colab notebook (`notebooks/week3_pipeline.ipynb`) is committed. The pipeline diagram (`docs/week3_pipeline_diagram.png`) is also present in the repository. The exported Part B manifest (`data/week3_manifest.json`), Part B image manifest and six prepared images (`data/processed/`), and Part C six prepared images plus `pipeline_manifest.json` (`data/pipeline_v1/images/`) remain in the supplied `week3_C4_artefacts.zip` export and have not yet been added as individual repository files. The original course ZIP/raw source images should not be committed until redistribution rights are verified.
 
 ## Part C — Individual Project Scope
 
