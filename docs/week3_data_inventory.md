@@ -225,3 +225,78 @@ The actual exported prepared image was visually inspected and matched Approach B
 ### 10.4 B3 conclusion
 
 All six prepared images passed the observed basic validation checks: they existed, were readable, used RGB mode, and measured 224 × 224 pixels. The manifest was present and non-empty at 1,850 bytes. Approach B was selected because it preserves image proportions while standardising the input dimensions. These results demonstrate successful preparation of the synthetic practice images only; they do not demonstrate vehicle detection, parking occupancy detection, or tracking performance.
+
+## 11. Part C — Step C1: Integrated V1 Image Pipeline Execution
+
+### 11.1 Executed pathway and configuration
+
+The Part C Colab notebook executed the common pipeline utilities (Cell 7), the selected image pathway (Cell 8C), and repeatability/provenance checks (Cell 9). Only Pathway C was run because the selected source is an image folder.
+
+| Field | Executed record |
+|---|---|
+| Selected pathway | C — Computer Vision / Images |
+| Source folder in Colab | `/content/week3_project/data/raw/topic3_dummy_datasets/03_images` |
+| Source files | 6 PNG shape images |
+| Cell 7 | Completed — common V1 pipeline utilities ready |
+| Cell 8C | Completed — 6 inputs and 6 prepared outputs |
+| Cell 9 | Passed — source fingerprints, prepared-output fingerprints and source-to-output mappings matched on rerun |
+| Colour conversion | RGB |
+| Geometric transformation | Aspect-ratio-preserving fit/pad |
+| Target dimensions | 224 × 224 pixels |
+| Padding colour | White ([255, 255, 255]) |
+| Colab output folder | `/content/week3_project/data/pipeline_v1/images/` |
+| Colab lineage file | `/content/week3_project/data/pipeline_v1/images/pipeline_manifest.json` |
+
+### 11.2 Prepared output and verification evidence
+
+The observed Cell 8C console output reported:
+
+- `SUCCESS: images | Inputs: 6 | Outputs: 6`
+- Manifest written to `/content/week3_project/data/pipeline_v1/images/pipeline_manifest.json`.
+- `Cell 8C completed successfully.`
+
+The observed Cell 9 output reported:
+
+- `PASS: images - source fingerprints, prepared outputs and mappings match`.
+- `All selected pipelines passed repeatability smoke checks.`
+
+These are execution and repeatability checks for the six synthetic images. They do not establish image-label correctness, SmartPark occupancy-detection accuracy, vehicle tracking performance, or full cross-environment reproducibility.
+
+### 11.3 Repository storage mapping for Step C4
+
+When the Colab artefacts are copied into the repository, retain this structure:
+
+```text
+notebooks/
+└── week3_pipeline.ipynb
+
+data/
+├── week3_manifest.json
+├── processed/
+│   ├── images/
+│   └── image_manifest.csv
+└── pipeline_v1/
+    └── images/
+        ├── prepared_001.png
+        ├── prepared_002.png
+        ├── prepared_003.png
+        ├── prepared_004.png
+        ├── prepared_005.png
+        ├── prepared_006.png
+        └── pipeline_manifest.json
+
+docs/
+├── week3_data_inventory.md
+├── week3_pipeline_diagram.png
+└── week3_pipeline_decisions.md
+```
+
+The Colab paths under `/content/week3_project/` are temporary runtime paths. The repository paths above are the intended committed locations. Copy only files permitted for submission; do not publish the course ZIP or source images if course access terms do not allow redistribution.
+
+### 11.4 Provenance and scope caveats
+
+- The source remains the lecturer-supplied synthetic shape-image subset (S01/S02), not project-collected parking footage.
+- The Part C pipeline manifest records source and prepared-output SHA-256 fingerprints and source-to-output mappings. Hashes support integrity checks; they do not prove permission, ownership, authenticity, or data quality.
+- The manifest's source version and access-rights fields remain unverified unless confirmed from the course materials.
+- The six images are independent still images. This pipeline is batch image preparation, not video streaming or vehicle tracking.
+- Preserve the original raw images unchanged. Store Part B and Part C prepared artefacts separately.
