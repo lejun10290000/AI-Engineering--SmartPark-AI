@@ -62,7 +62,7 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 |------|-------|-------------|--------|
 | W1 | Project framing and system map | Part A observation evidence, Part B system map and individual Part C project scope | Complete |
 | W2 | Requirements, evaluation and V1 architecture | Requirements specification, evaluation criteria, architecture diagram, ADR and traceability | Complete |
-| W3 | Data inventory, preparation and V1 pipeline | Data inventory, pipeline diagram and decisions; Colab runtime artefact transfer pending | In progress |
+| W3 | Data inventory, preparation and V1 pipeline | Data inventory, pipeline diagram and decisions; runnable notebook, manifests and prepared outputs | Complete |
 
 
 ## Week 2 — Requirements, Evaluation and Architecture
@@ -83,7 +83,7 @@ The Week 2 documents connect the project objectives to functional, non-functiona
 
 **Selected pathway:** C — Computer Vision / Images. The six lecturer-supplied synthetic shape images were processed in Colab. Cells 7, 8C and 9 completed; six prepared images were produced and the repeatability smoke check passed. These are data-preparation results only, not SmartPark model-performance results.
 
-**Step C4 artefact transfer:** The Colab notebook (`notebooks/week3_pipeline.ipynb`), Part B manifest (`data/week3_manifest.json`), Part B prepared outputs and Part C `data/pipeline_v1/images/` files must be copied from the Colab runtime before those runtime artefacts can be marked as committed. Check course redistribution terms before committing the synthetic source archive or raw dataset.
+**Step C4 artefact transfer:** The Colab notebook (`notebooks/week3_pipeline.ipynb`), Part B lineage manifest (`data/week3_manifest.json`), Part B image manifest and six prepared images (`data/processed/`), and Part C six prepared images plus `pipeline_manifest.json` (`data/pipeline_v1/images/`) have been transferred from the Colab export bundle. The notebook is committed without transient cell outputs so it remains lightweight and rerunnable; execution evidence is recorded in this document and the pipeline decisions file. The original course ZIP/raw source images are not committed because redistribution rights were not verified.
 
 ## Part C — Individual Project Scope
 
@@ -95,6 +95,8 @@ The scope defines the proposed system, objectives, users, sources and risks. Sma
 
 ```text
 README.md
+notebooks/
+└── week3_pipeline.ipynb
 docs/
 ├── week1_observation_sheet.md   # Part A
 ├── evidence/                    # Part A screenshots and index
