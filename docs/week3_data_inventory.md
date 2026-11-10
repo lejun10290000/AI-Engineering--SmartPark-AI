@@ -311,8 +311,8 @@ The supplied Colab notebook has been committed to `notebooks/week3_pipeline.ipyn
 | Runnable notebook | `notebooks/week3_pipeline.ipynb` | Committed; 17 cells retained |
 | Part B lineage manifest | `data/week3_manifest.json` | Committed |
 | Part B image manifest | `data/processed/image_manifest.csv` | Committed; 1,850 bytes |
-| Part B prepared images | `data/processed/images/` | Six PNGs committed |
-| Part C prepared images | `data/pipeline_v1/images/` | Six PNGs committed |
+| Part B prepared images | `data/processed/images/` | Six PNGs in C4 export; repository upload pending |
+| Part C prepared images | `data/pipeline_v1/images/` | Six PNGs in C4 export; repository upload pending |
 | Part C pipeline manifest | `data/pipeline_v1/images/pipeline_manifest.json` | Committed |
 | Pipeline diagram | `docs/week3_pipeline_diagram.png` | Existing repository diagram retained |
 | Pipeline decisions | `docs/week3_pipeline_decisions.md` | Updated with C2/C3 decisions and execution evidence |
