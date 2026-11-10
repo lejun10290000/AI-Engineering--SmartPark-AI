@@ -129,5 +129,20 @@ The execution screenshots evidence the console messages and successful run. The 
 - [x] Record the selected source, transformation and Part B comparison.
 - [x] State ETL and batch-processing decisions with rationale.
 - [x] Record stage contracts, output paths and provenance/access caveats.
-- [ ] Export and commit the original Colab notebook and permitted runtime artefacts as part of Step C4.
-- [ ] Verify the uploaded files and links in the GitHub repository.
+- [x] Export and commit the Colab notebook and permitted runtime artefacts as part of Step C4 (raw course source archive omitted because redistribution rights were not verified).
+- [x] Verify the uploaded files and links in the GitHub repository.
+
+
+## 10. Step C4 — Repository Transfer Record
+
+The Colab notebook and supplied C4 artefact ZIP were used to populate the repository paths:
+
+- `notebooks/week3_pipeline.ipynb` — portable notebook with the 17 original cells retained; transient outputs and execution counters cleared.
+- `data/week3_manifest.json` — Part B source-to-prepared lineage records.
+- `data/processed/image_manifest.csv` and `data/processed/images/` — Part B image manifest and six prepared images.
+- `data/pipeline_v1/images/` — six Part C prepared images and the pipeline manifest.
+- `docs/week3_data_inventory.md`, `docs/week3_pipeline_diagram.png`, and this file — Week 3 documentation.
+
+The source archive and raw course images were not committed because their redistribution permissions were not verified. The committed prepared images are outputs of the course-supplied synthetic shape dataset and must not be represented as real SmartPark parking-scene data.
+
+**C4 status:** Artefact transfer and repository-path verification are complete. Cell 7, Cell 8C and Cell 9 execution evidence is recorded above. The Cell 9 result is a repeatability smoke check within the supplied Colab runtime, not proof of full reproducibility across environments.
