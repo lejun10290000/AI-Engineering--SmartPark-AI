@@ -2,7 +2,7 @@
 
 > SmartPark AI is a proposed computer-vision prototype that detects parking-bay occupancy, tracks vehicles and provides basic parking guidance for drivers and parking operators.
 
-This repository keeps the required group evidence for Part A and Part B alongside my individual Part C project scope.
+This repository contains the group evidence for Parts A and B, together with my individual Part C project scope and the supporting Week 2 and Week 3 engineering artefacts.
 
 ## Problem Statement
 
@@ -62,8 +62,16 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 |------|-------|-------------|--------|
 | W1 | Project framing and system map | Part A observation evidence, Part B system map and individual Part C project scope | Complete |
 | W2 | Requirements, evaluation and V1 architecture | Requirements specification, evaluation criteria, architecture diagram, ADR and traceability | Complete |
-| W3 | Data inventory, preparation and V1 pipeline | Notebook, inventory, decisions, diagram, manifests and all 12 prepared images committed and verified on main | Complete |
+| W3 | Data inventory, preparation and V1 pipeline | Executed notebook, inventory, decisions, diagram, Part B and Part C manifests, and prepared image outputs | Complete |
 
+## Week 1 — Project Framing and System Map
+
+- [Part A observation sheet](docs/week1_observation_sheet.md)
+- [Part A evidence folder](docs/evidence/)
+- [Part B system map (PNG)](docs/week1_system_map.png)
+- [Part B editable system map (Draw.io)](docs/week1_system_map.drawio)
+- [Part B system map notes and reflection](docs/week1_system_map_notes.md)
+- [Part C individual project scope](docs/week1_project_scope.md)
 
 ## Week 2 — Requirements, Evaluation and Architecture
 
@@ -78,19 +86,21 @@ The Week 2 documents connect the project objectives to functional, non-functiona
 ## Week 3 — Data Preparation and V1 Pipeline
 
 - [Data inventory and Part B/C execution record](docs/week3_data_inventory.md)
-- [Executed V1 image pipeline workflow (PNG)](docs/week3_pipeline_diagram.png)
-- [Editable V1 pipeline workflow (SVG)](docs/week3_pipeline_diagram.svg)
+- [V1 image preparation pipeline diagram (PNG)](docs/week3_pipeline_diagram.png)
+- [Editable V1 pipeline diagram (SVG)](docs/week3_pipeline_diagram.svg)
 - [Pipeline decisions, stage contracts and traceability](docs/week3_pipeline_decisions.md)
+- [Executed Week 3 pipeline notebook](notebooks/week3_pipeline.ipynb)
 
-**Selected pathway:** C — Computer Vision / Images. The six lecturer-supplied synthetic shape images were processed in Colab. Cells 7, 8C and 9 completed; six prepared images were produced and the repeatability smoke check passed. These are data-preparation results only, not SmartPark model-performance results.
+**Selected pathway:** C — Computer Vision / Images. The six lecturer-supplied synthetic shape images were inspected and prepared in Colab. The selected configuration converts images to RGB and uses aspect-ratio-preserving fit with white padding to produce 224 × 224 outputs. The notebook records the preparation comparison, validation, lineage registration, V1 pipeline execution and repeatability smoke check. Six Part B prepared images and six Part C pipeline outputs were produced; the repeatability check passed.
 
-**Step C4 artefact transfer:** The runnable Colab notebook, Part B manifest (`data/week3_manifest.json`), Part B image manifest and six prepared images (`data/processed/`), and Part C six prepared images plus `pipeline_manifest.json` (`data/pipeline_v1/images/`) are committed individually. Both PNG and editable SVG pipeline diagrams are present under `docs/`. All 12 prepared image outputs have been verified on the `main` branch. The original course ZIP/raw source images were not committed because redistribution rights were not verified.
+**Manifest and output locations:**
+- Part B lineage manifest: `data/week3_manifest.json`
+- Part B prepared image manifest: `data/processed/image_manifest.csv`
+- Part B prepared images: `data/processed/images/`
+- Part C pipeline manifest: `data/pipeline_v1/images/pipeline_manifest.json`
+- Part C pipeline outputs: `data/pipeline_v1/images/`
 
-## Part C — Individual Project Scope
-
-- [Full Part C scope](docs/week1_project_scope.md)
-
-The scope defines the proposed system, objectives, users, sources and risks. SmartPark AI is a proposed prototype, not yet a functioning AI application.
+**Scope and data limitation:** The six supplied images are synthetic shape images used to demonstrate and validate the data-preparation workflow. They are not real parking-lot images and do not demonstrate SmartPark occupancy detection, vehicle tracking, number-plate recognition or model performance. The repeatability result is a smoke check in the supplied Colab runtime, not a claim of cross-environment reproducibility. The original course ZIP and raw source images were not committed because redistribution rights were not verified.
 
 ## Repository Structure
 
@@ -98,16 +108,44 @@ The scope defines the proposed system, objectives, users, sources and risks. Sma
 README.md
 notebooks/
 └── week3_pipeline.ipynb
+data/
+├── week3_manifest.json
+├── processed/
+│   ├── image_manifest.csv
+│   └── images/
+│       ├── shape_01_17a1e2828014.png
+│       ├── shape_02_dfa0925ff27b.png
+│       ├── shape_03_bb10030d1f0b.png
+│       ├── shape_04_2514fccc54d1.png
+│       ├── shape_05_94d4f1150747.png
+│       └── shape_06_5908f2d0dabc.png
+└── pipeline_v1/
+    └── images/
+        ├── pipeline_manifest.json
+        ├── prepared_001.png
+        ├── prepared_002.png
+        ├── prepared_003.png
+        ├── prepared_004.png
+        ├── prepared_005.png
+        └── prepared_006.png
 docs/
-├── week1_observation_sheet.md   # Part A
-├── evidence/                    # Part A screenshots and index
-├── week1_system_map.png         # Part B submission image
-├── week1_system_map.drawio      # Part B editable source
-├── week1_system_map_notes.md    # Part B explanation and reflection
-├── week1_project_scope.md       # Part C — individual SmartPark AI scope
-├── week2_requirements.md        # Week 2 — Sections 0–4 requirements
-├── week2_evaluation_criteria.md # Week 2 — evaluation criteria
-├── week2_architecture_decisions.md # Week 2 — architecture, ADR and traceability
-├── week2_architecture_v1.png       # Week 2 — architecture diagram (PNG)
-└── week2_architecture.drawio       # Week 2 — editable architecture source
+├── evidence/
+├── week1_observation_sheet.md
+├── week1_system_map.png
+├── week1_system_map.drawio
+├── week1_system_map_notes.md
+├── week1_project_scope.md
+├── week2_requirements.md
+├── week2_evaluation_criteria.md
+├── week2_architecture_decisions.md
+├── week2_architecture_v1.png
+├── week2_architecture.drawio
+├── week3_data_inventory.md
+├── week3_pipeline_diagram.png
+├── week3_pipeline_diagram.svg
+└── week3_pipeline_decisions.md
 ```
+
+## Current Project Status
+
+The repository documents the project scope and the engineering work completed through Week 3. The Week 3 notebook demonstrates an image-preparation pipeline using synthetic practice data. The SmartPark miniature parking prototype, real parking-scene dataset collection, model training and project-level performance evaluation remain part of the planned project development; they are not claimed as completed by the Week 3 exercise.
