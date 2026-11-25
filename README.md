@@ -63,7 +63,7 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 | W1 | Project framing and system map | Part A observation evidence, Part B system map and individual Part C project scope | Complete |
 | W2 | Requirements, evaluation and V1 architecture | Requirements specification, evaluation criteria, architecture diagram, ADR and traceability | Complete |
 | W3 | Data inventory, preparation and V1 pipeline | Executed notebook, inventory, decisions, diagram, Part B and Part C manifests, and prepared image outputs | Complete |
-| W4 | Data quality and responsible data practices | Executed Colab-compatible notebook, validation and duplicate evidence, coverage plot, cleaned formats and quality report | Review complete. Data gate HOLD. |
+| W4 | Data quality and responsible data practices | Executed Colab-compatible notebook, validation and duplicate evidence, coverage plot, cleaned formats and quality report | FYP review complete. Offline development GO. |
 
 ## Week 1 — Project Framing and System Map
 
@@ -105,6 +105,15 @@ The Week 2 documents connect the project objectives to functional, non-functiona
 
 ## Week 4 — Data Quality and Responsible Data Practices
 
+The [FYP data quality report](docs/week4_fyp_data_quality_report.md) records a **GO for offline prototype development and replay**. The review retained 285 records from the actual miniature parking project. Its scope includes detector development and replay of occupancy, tracking and uncertainty. Formal performance testing will use independent labels and new held-out sessions.
+
+- [FYP Week 4 notebook](notebooks/week4_quality_fyp.ipynb)
+- [Validation rules and results](docs/week4_fyp_validation_summary.csv), [coverage chart](docs/week4_fyp_coverage.png) and [review summary](docs/week4_fyp_review_summary.json)
+
+The cleaned data files and indexed camera images are in the private submission bundle. Topic 7 development should use the reviewed FYP inputs within the stated scope.
+
+### Initial synthetic practice review
+
 - [Open the Week 4 notebook in Google Colab](https://colab.research.google.com/github/lejun10290000/AI-Engineering--SmartPark-AI/blob/main/notebooks/week4_quality.ipynb) or [view it on GitHub](notebooks/week4_quality.ipynb).
 - [Quality, bias and governance report](docs/week4_data_quality_report.md)
 - [Validation failures](docs/week4_validation_failures.csv), [duplicate review](docs/week4_duplicate_review.csv) and [coverage plot](docs/week4_coverage_by_source.png)
@@ -112,7 +121,7 @@ The Week 2 documents connect the project objectives to functional, non-functiona
 
 Week 4 applies the Topic 4 checks to the six Week 3 Computer Vision image records. One image pair fails PNG verification. All six records failed the prepared-file contract and were quarantined. The cleaned formats use the assignment filenames and both contain zero eligible image records. The report records the unresolved data lineage and permissions, along with the miniature parking footage needed for project evaluation.
 
-**Topic 7 (Week 9):** Keep downstream ingestion on hold. Once the applicable gate is cleared, use the reviewed Topic 4 outputs with their release and validation evidence. A project dataset must include the actual labelled parking scenes required by the scope.
+The initial practice files document the synthetic-data HOLD. The FYP review above provides the development hand-off.
 
 ## Repository Structure
 
@@ -167,4 +176,4 @@ docs/
 
 ## Current Project Status
 
-The repository documents the project through Week 4. The image-preparation exercise is complete, and Week 4 has placed the repository's practice images on hold. The miniature parking prototype, collection of labelled parking scenes, model training and project-level performance evaluation are planned work.
+The repository documents the project through Week 4. The reviewed FYP data can proceed to offline development and replay. Independent performance evaluation is planned.

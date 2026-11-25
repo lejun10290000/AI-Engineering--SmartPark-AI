@@ -1,0 +1,8 @@
+Rule,Condition,Why this rule?,Failures,Decision
+identity,The record ID and private image path are unique and the declared source/type are present.,Prevents ambiguous lineage or counting the same index row twice.,0,Quarantine on failure
+integrity,"The original SHA-256 matches, and the image verifies and decodes as RGB JPEG.","Detects missing, corrupt, substituted or incorrectly encoded images.",0,Quarantine on failure
+detector_annotations,Car class 0 boxes match the count and have finite coordinates within the image.,Detects malformed labels. Reviewed negatives can legitimately have zero boxes.,0,Quarantine on failure
+bay_coverage,"For replay, all 24 distinct bay IDs have a recognised state and a reason.",Prevents missing or invented statuses and preserves the reason for uncertainty.,0,Quarantine on failure
+replay_sync,"For replay, frame time agrees with each bay state and track within 0.1 ms.",Prevents joining the wrong moment of a clip with a bay status or vehicle position.,0,Quarantine on failure
+track_schema,"For replay, track IDs in each frame are distinct and coordinates are finite.",Detects records that cannot be replayed or traced to a unique track.,0,Quarantine on failure
+alignment_abstention,Frames with invalid alignment report all 24 bays as unknown.,Detects cases where unusable alignment could be presented as a known bay state.,0,Quarantine on failure

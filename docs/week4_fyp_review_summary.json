@@ -1,0 +1,53 @@
+{
+  "input": 285,
+  "clean": 285,
+  "rejected": 0,
+  "duplicates": 0,
+  "detector_images": 85,
+  "replay_frames": 200,
+  "replay_sessions": 5,
+  "capture_dates": [
+    "2026-11-19",
+    "2026-11-20",
+    "2026-11-21"
+  ],
+  "bay_count": 24,
+  "bay_observations": 4800,
+  "bay_states": {
+    "unknown": 1972,
+    "vacant": 1608,
+    "occupied": 1220
+  },
+  "by_source": {
+    "D03": 12,
+    "D04": 63,
+    "D01": 2,
+    "D05": 3,
+    "D02": 5,
+    "R01": 40,
+    "R02": 40,
+    "R03": 40,
+    "R04": 40,
+    "R05": 40
+  },
+  "complete_windows": 20,
+  "windows": 20,
+  "bay_issues": {
+    "straddling": 232,
+    "over_line": 161,
+    "shared_bay": 67,
+    "unverified": 3
+  },
+  "frames_with_tracks": 170,
+  "track_observations": 2977,
+  "alignment_loss_frames": 23,
+  "detector_boxes": 573,
+  "negative_images": 9,
+  "original_detector_splits": {
+    "train": 80,
+    "val": 2,
+    "test": 3
+  },
+  "cross_split_sources": [],
+  "development_gate": "GO"
+}
