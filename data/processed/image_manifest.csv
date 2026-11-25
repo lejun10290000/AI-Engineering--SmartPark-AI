@@ -1,7 +1,286 @@
-source,source_sha256,filename,shape_label,colour,original_width,original_height,original_mode,output,output_width,output_height,output_mode,processing
-topic3_dummy_datasets/03_images/shape_01.png,17a1e28280144daee387c32b2012bfc61e723a87ce1a800accdfac3e674b5bb6,shape_01.png,circle,red,92,97,RGB,data/processed/images/shape_01_17a1e2828014.png,224,224,RGB,RGB conversion; aspect-ratio-preserving resize with white padding to 224x224
-topic3_dummy_datasets/03_images/shape_02.png,dfa0925ff27bea94c60974b8fba381796981f0b5a44c9521840bd8dac749bf4f,shape_02.png,square,blue,104,104,RGB,data/processed/images/shape_02_dfa0925ff27b.png,224,224,RGB,RGB conversion; aspect-ratio-preserving resize with white padding to 224x224
-topic3_dummy_datasets/03_images/shape_03.png,bb10030d1f0b64edb708459dad523a318ee2d75d282256ebb4620d4f3700c604,shape_03.png,circle,blue,116,111,RGB,data/processed/images/shape_03_bb10030d1f0b.png,224,224,RGB,RGB conversion; aspect-ratio-preserving resize with white padding to 224x224
-topic3_dummy_datasets/03_images/shape_04.png,2514fccc54d18b11837c437c31346d57e152014a1b15f3e5351b1fe9c7fa9a3c,shape_04.png,square,red,128,118,RGB,data/processed/images/shape_04_2514fccc54d1.png,224,224,RGB,RGB conversion; aspect-ratio-preserving resize with white padding to 224x224
-topic3_dummy_datasets/03_images/shape_05.png,94d4f11507479c60a641b743d0665bec8b41e7299871c2c6b6ebe549b2ca52f1,shape_05.png,circle,red,140,125,RGB,data/processed/images/shape_05_94d4f1150747.png,224,224,RGB,RGB conversion; aspect-ratio-preserving resize with white padding to 224x224
-topic3_dummy_datasets/03_images/shape_06.png,5908f2d0dabc2479d2740d4df8abe62785aa10aa6f34e7b838c58cf6e71ebd14,shape_06.png,square,blue,152,132,RGB,data/processed/images/shape_06_5908f2d0dabc.png,224,224,RGB,aspect-ratio-preserving resize with white padding to 224x224
+record_id,kind,source_id,image_path,sha256,width,height,mode,capture_date,frame,seconds,window,box_count,bay_count,track_count,annotation_origin
+D03:static_00_00000.jpg,detector_image,D03,images/detector/train/static_00_00000.jpg,d87ee2f2b0f19fc47a3c19422cea7b8727e5714ac434eef764bff5f2b7b58bb4,1040,1015,RGB,,,,,11,,,model-assisted visually reviewed car boxes
+D03:static_00_00000_tile0.jpg,detector_image,D03,images/detector/train/static_00_00000_tile0.jpg,140a79d2b91590093f3c95a68cba5cd3bce0529507eba294fefef78608d0fe4b,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D03:static_00_00000_tile2.jpg,detector_image,D03,images/detector/train/static_00_00000_tile2.jpg,1c2666ed79040c34136958037c20a869c253618fdbf493f8aab1f6a3ac7cb137,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D03:static_00_00000_tile3.jpg,detector_image,D03,images/detector/train/static_00_00000_tile3.jpg,a05e6ae96aeeb04c1f857a38befa9e55bd9182f3f2816d2d82fd9760daf38d00,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D03:static_01_05000.jpg,detector_image,D03,images/detector/train/static_01_05000.jpg,590bdef0798c38fa9261427ddd4f66ac4cb7e9e06717c7dd2730178a6ba0025a,1040,1015,RGB,,,,,11,,,model-assisted visually reviewed car boxes
+D03:static_01_05000_tile0.jpg,detector_image,D03,images/detector/train/static_01_05000_tile0.jpg,716c85cee050604f1a5cab8f8f5aceeed26793705d515a92af475ef9f6b9e047,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D03:static_01_05000_tile2.jpg,detector_image,D03,images/detector/train/static_01_05000_tile2.jpg,96af2351e899859268564f28277bd136e48a041ca03e0bc4613dde9e173c1bcf,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D03:static_01_05000_tile3.jpg,detector_image,D03,images/detector/train/static_01_05000_tile3.jpg,af0cb79c738d5543beda34169f796f8b9e9d6d4b7e18b1e2d0affd628f7b2e1a,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D03:static_02_10000.jpg,detector_image,D03,images/detector/train/static_02_10000.jpg,ef82a9a207e0e4acea2c06ac7de16f9d1f44a6d6e6c522f4f34e880654d34bd2,1040,1015,RGB,,,,,11,,,model-assisted visually reviewed car boxes
+D03:static_02_10000_tile0.jpg,detector_image,D03,images/detector/train/static_02_10000_tile0.jpg,28e614166854d3f127a259fc2e3e208f8a1ced0d817cf4f192090854407ed7ac,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D03:static_02_10000_tile2.jpg,detector_image,D03,images/detector/train/static_02_10000_tile2.jpg,190e15d261a8e14307a5c66c56dcfa9314141fa25f2df439fd85b6c425e17ba9,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D03:static_02_10000_tile3.jpg,detector_image,D03,images/detector/train/static_02_10000_tile3.jpg,d13fb28eda785a123efc5fc9f1221f795c20326f4e03e3eb1ab9b08ab6053c62,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_00_00000.jpg,detector_image,D04,images/detector/train/movement_00_00000.jpg,3f39bc5f04c804d36d0a49365a2215e5378a38aba92a0e8b7e7afb53e78490c4,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_00_00000_tile0.jpg,detector_image,D04,images/detector/train/movement_00_00000_tile0.jpg,81645b770a93af5f559a8812658088661942c1047dc1f1e725f52975d611b260,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_00_00000_tile2.jpg,detector_image,D04,images/detector/train/movement_00_00000_tile2.jpg,8f47cc0e9114e5e3b266bf2abb5326bdb9d21415db44bea55e67dbb8f4ef415c,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_00_00000_tile3.jpg,detector_image,D04,images/detector/train/movement_00_00000_tile3.jpg,5ed6256907d3083600e399036d28a9e7ee7fbf11d932b94765e448da7ee6d38e,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_01_01500.jpg,detector_image,D04,images/detector/train/movement_01_01500.jpg,97f22bb0539a748d4326319b6ddcb4798301147efc57edc7e381a5126d29da29,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_01_01500_tile0.jpg,detector_image,D04,images/detector/train/movement_01_01500_tile0.jpg,1f2d133cf23c598f5fd6111d775d1f06331f8bb37af20acc5337d8586adaaf40,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_01_01500_tile1.jpg,detector_image,D04,images/detector/train/movement_01_01500_tile1.jpg,0391b3b4acd9c6c4ac24c5187a6007bbe0d2ce50f3c4b6c396e5df289c140861,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_01_01500_tile2.jpg,detector_image,D04,images/detector/train/movement_01_01500_tile2.jpg,596196f3692941f4664214ff6647c0ca4543fd14701b23d01066bc89b61f3d78,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_01_01500_tile3.jpg,detector_image,D04,images/detector/train/movement_01_01500_tile3.jpg,b57ad17f60bd92172edcb34f51a1422c14d3828f47758d91948c327edf5f251e,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_02_03000.jpg,detector_image,D04,images/detector/train/movement_02_03000.jpg,e92a6a9c06333a423228f976fcb4636fff3460aa042c3f06f6292768b0502f22,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_02_03000_tile0.jpg,detector_image,D04,images/detector/train/movement_02_03000_tile0.jpg,af507537bbea45306c7c1b12e68faa8e0da370a79850bbc620017fa4c150d6cf,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_02_03000_tile2.jpg,detector_image,D04,images/detector/train/movement_02_03000_tile2.jpg,51052c4188f906ca7a3f1426c2f11867a8ffd997fbcd73dd95d360b417f9fd00,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_02_03000_tile3.jpg,detector_image,D04,images/detector/train/movement_02_03000_tile3.jpg,89097d1e0d4e36149f3535514122efa7bf587b36dff3a6c612521329c9eff80c,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_03_04500.jpg,detector_image,D04,images/detector/train/movement_03_04500.jpg,16e11b9bafa99dc05c42c6db743c4b7fe2a6d46002bcbf3db425e2764532ae61,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_03_04500_tile0.jpg,detector_image,D04,images/detector/train/movement_03_04500_tile0.jpg,cd3a7c21948c45b8483e70a48085c86ab251e4af3c03fc31c7492c515c2d2053,640,640,RGB,,,,,7,,,model-assisted visually reviewed car boxes
+D04:movement_03_04500_tile1.jpg,detector_image,D04,images/detector/train/movement_03_04500_tile1.jpg,8ba7a658ec8cbef5e0d377eda24e298629141066207719d32cc51526fa6e8dbc,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_03_04500_tile2.jpg,detector_image,D04,images/detector/train/movement_03_04500_tile2.jpg,074ca573faebbdfad59cb545ce22cac9e950e73dbb750c47f573487930193776,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_03_04500_tile3.jpg,detector_image,D04,images/detector/train/movement_03_04500_tile3.jpg,8e954eb9853c8cab6a26b2bd4b8a61b2fdf92365cbae6bb9b9a109a69f0e9df0,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_04_06000.jpg,detector_image,D04,images/detector/train/movement_04_06000.jpg,6b683d88adb6e584d175bda9230514da78395024864f1c919bdd0381d351a749,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_04_06000_tile0.jpg,detector_image,D04,images/detector/train/movement_04_06000_tile0.jpg,a4016752a6728e9636169afb7c6b5e7c0fa71f1c2483dc6d47385b2930413b99,640,640,RGB,,,,,7,,,model-assisted visually reviewed car boxes
+D04:movement_04_06000_tile2.jpg,detector_image,D04,images/detector/train/movement_04_06000_tile2.jpg,6a84c172c67a3ffbcd1fe6ef62ea53dc09eda8e7c96d4fc8ba8f3fe8abce543c,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_04_06000_tile3.jpg,detector_image,D04,images/detector/train/movement_04_06000_tile3.jpg,2eadec45484591cfc5f3d5cb00dbde817e5a684576383b17419f82478470d78d,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_05_07500.jpg,detector_image,D04,images/detector/train/movement_05_07500.jpg,dc96e4027b75e3f457e03e22c067189a4395f6b37f12c495847c6e402603c184,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_05_07500_tile0.jpg,detector_image,D04,images/detector/train/movement_05_07500_tile0.jpg,a6dc111014c13e1abcc7e62becba0521f3233a6e116cde6d80204fc1359d6e5e,640,640,RGB,,,,,7,,,model-assisted visually reviewed car boxes
+D04:movement_05_07500_tile2.jpg,detector_image,D04,images/detector/train/movement_05_07500_tile2.jpg,fee48b4eda4beb524eacce33c586b5cf61b87565c8953d390a6d128443c4e5d7,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_05_07500_tile3.jpg,detector_image,D04,images/detector/train/movement_05_07500_tile3.jpg,d78c485a668f219ddbf9eff208681acae06d3b372d0b0e839fa05b845f0515e7,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_06_09000.jpg,detector_image,D04,images/detector/train/movement_06_09000.jpg,a855c8efe66b1d0a4f84cabc6247277cde228fcffb79fbd0386ceefb64a48e71,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_06_09000_tile0.jpg,detector_image,D04,images/detector/train/movement_06_09000_tile0.jpg,c4e555c82c6ed01d3d72f60f911a270965b74a4e6db9286775216838a15f9aac,640,640,RGB,,,,,7,,,model-assisted visually reviewed car boxes
+D04:movement_06_09000_tile2.jpg,detector_image,D04,images/detector/train/movement_06_09000_tile2.jpg,b765871a6a258e3099236ec62934918a123dafa048fbe5cf53e92d8356504d77,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_06_09000_tile3.jpg,detector_image,D04,images/detector/train/movement_06_09000_tile3.jpg,34d9c7c69f13ad8fa31e05ea76b4e6a8eabe51774a040f6112c8e95151f00b99,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_10_15000.jpg,detector_image,D04,images/detector/train/movement_10_15000.jpg,7cf21feccd9f8a540692d4859d4d4d92e0d67c2e0118fccce24b62067c6d1d03,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_10_15000_tile0.jpg,detector_image,D04,images/detector/train/movement_10_15000_tile0.jpg,9e01ff87bb3ba237f3563708046bc76763ca43b1e78119dd9ede093adba0ea8d,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_10_15000_tile2.jpg,detector_image,D04,images/detector/train/movement_10_15000_tile2.jpg,7ccc8227dc2fb17b1b8c1134034daac693365c33a78eb4989403536ec299f2cf,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_10_15000_tile3.jpg,detector_image,D04,images/detector/train/movement_10_15000_tile3.jpg,3ae7d7787b1256c23b85202f8cfbde6eab5a6ac794016d5b504f673bb6a41268,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_11_16500.jpg,detector_image,D04,images/detector/train/movement_11_16500.jpg,35e702eca4ee6a68a5170357f56cb5fcfa7532b2c0d831e4710d41485d9ecdf7,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_11_16500_tile0.jpg,detector_image,D04,images/detector/train/movement_11_16500_tile0.jpg,5593ee823f1bc0b3d57022b301f7d4a1752f2c0fbac2ff4761e911e95f7d077f,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_11_16500_tile1.jpg,detector_image,D04,images/detector/train/movement_11_16500_tile1.jpg,1a69c83f192c7beca81d576be6899f7576f8a28892063bcffd26184d4b9e9923,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_11_16500_tile3.jpg,detector_image,D04,images/detector/train/movement_11_16500_tile3.jpg,d832c4cef247d94ee9f81e4fea2d61a61a3c04cf1f6fe64dfdbfd3cea04ba397,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_12_18000.jpg,detector_image,D04,images/detector/train/movement_12_18000.jpg,b6c330e0d1511cffa495e78caef94380ecd36222ec8da010eacb3422fae8b34a,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_12_18000_tile0.jpg,detector_image,D04,images/detector/train/movement_12_18000_tile0.jpg,35de375d706cf434271f17236832489c5a0aa0f30892f3a428bffed40669cce0,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_12_18000_tile1.jpg,detector_image,D04,images/detector/train/movement_12_18000_tile1.jpg,cd8252f7b869361d7a7659523a5a806ec84ed9cc68a2f4dfecd330a02e987582,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_12_18000_tile2.jpg,detector_image,D04,images/detector/train/movement_12_18000_tile2.jpg,44aaba07cd3b2955237c9819ca8c2a37f7ca9fade0994c84008416f7fd4a42d2,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_12_18000_tile3.jpg,detector_image,D04,images/detector/train/movement_12_18000_tile3.jpg,a913a5c4797edfba38558c13e134601e3c39b17311cb983e3076a4e0a5944e68,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_14_21000.jpg,detector_image,D04,images/detector/train/movement_14_21000.jpg,7a0dd1b8a4f1886a82a00859097ab0b7a7c74a4b6107db82f066a71e91a1abfc,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_14_21000_tile0.jpg,detector_image,D04,images/detector/train/movement_14_21000_tile0.jpg,4cd6bd85d7cb6ceb8dd8938a0c942ff25eee945cc08d99f3da61ce4df6646636,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_14_21000_tile2.jpg,detector_image,D04,images/detector/train/movement_14_21000_tile2.jpg,6e42bf04044620c2dd0a4b981a533d0a169e32ad3518068863e2f376e6d47016,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_14_21000_tile3.jpg,detector_image,D04,images/detector/train/movement_14_21000_tile3.jpg,28544143488411ecb346da3c86fd489b2826bb66a4558111419125d16698ef45,640,640,RGB,,,,,6,,,model-assisted visually reviewed car boxes
+D04:movement_16_24000.jpg,detector_image,D04,images/detector/train/movement_16_24000.jpg,7a257631b0174a8b0869d5f00fc1af275edfea1b2ae0b61f354db495c80dee15,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_16_24000_tile0.jpg,detector_image,D04,images/detector/train/movement_16_24000_tile0.jpg,73d53cb558160ff924f33057411dbb2b8d2f7f65b5a513b97a1fec7dc1601fab,640,640,RGB,,,,,7,,,model-assisted visually reviewed car boxes
+D04:movement_16_24000_tile2.jpg,detector_image,D04,images/detector/train/movement_16_24000_tile2.jpg,d8fa80f6f4a203d9445a247d42abe364007f969091617e9e99ef8462e499fdff,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_16_24000_tile3.jpg,detector_image,D04,images/detector/train/movement_16_24000_tile3.jpg,8126ca1744284242edbc2a4a2c1b5d097629956b75724b36eb8a8e9b27be5115,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_18_27000.jpg,detector_image,D04,images/detector/train/movement_18_27000.jpg,85e3790c6ec86dd198e1ec23e8aebd0130f1cf2df21b9e5edc2afb9501c7058e,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_18_27000_tile0.jpg,detector_image,D04,images/detector/train/movement_18_27000_tile0.jpg,85b58d441ad8f1683ae80e08f09c73b9ef2b3e6c8455d92908d4189c68694a99,640,640,RGB,,,,,7,,,model-assisted visually reviewed car boxes
+D04:movement_18_27000_tile2.jpg,detector_image,D04,images/detector/train/movement_18_27000_tile2.jpg,c1f98191cf45a2c0e838e2c428db3d12f47186069d55f949ba172694cccbe0c3,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_18_27000_tile3.jpg,detector_image,D04,images/detector/train/movement_18_27000_tile3.jpg,eeaa115da12a4cd961c3edc65ea4ed5de60017c8cbeca95ca17898329f7f252a,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_19_28800.jpg,detector_image,D04,images/detector/train/movement_19_28800.jpg,0ea5d2eb7146e106d60b1bf1ead609de516499beb68078ba6a09fa2b6823ed00,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D04:movement_19_28800_tile0.jpg,detector_image,D04,images/detector/train/movement_19_28800_tile0.jpg,e89c214ab0e471a1d8130b68a02e6061090dd7b6ef10594b6cb5d980fbf30f82,640,640,RGB,,,,,7,,,model-assisted visually reviewed car boxes
+D04:movement_19_28800_tile2.jpg,detector_image,D04,images/detector/train/movement_19_28800_tile2.jpg,bd46035d151227653465af4079f7335f5ce769169ba70984c4842bb38e942747,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D04:movement_19_28800_tile3.jpg,detector_image,D04,images/detector/train/movement_19_28800_tile3.jpg,678d455827f95fb613d3b3db5873907c335130efbe4f1eba0613cac83b4952ac,640,640,RGB,,,,,5,,,model-assisted visually reviewed car boxes
+D01:older_00_00000.jpg,detector_image,D01,images/detector/val/older_00_00000.jpg,0e3c6158b04633ae8a2e5dac674231b1045b0ca9cec8956892c36a84d0934cdc,1070,1015,RGB,,,,,15,,,model-assisted visually reviewed car boxes
+D01:older_01_31500.jpg,detector_image,D01,images/detector/val/older_01_31500.jpg,ac067a8ae5a37ee20044ea39cc45a1620fe01cfd653ad0204e50854ec2615135,1070,1015,RGB,,,,,15,,,model-assisted visually reviewed car boxes
+D05:parking_00_00000.jpg,detector_image,D05,images/detector/test/parking_00_00000.jpg,b90fde9a93202af9bec91cb111203cf03106e6bf7e8ddb27d26cc7a8df7cb199,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D05:parking_01_30000.jpg,detector_image,D05,images/detector/test/parking_01_30000.jpg,6ac33b9046705ee7a529813f265918ba9835f9c3fbbf435d51a76b8339dd9477,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D05:parking_02_37400.jpg,detector_image,D05,images/detector/test/parking_02_37400.jpg,6b15fee703a0cf9db16386b9c2f263cd1beb326fe61a5f9904d9376eea5599c9,1040,1015,RGB,,,,,12,,,model-assisted visually reviewed car boxes
+D02:empty_board.jpg,detector_image,D02,images/detector/train/empty_board.jpg,6c043b98e3aa13cf3da617fd3a87f51a8b0bd234b29a787538a909b7f47e71b3,1040,1015,RGB,,,,,0,,,model-assisted visually reviewed car boxes
+D02:empty_board_tile0.jpg,detector_image,D02,images/detector/train/empty_board_tile0.jpg,d92e9dfaaab89e6876a1360d17fe0d84c95242b8cd49db6439f566a50df0dc22,640,640,RGB,,,,,0,,,model-assisted visually reviewed car boxes
+D02:empty_board_tile1.jpg,detector_image,D02,images/detector/train/empty_board_tile1.jpg,def8090b54ce09294a9e9f42565e75336ebd991887b0bb672d1385730cbb6b41,640,640,RGB,,,,,0,,,model-assisted visually reviewed car boxes
+D02:empty_board_tile2.jpg,detector_image,D02,images/detector/train/empty_board_tile2.jpg,1013f840a2dec952e47699a8aa5d8e772db7d878ea6e0243fd66b2342ddec6ec,640,640,RGB,,,,,0,,,model-assisted visually reviewed car boxes
+D02:empty_board_tile3.jpg,detector_image,D02,images/detector/train/empty_board_tile3.jpg,a0ff58cb33743adde93e6a64a2a7c338378b48b5bb121a73afddfa4aaf94d7db,640,640,RGB,,,,,0,,,model-assisted visually reviewed car boxes
+D04:hand_floor_negative_0.jpg,detector_image,D04,images/detector/train/hand_floor_negative_0.jpg,2657e313511772cf949ab64c71ea477c59c198d24c93db043f3f66e693d6c9e7,470,700,RGB,,,,,0,,,model-assisted visually reviewed car boxes
+D04:hand_floor_negative_1.jpg,detector_image,D04,images/detector/train/hand_floor_negative_1.jpg,a2cba182a52fc5bd60c60336a8d350f0dec2fbedc775a4889c5759a85beba082,470,700,RGB,,,,,0,,,model-assisted visually reviewed car boxes
+D04:hand_floor_negative_2.jpg,detector_image,D04,images/detector/train/hand_floor_negative_2.jpg,c9ac6a5cd05622f1e94d576523e7ee1abef6a4e28ab85d1d240051b23361ff7c,470,700,RGB,,,,,0,,,model-assisted visually reviewed car boxes
+D04:hand_floor_negative_3.jpg,detector_image,D04,images/detector/train/hand_floor_negative_3.jpg,a038c4833e4a9d227fb27d297d8c52838e0c54232387912fbc7d3a242c9d230f,470,700,RGB,,,,,0,,,model-assisted visually reviewed car boxes
+R01:0,annotated_replay,R01,images/replay/R01/00000.jpg,2543cad845ffbf786418cb6b7bdaea26f9fc70af92bfa25c319c41b428a910e8,1920,1080,RGB,2026-11-19,0,0.0,1,,24,13,prototype telemetry
+R01:1,annotated_replay,R01,images/replay/R01/00001.jpg,857e5107886a0e1cf335e5a31160362508cac8c800ffbe477c550acce2cafd50,1920,1080,RGB,2026-11-19,1,0.998,1,,24,13,prototype telemetry
+R01:2,annotated_replay,R01,images/replay/R01/00002.jpg,38ea5dedb43ca22d13b38a1bdccd2442cd7e4a169ddf232b627dbf0741713ea7,1920,1080,RGB,2026-11-19,2,1.9105,1,,24,13,prototype telemetry
+R01:3,annotated_replay,R01,images/replay/R01/00003.jpg,10a5d5aca3e39a01e2234bf6dddb092dba365ba713cc09d819c1d1c203d17297,1920,1080,RGB,2026-11-19,3,2.7574,1,,24,13,prototype telemetry
+R01:4,annotated_replay,R01,images/replay/R01/00004.jpg,f4c384a25063100bcec0598a5fe7f9a303770e31469cf9e2fed985835273321f,1920,1080,RGB,2026-11-19,4,3.6514,1,,24,13,prototype telemetry
+R01:5,annotated_replay,R01,images/replay/R01/00005.jpg,9fb48dc5053d992b5cad30c4591ae1d091347dd46cfe65e02da0cfde8de9e7af,1920,1080,RGB,2026-11-19,5,4.4506,1,,24,13,prototype telemetry
+R01:6,annotated_replay,R01,images/replay/R01/00006.jpg,a9b49476b3af0c247af15dc199d6f9011e4649fda63bce0199f7fe819d68db26,1920,1080,RGB,2026-11-19,6,5.2052,1,,24,13,prototype telemetry
+R01:7,annotated_replay,R01,images/replay/R01/00007.jpg,1f0ff0552dfe1b24f9ae0fa447bc882a2633b1f3a0025a1b57d8b65b6861541b,1920,1080,RGB,2026-11-19,7,6.0031,1,,24,13,prototype telemetry
+R01:8,annotated_replay,R01,images/replay/R01/00008.jpg,bddbdbe3242efbbe4b62e95c4b02a15f98fc729b2295fe34d6020b5e46961006,1920,1080,RGB,2026-11-19,8,6.7564,1,,24,13,prototype telemetry
+R01:9,annotated_replay,R01,images/replay/R01/00009.jpg,e31fd0ca5e9b56752ec73c6d73c70358334c99109a0dc861f58d2583baa214e9,1920,1080,RGB,2026-11-19,9,7.557,1,,24,13,prototype telemetry
+R01:224,annotated_replay,R01,images/replay/R01/00224.jpg,bc850f3fd19273283a26d32f2a1dfeb69ffe65755e32c9c57f68e37456e454b9,1920,1080,RGB,2026-11-19,224,166.3623,2,,24,0,prototype telemetry
+R01:225,annotated_replay,R01,images/replay/R01/00225.jpg,290632940cdecbc63ee8a68a1a1dfbd72874a388ff6bff4bc99a05ef7c92a23f,1920,1080,RGB,2026-11-19,225,166.4096,2,,24,0,prototype telemetry
+R01:226,annotated_replay,R01,images/replay/R01/00226.jpg,3a856bc6ef60bae689007d30828b2c8bc465cf4900eddf16f0d25ee0e6d41c3a,1920,1080,RGB,2026-11-19,226,166.5195,2,,24,0,prototype telemetry
+R01:227,annotated_replay,R01,images/replay/R01/00227.jpg,16c3b3c7ce892931e45e20f3cd46729221bbfda82cb5475d2f4d502d8894ebc5,1920,1080,RGB,2026-11-19,227,166.6107,2,,24,16,prototype telemetry
+R01:228,annotated_replay,R01,images/replay/R01/00228.jpg,4038c842799917fc951b4e9cab96ae6583e7ed7b497e8cb08513f6e5205a107d,1920,1080,RGB,2026-11-19,228,167.3693,2,,24,16,prototype telemetry
+R01:229,annotated_replay,R01,images/replay/R01/00229.jpg,97a9d570dff22c0234af00a0ba906928d6e375dc05f2a4622bfe7614010cb4f5,1920,1080,RGB,2026-11-19,229,168.2175,2,,24,16,prototype telemetry
+R01:230,annotated_replay,R01,images/replay/R01/00230.jpg,cf913f2e758e18b2ac04c6827102ea5ea14f40a533bb0836300d6ec82c02407c,1920,1080,RGB,2026-11-19,230,169.0631,2,,24,16,prototype telemetry
+R01:231,annotated_replay,R01,images/replay/R01/00231.jpg,80fa040887b6b5d5a4c5917d008bab6c6af8c5ca88225d306abaf2afba29d844,1920,1080,RGB,2026-11-19,231,169.8616,2,,24,16,prototype telemetry
+R01:232,annotated_replay,R01,images/replay/R01/00232.jpg,fe98778b8768f7259ce1983dd0a85fed288401fef401588a8f2509bb0e51f5c2,1920,1080,RGB,2026-11-19,232,170.6792,2,,24,16,prototype telemetry
+R01:233,annotated_replay,R01,images/replay/R01/00233.jpg,f1713c1a9e3308482b32c1e8fca6460170d0cbc1a01a1b83500c97925e6ac89f,1920,1080,RGB,2026-11-19,233,171.526,2,,24,16,prototype telemetry
+R01:448,annotated_replay,R01,images/replay/R01/00448.jpg,2edf399dea7b94b929108b06d83ab68664682d7e4f832d26ab767e05ff7bcb33,1920,1080,RGB,2026-11-19,448,315.8515,3,,24,0,prototype telemetry
+R01:449,annotated_replay,R01,images/replay/R01/00449.jpg,4218baf8c04c4070db9a7853a6b1341a3ac06f788fe6b303020afd80a54bd5b3,1920,1080,RGB,2026-11-19,449,315.9466,3,,24,0,prototype telemetry
+R01:450,annotated_replay,R01,images/replay/R01/00450.jpg,f1f161889df795951ef35f2a0e3bc8f8cb1bcd722cb5f7d8ab01d39281a95f33,1920,1080,RGB,2026-11-19,450,316.0454,3,,24,0,prototype telemetry
+R01:451,annotated_replay,R01,images/replay/R01/00451.jpg,b237cad2590814c49533abf0091698c56d19449062edca16beffc8e5d1093551,1920,1080,RGB,2026-11-19,451,316.1066,3,,24,17,prototype telemetry
+R01:452,annotated_replay,R01,images/replay/R01/00452.jpg,b646d5c869ceb7d467ac5cc735457853640505ea45d45d42b5e53d7b28c0e0a7,1920,1080,RGB,2026-11-19,452,316.956,3,,24,17,prototype telemetry
+R01:453,annotated_replay,R01,images/replay/R01/00453.jpg,e1c1aee225f5285f47af6517df2f10e93dc707ac34e7e67e78d3d9b2d910fc45,1920,1080,RGB,2026-11-19,453,317.7548,3,,24,17,prototype telemetry
+R01:454,annotated_replay,R01,images/replay/R01/00454.jpg,009a1bf5720a292adab325ebd32fff5a3b122dc00f069873d673368f6178bbeb,1920,1080,RGB,2026-11-19,454,318.6491,3,,24,17,prototype telemetry
+R01:455,annotated_replay,R01,images/replay/R01/00455.jpg,5d888bbd757e3a0503949c0fdf102f409f36a15b487563e9c492d81ca5957d20,1920,1080,RGB,2026-11-19,455,319.5008,3,,24,17,prototype telemetry
+R01:456,annotated_replay,R01,images/replay/R01/00456.jpg,2f5fe1b055bb5a847026b3415ccd1f3cea82d88e283e8d54c20b4052ee60000e,1920,1080,RGB,2026-11-19,456,320.3657,3,,24,17,prototype telemetry
+R01:457,annotated_replay,R01,images/replay/R01/00457.jpg,54667c2388017ae6bcccdababc8edc635048d16543e86f36d3803fc855700ca9,1920,1080,RGB,2026-11-19,457,321.2616,3,,24,17,prototype telemetry
+R01:662,annotated_replay,R01,images/replay/R01/00662.jpg,8659bf2d550379c14f14ffbfc6520cdc6e9989bd0a672d53205c8f7ea737fe63,1920,1080,RGB,2026-11-19,662,476.5098,4,,24,18,prototype telemetry
+R01:663,annotated_replay,R01,images/replay/R01/00663.jpg,e1dec8768116c791e795d76ee930215b8053a60b6aad32d01eb26889720c193d,1920,1080,RGB,2026-11-19,663,477.3085,4,,24,18,prototype telemetry
+R01:664,annotated_replay,R01,images/replay/R01/00664.jpg,6f19bef07d95f50a35da6c3ff39b908102ceecc52c6ba7f425cb38945c984b6a,1920,1080,RGB,2026-11-19,664,478.1081,4,,24,18,prototype telemetry
+R01:665,annotated_replay,R01,images/replay/R01/00665.jpg,4d7388c80095cd211b15ef93a2fef96bfa356a8eb051e409a6056f5cbc278b88,1920,1080,RGB,2026-11-19,665,478.9613,4,,24,18,prototype telemetry
+R01:666,annotated_replay,R01,images/replay/R01/00666.jpg,9af387d607dc233a5adffe235f87a63db58db57746366f24f00261432c15b289,1920,1080,RGB,2026-11-19,666,479.7648,4,,24,19,prototype telemetry
+R01:667,annotated_replay,R01,images/replay/R01/00667.jpg,a39fc860e311ae7c085ca6b7a7628f0726f3c43eede61816d6da0c5527e2c491,1920,1080,RGB,2026-11-19,667,480.5539,4,,24,18,prototype telemetry
+R01:668,annotated_replay,R01,images/replay/R01/00668.jpg,3ac419d4f58a1a56dd4b30cd6b3b31a97f329e6388b9960627ffa2da5574024d,1920,1080,RGB,2026-11-19,668,481.2104,4,,24,18,prototype telemetry
+R01:669,annotated_replay,R01,images/replay/R01/00669.jpg,e503506374224d2ba6c246803e3eea952c150cc71efdfb1556fecd15fc7c58f3,1920,1080,RGB,2026-11-19,669,481.865,4,,24,18,prototype telemetry
+R01:670,annotated_replay,R01,images/replay/R01/00670.jpg,1ae40458cd528be932a55382007c4c63b3ab29d0925c13eec45c42c913166ee4,1920,1080,RGB,2026-11-19,670,482.4587,4,,24,18,prototype telemetry
+R01:671,annotated_replay,R01,images/replay/R01/00671.jpg,56c4c509c2e98d77ef88275dca33e303e30f41f76bba865b21c71d78e1c9eea6,1920,1080,RGB,2026-11-19,671,483.0648,4,,24,18,prototype telemetry
+R02:0,annotated_replay,R02,images/replay/R02/00000.jpg,eda74a477aa3d823500d9b64ea4aa9f364cd5cc10f34fd75f8988e5bcdffb82b,1920,1080,RGB,2026-11-20,0,0.0,1,,24,0,prototype telemetry
+R02:1,annotated_replay,R02,images/replay/R02/00001.jpg,808ff26253e1146711dfe86d0d75a3358319fc1684323dbf8336f01797c63fcc,1920,1080,RGB,2026-11-20,1,0.5905,1,,24,16,prototype telemetry
+R02:2,annotated_replay,R02,images/replay/R02/00002.jpg,774cf9f42a5681fa1d85fab2823a72f02200f2ead4e6468806efe700075ad4c1,1920,1080,RGB,2026-11-20,2,1.1504,1,,24,17,prototype telemetry
+R02:3,annotated_replay,R02,images/replay/R02/00003.jpg,e032252c1166ecf6e9ba074f19b7f87b7f0a0f7dba9d3b7e3819e780f69dcf93,1920,1080,RGB,2026-11-20,3,1.5987,1,,24,17,prototype telemetry
+R02:4,annotated_replay,R02,images/replay/R02/00004.jpg,0fadae0182649fcfa747d78fbc02c351a2ab8ccb0be1fadb56e58982f91e7a6c,1920,1080,RGB,2026-11-20,4,2.0938,1,,24,17,prototype telemetry
+R02:5,annotated_replay,R02,images/replay/R02/00005.jpg,2e74a4b3fb8f7845781404b61239aafa26b1abd5446c08e6e5a27deae017895c,1920,1080,RGB,2026-11-20,5,2.543,1,,24,17,prototype telemetry
+R02:6,annotated_replay,R02,images/replay/R02/00006.jpg,9c1e0d1f3e84f7898421a80a3ca6bd3d7e09ee73a0314077ee2e158de95d4230,1920,1080,RGB,2026-11-20,6,3.0546,1,,24,17,prototype telemetry
+R02:7,annotated_replay,R02,images/replay/R02/00007.jpg,24a95d7443fd384456781b41eba54e8ecc3e4f3ad5e2af24812acc0ab4d52d8e,1920,1080,RGB,2026-11-20,7,3.5039,1,,24,17,prototype telemetry
+R02:8,annotated_replay,R02,images/replay/R02/00008.jpg,b3704d1c7adab34d7fe7d31dfb37d03e1600df00e24205bfb53e7adc3b19d341,1920,1080,RGB,2026-11-20,8,3.9972,1,,24,17,prototype telemetry
+R02:9,annotated_replay,R02,images/replay/R02/00009.jpg,3cfc461325666aa72d5493cf7961521bf7e47c2298101acfa3e2baac3e11b901,1920,1080,RGB,2026-11-20,9,4.5106,1,,24,17,prototype telemetry
+R02:454,annotated_replay,R02,images/replay/R02/00454.jpg,eb0c0eae6a37e476bba45d5f158e0deb986e33d9b546314758d7227ea06643ec,1920,1080,RGB,2026-11-20,454,147.4257,2,,24,19,prototype telemetry
+R02:455,annotated_replay,R02,images/replay/R02/00455.jpg,d24af7375e9902353f01406c8b60abb94016e48a427d2bfa3232a5e7c03224b3,1920,1080,RGB,2026-11-20,455,147.8754,2,,24,19,prototype telemetry
+R02:456,annotated_replay,R02,images/replay/R02/00456.jpg,434da0ad28ff75f6ff63cb457f17b79caaa545570fcf7d8b11acae82ca1e3b52,1920,1080,RGB,2026-11-20,456,148.3713,2,,24,19,prototype telemetry
+R02:457,annotated_replay,R02,images/replay/R02/00457.jpg,d36f49aaa000c11197fb2254844ef95c83abe8c8df1ef8f693eb24a9c135a787,1920,1080,RGB,2026-11-20,457,148.7867,2,,24,19,prototype telemetry
+R02:458,annotated_replay,R02,images/replay/R02/00458.jpg,9edaaee3a86ddfb2d481a90895315efdae2bf525cbe46f23713e0d507e96e4a7,1920,1080,RGB,2026-11-20,458,149.2833,2,,24,19,prototype telemetry
+R02:459,annotated_replay,R02,images/replay/R02/00459.jpg,9636b8b38c10202c86585d260c97e0e40f64829889756a4a671a94fce058e76c,1920,1080,RGB,2026-11-20,459,149.7307,2,,24,19,prototype telemetry
+R02:460,annotated_replay,R02,images/replay/R02/00460.jpg,e36bbd721b402d514a3a9e848be15a0ddbdf7f6f464d8eeff48f7c258f2f72be,1920,1080,RGB,2026-11-20,460,150.1782,2,,24,19,prototype telemetry
+R02:461,annotated_replay,R02,images/replay/R02/00461.jpg,bfe19f8c1483bc85cbded421f2d702cc391a2e608bb18ef21d7c519caf2afacd,1920,1080,RGB,2026-11-20,461,150.6258,2,,24,19,prototype telemetry
+R02:462,annotated_replay,R02,images/replay/R02/00462.jpg,1141c25af99ead6b230fdde75e33bc0bce125e9db197667b8764eae56f828585,1920,1080,RGB,2026-11-20,462,151.0901,2,,24,19,prototype telemetry
+R02:463,annotated_replay,R02,images/replay/R02/00463.jpg,c0e52cd154bf8dc391d643cbb70873b0bd2d6050558ed1ae0403c5090b7e8d5f,1920,1080,RGB,2026-11-20,463,151.5864,2,,24,0,prototype telemetry
+R02:908,annotated_replay,R02,images/replay/R02/00908.jpg,5ab2b279357e026fcadeba7d06076ec97368f851cf3c95026aa28cf0e9cc6dc0,1920,1080,RGB,2026-11-20,908,324.3605,3,,24,20,prototype telemetry
+R02:909,annotated_replay,R02,images/replay/R02/00909.jpg,65a3a3d6a38d45ecb6b27de8b8300454b7f9c9b96184d2a431090ae77b2ec738,1920,1080,RGB,2026-11-20,909,324.8548,3,,24,20,prototype telemetry
+R02:910,annotated_replay,R02,images/replay/R02/00910.jpg,175dc35cad986c9403f6bde8345e7f6084739f5dd096205a189ceb0de0987461,1920,1080,RGB,2026-11-20,910,325.4142,3,,24,20,prototype telemetry
+R02:911,annotated_replay,R02,images/replay/R02/00911.jpg,07fe37ad60977763704b2636aab47bc79439af34ab28c3b826c6771897cd05aa,1920,1080,RGB,2026-11-20,911,325.9135,3,,24,20,prototype telemetry
+R02:912,annotated_replay,R02,images/replay/R02/00912.jpg,754bd52ae5a98d358a06dbbacf49bc59d8e225cd6a24b02bb7ac361567d95536,1920,1080,RGB,2026-11-20,912,326.4724,3,,24,19,prototype telemetry
+R02:913,annotated_replay,R02,images/replay/R02/00913.jpg,ae35ff91f6ce5b73e1bd151cf507158dfde37efca38162b2bc2d10ebb59d8b3d,1920,1080,RGB,2026-11-20,913,327.0166,3,,24,19,prototype telemetry
+R02:914,annotated_replay,R02,images/replay/R02/00914.jpg,6641f162aa247f0a4aa62a5185b907871ccb11185340f376a7dd4718eef81717,1920,1080,RGB,2026-11-20,914,327.5143,3,,24,19,prototype telemetry
+R02:915,annotated_replay,R02,images/replay/R02/00915.jpg,c4ab316bf0cf0af2fd5477dbb02188151850f1db26216db344cbcda4039a9972,1920,1080,RGB,2026-11-20,915,328.0247,3,,24,20,prototype telemetry
+R02:916,annotated_replay,R02,images/replay/R02/00916.jpg,0ec8e0a851d804c9ee1746a2de08894e4ff02cca0ef4687275f6ce3fcaf4924b,1920,1080,RGB,2026-11-20,916,328.52,3,,24,20,prototype telemetry
+R02:917,annotated_replay,R02,images/replay/R02/00917.jpg,22ac9f2d5a3f68f849460972e8c4185a0a1e04ced9abc391eb5fec91c1e57563,1920,1080,RGB,2026-11-20,917,329.0656,3,,24,20,prototype telemetry
+R02:1352,annotated_replay,R02,images/replay/R02/01352.jpg,4ec29363518f7c738ec83708a599d8a7de37118e80e168172de98912ab8cca9b,1920,1080,RGB,2026-11-20,1352,441.4032,4,,24,20,prototype telemetry
+R02:1353,annotated_replay,R02,images/replay/R02/01353.jpg,3c9086d9d4566ad9838d57f8cb3fc21ef65c23e9f16dd2baa24e6b3af2f1f93e,1920,1080,RGB,2026-11-20,1353,441.8996,4,,24,20,prototype telemetry
+R02:1354,annotated_replay,R02,images/replay/R02/01354.jpg,725a14ce20d781124e3553c8f0f9fa10a6998d2b6eecf28068528d0150111109,1920,1080,RGB,2026-11-20,1354,442.412,4,,24,20,prototype telemetry
+R02:1355,annotated_replay,R02,images/replay/R02/01355.jpg,23349523168eb823c1ab462a155263d7f653e5a5482452e3f96ab02eee85000e,1920,1080,RGB,2026-11-20,1355,442.9075,4,,24,20,prototype telemetry
+R02:1356,annotated_replay,R02,images/replay/R02/01356.jpg,24d8aa39af00c41ce938efc685a5dc116fe553550005f78ce3d0e4633e3ba828,1920,1080,RGB,2026-11-20,1356,443.4031,4,,24,0,prototype telemetry
+R02:1357,annotated_replay,R02,images/replay/R02/01357.jpg,9b22983d943e8619b2ed524367211074b097076ea3bc6e7be2ddd25fcaa40ef5,1920,1080,RGB,2026-11-20,1357,443.4507,4,,24,0,prototype telemetry
+R02:1358,annotated_replay,R02,images/replay/R02/01358.jpg,1696237eac3272639a1056cdca6e7bedd9255194735a2cb86fdfbc6a50ca3128,1920,1080,RGB,2026-11-20,1358,443.5153,4,,24,0,prototype telemetry
+R02:1359,annotated_replay,R02,images/replay/R02/01359.jpg,44ea92d70492edde513965156c10f93edd8a4ab31a93a9667f038e36b8a90dc3,1920,1080,RGB,2026-11-20,1359,444.0115,4,,24,16,prototype telemetry
+R02:1360,annotated_replay,R02,images/replay/R02/01360.jpg,3897bfaa117cb5a7625545b299b6b292a428152f35e203ac98a98b44f65d7889,1920,1080,RGB,2026-11-20,1360,444.4608,4,,24,19,prototype telemetry
+R02:1361,annotated_replay,R02,images/replay/R02/01361.jpg,742a8384d19b65f1bdbc68ada7880eebfef72119785ce433617d8d73c60329f4,1920,1080,RGB,2026-11-20,1361,444.9544,4,,24,20,prototype telemetry
+R03:0,annotated_replay,R03,images/replay/R03/00000.jpg,9fc902a15618fca74a1b40e7b00c55d0413bd4e99c8e8ae6441449baccd122c6,1920,1080,RGB,2026-11-20,0,0.0,1,,24,0,prototype telemetry
+R03:1,annotated_replay,R03,images/replay/R03/00001.jpg,69278590e39f56342d91db35b9b6cfc6f77777f466db7d14807cdae2d5927e5e,1920,1080,RGB,2026-11-20,1,0.8561,1,,24,19,prototype telemetry
+R03:2,annotated_replay,R03,images/replay/R03/00002.jpg,7796a9b446e8dd4c13d40090e825bcf0a6f758659022c367916169a911856f0d,1920,1080,RGB,2026-11-20,2,1.7043,1,,24,19,prototype telemetry
+R03:3,annotated_replay,R03,images/replay/R03/00003.jpg,b7217d6eba239ac91d2b18ce021716a29504c45126dda9396d9acfa3f45894e9,1920,1080,RGB,2026-11-20,3,2.5096,1,,24,19,prototype telemetry
+R03:4,annotated_replay,R03,images/replay/R03/00004.jpg,51d7c3736d71e25d6586d12f9820fda52204eb37c496baa5b2707f65737f386b,1920,1080,RGB,2026-11-20,4,3.3691,1,,24,19,prototype telemetry
+R03:5,annotated_replay,R03,images/replay/R03/00005.jpg,a177c53e741143d3fc373eb362b815b49d8ed7a468f60bda5adf928dc4d19737,1920,1080,RGB,2026-11-20,5,4.22,1,,24,0,prototype telemetry
+R03:6,annotated_replay,R03,images/replay/R03/00006.jpg,3d479bf73d40eaa8dc9eb1ca0ab25b0ec72bfc243cbe97822ca7b0e4be7e661e,1920,1080,RGB,2026-11-20,6,4.3129,1,,24,0,prototype telemetry
+R03:7,annotated_replay,R03,images/replay/R03/00007.jpg,767391d5ed73af14f004d982bfe1f61d26d716a964e25f88d3ef2b76e37815ab,1920,1080,RGB,2026-11-20,7,5.0729,1,,24,19,prototype telemetry
+R03:8,annotated_replay,R03,images/replay/R03/00008.jpg,95d885ef5ab793ec16c51bad1caff23e926ea6429d47ad2dcaf7814293224150,1920,1080,RGB,2026-11-20,8,5.8184,1,,24,19,prototype telemetry
+R03:9,annotated_replay,R03,images/replay/R03/00009.jpg,55c545d6a290e694b553bf469fbb6002eff7497e7025749f4925a204293af6d5,1920,1080,RGB,2026-11-20,9,6.627,1,,24,20,prototype telemetry
+R03:81,annotated_replay,R03,images/replay/R03/00081.jpg,9a855f4b4b05e35a4e282a06a541089f85ad8a69245409b5bd13d496ce7da467,1920,1080,RGB,2026-11-20,81,44.128,2,,24,20,prototype telemetry
+R03:82,annotated_replay,R03,images/replay/R03/00082.jpg,b3016ce285d901a0fe5f3b6ca1972c834e51ee541964fb5539170b1516e3668b,1920,1080,RGB,2026-11-20,82,44.5762,2,,24,20,prototype telemetry
+R03:83,annotated_replay,R03,images/replay/R03/00083.jpg,7455c09372521874b6c5e41c6e99356f3132ee8eebceaa2d55893952f188bd9b,1920,1080,RGB,2026-11-20,83,45.0872,2,,24,20,prototype telemetry
+R03:84,annotated_replay,R03,images/replay/R03/00084.jpg,713d924937fcd0b168c01354c9610d3a8ee0d29dd8549317973c276ccf2e2fdc,1920,1080,RGB,2026-11-20,84,45.5859,2,,24,20,prototype telemetry
+R03:85,annotated_replay,R03,images/replay/R03/00085.jpg,72997f5c31da713358b6e0aab76c1e2c2123dd0b5211afc921b44b7da24b4423,1920,1080,RGB,2026-11-20,85,46.0815,2,,24,20,prototype telemetry
+R03:86,annotated_replay,R03,images/replay/R03/00086.jpg,3d93240142fcce3423320d38d873196f1790be139e8144bc1496ec7f7b40c1da,1920,1080,RGB,2026-11-20,86,46.5426,2,,24,20,prototype telemetry
+R03:87,annotated_replay,R03,images/replay/R03/00087.jpg,8b2035fc102539417665b42e93866a5cc4e683ba2c3f7477d0d7020db929e111,1920,1080,RGB,2026-11-20,87,47.0422,2,,24,19,prototype telemetry
+R03:88,annotated_replay,R03,images/replay/R03/00088.jpg,8ca606c54dc51ef7cd35c9549a948b6aa3fb2ebc34040ec8fc67bc7326c52ec3,1920,1080,RGB,2026-11-20,88,47.5844,2,,24,19,prototype telemetry
+R03:89,annotated_replay,R03,images/replay/R03/00089.jpg,a31425294bf9c14245f102ce688c0b2634f91482be095b2d3fb820eb0f8a1161,1920,1080,RGB,2026-11-20,89,48.0319,2,,24,20,prototype telemetry
+R03:90,annotated_replay,R03,images/replay/R03/00090.jpg,a40245f3578f964e0f7cba35240e4448fe281e17d4abb04aa507f3eb27ea2041,1920,1080,RGB,2026-11-20,90,48.5432,2,,24,20,prototype telemetry
+R03:162,annotated_replay,R03,images/replay/R03/00162.jpg,45b19f2ef26f9846443843c5fbc41cb680ec0764d5c34e6ab97b198d7f506f27,1920,1080,RGB,2026-11-20,162,81.2961,3,,24,20,prototype telemetry
+R03:163,annotated_replay,R03,images/replay/R03/00163.jpg,14176a21587bb6261ae681d643e5757cc06e2b4501434f7eb7cadeb752e3c954,1920,1080,RGB,2026-11-20,163,81.7615,3,,24,20,prototype telemetry
+R03:164,annotated_replay,R03,images/replay/R03/00164.jpg,3f95ed59b395068dc3c6987ae8c19e75aabbe1e004bd62c3c98cd738ee54cc90,1920,1080,RGB,2026-11-20,164,82.2579,3,,24,20,prototype telemetry
+R03:165,annotated_replay,R03,images/replay/R03/00165.jpg,31a0eaeaba1a10a3c96a80381e89a3408e8bfffe3b9c395ebefe6ec3e7fca6ab,1920,1080,RGB,2026-11-20,165,82.7537,3,,24,20,prototype telemetry
+R03:166,annotated_replay,R03,images/replay/R03/00166.jpg,06f462bb735427669bdeae8b86df3f0d4b9512c6cf5b690541e2212438e02194,1920,1080,RGB,2026-11-20,166,83.2634,3,,24,20,prototype telemetry
+R03:167,annotated_replay,R03,images/replay/R03/00167.jpg,d65ba2a30008fc89dc9fd5af418d1e9cbf5c1dc71d8cb92bf6f602c664f50fa2,1920,1080,RGB,2026-11-20,167,83.7601,3,,24,20,prototype telemetry
+R03:168,annotated_replay,R03,images/replay/R03/00168.jpg,170e7833c57933eaaac956399d10352ac8cef21903711aff55ed641c71023c7c,1920,1080,RGB,2026-11-20,168,84.2561,3,,24,20,prototype telemetry
+R03:169,annotated_replay,R03,images/replay/R03/00169.jpg,113c69e1fa430839750cb969d944cd4f211693fadce7f89b5c60822dee19716b,1920,1080,RGB,2026-11-20,169,84.7082,3,,24,20,prototype telemetry
+R03:170,annotated_replay,R03,images/replay/R03/00170.jpg,975dcf72667e4de41514a55d3c9fad5308b7241e9d20f2c5863f56bb6f87991b,1920,1080,RGB,2026-11-20,170,85.2171,3,,24,20,prototype telemetry
+R03:171,annotated_replay,R03,images/replay/R03/00171.jpg,1fdd638de0e40825502f6163bc83aebf8d60a7f2c34b544486a8af0a8c5572ab,1920,1080,RGB,2026-11-20,171,85.7134,3,,24,20,prototype telemetry
+R03:233,annotated_replay,R03,images/replay/R03/00233.jpg,655531e18f082ae6ca4d61434cab3be6b523dc681ab5fd241025bdcd1659dcb5,1920,1080,RGB,2026-11-20,233,115.4257,4,,24,19,prototype telemetry
+R03:234,annotated_replay,R03,images/replay/R03/00234.jpg,74de0c7017024ad9d0aeeb54887c03abef528e654269a1378144dfea04fb1c95,1920,1080,RGB,2026-11-20,234,115.9227,4,,24,20,prototype telemetry
+R03:235,annotated_replay,R03,images/replay/R03/00235.jpg,9cdb9e2e1b86e85fc7a44fad59f65690d0e6f0995513b2c386a51b0d2f71f35d,1920,1080,RGB,2026-11-20,235,116.4183,4,,24,20,prototype telemetry
+R03:236,annotated_replay,R03,images/replay/R03/00236.jpg,99d52f40bff948d32feb2474ab68578a02562d6a70a93b93bef6dba144cf78db,1920,1080,RGB,2026-11-20,236,116.9151,4,,24,20,prototype telemetry
+R03:237,annotated_replay,R03,images/replay/R03/00237.jpg,e2d47603f42f87179dd28c9064828f43347a6e134aadf169676b0ee0df7d61ec,1920,1080,RGB,2026-11-20,237,117.4267,4,,24,20,prototype telemetry
+R03:238,annotated_replay,R03,images/replay/R03/00238.jpg,fa1042ba5a2d96a243335a2765591c75cf5bbb30d1aae288ee527dd6941c06b6,1920,1080,RGB,2026-11-20,238,117.9221,4,,24,0,prototype telemetry
+R03:239,annotated_replay,R03,images/replay/R03/00239.jpg,388a7b980df41bed6068212d4b44b6a15c102c7401a47124beae62e54c2ec780,1920,1080,RGB,2026-11-20,239,117.9691,4,,24,0,prototype telemetry
+R03:240,annotated_replay,R03,images/replay/R03/00240.jpg,2b2191e0082be0a76bffc03982eeb60b1172c291d91f1cfa4a20221aeea9e11d,1920,1080,RGB,2026-11-20,240,118.4651,4,,24,0,prototype telemetry
+R03:241,annotated_replay,R03,images/replay/R03/00241.jpg,db89090010fce8bc7195e0eb92a1d4dc823055b7e8893b0e31e7f6fcd13ca645,1920,1080,RGB,2026-11-20,241,118.5301,4,,24,18,prototype telemetry
+R03:242,annotated_replay,R03,images/replay/R03/00242.jpg,4614e91bdc9e96a2a2dbc9fff4de6a7ba1e1b2b06cb7846e66223ca8dd4ee664,1920,1080,RGB,2026-11-20,242,118.9784,4,,24,19,prototype telemetry
+R04:0,annotated_replay,R04,images/replay/R04/00000.jpg,dea5f0050a6f309583db85e87ba9bfe04c295eb9c5ab10dd69bcef5ae2a9262d,1920,1080,RGB,2026-11-21,0,0.0,1,,24,0,prototype telemetry
+R04:1,annotated_replay,R04,images/replay/R04/00001.jpg,9b602da5ecd20ef548aabcb5ea28d8de868bae8f1b4bdc603f3b552d3730a73e,1920,1080,RGB,2026-11-21,1,0.1001,1,,24,0,prototype telemetry
+R04:2,annotated_replay,R04,images/replay/R04/00002.jpg,f4ca63e82a7bdad5eeb9b9132c61f77a548aead3736c91106c7e5037003aaf0b,1920,1080,RGB,2026-11-21,2,0.6396,1,,24,12,prototype telemetry
+R04:3,annotated_replay,R04,images/replay/R04/00003.jpg,067fce7bc7c20041e88b0539b43056612880b01444735d54a267a7676eec04de,1920,1080,RGB,2026-11-21,3,1.2007,1,,24,13,prototype telemetry
+R04:4,annotated_replay,R04,images/replay/R04/00004.jpg,1c9c5e85e080e5942ae7ab9c0e29317990aad3122e2161e2db2621271fe2f2f0,1920,1080,RGB,2026-11-21,4,1.697,1,,24,13,prototype telemetry
+R04:5,annotated_replay,R04,images/replay/R04/00005.jpg,967e6365cac9be1a253867812d9aff86b530a2a5e681e24ebb19f3b59c734afd,1920,1080,RGB,2026-11-21,5,2.1925,1,,24,13,prototype telemetry
+R04:6,annotated_replay,R04,images/replay/R04/00006.jpg,cec50ab87513f49a5fe0b3e3d80d4805919af618ff13eb408ece4a7ed4ad7ee4,1920,1080,RGB,2026-11-21,6,2.7016,1,,24,13,prototype telemetry
+R04:7,annotated_replay,R04,images/replay/R04/00007.jpg,99ea6e9ec4d862dade03f09b947df2db6c84fdf5b84fdc4ef418872ae9cf2cd2,1920,1080,RGB,2026-11-21,7,3.1986,1,,24,13,prototype telemetry
+R04:8,annotated_replay,R04,images/replay/R04/00008.jpg,212086d362a8ce273b8faf46b62d2873ae0589dde92feda8e3a03c3eb3c88f8b,1920,1080,RGB,2026-11-21,8,3.6937,1,,24,13,prototype telemetry
+R04:9,annotated_replay,R04,images/replay/R04/00009.jpg,5471969cb9a37b6464decc44d07c8dd5a6f0b1d6891e8d60500dcd15a4b9f77e,1920,1080,RGB,2026-11-21,9,4.1892,1,,24,13,prototype telemetry
+R04:177,annotated_replay,R04,images/replay/R04/00177.jpg,2b65f70f7b4c2d4c07c465e94c6fc9bc045b3ee98e0e01d819d0b33c8bd337f0,1920,1080,RGB,2026-11-21,177,83.1046,2,,24,0,prototype telemetry
+R04:178,annotated_replay,R04,images/replay/R04/00178.jpg,21f3484fd5618a3042b16414bcb3af0ac862f14eefcaf67b066206387a54136f,1920,1080,RGB,2026-11-21,178,83.1527,2,,24,0,prototype telemetry
+R04:179,annotated_replay,R04,images/replay/R04/00179.jpg,d336a772d13cc7415a8b295d3f071f46adabcbd7fa981cdcf6bfc2a8fb5e9926,1920,1080,RGB,2026-11-21,179,83.2011,2,,24,0,prototype telemetry
+R04:180,annotated_replay,R04,images/replay/R04/00180.jpg,247500b6a94327dd51e0a1df9c04f56711bbdd5c00f2a9b8d298b77ff7a7e318,1920,1080,RGB,2026-11-21,180,83.2477,2,,24,0,prototype telemetry
+R04:181,annotated_replay,R04,images/replay/R04/00181.jpg,a9af2e644ea52ee8a94e3c0f209ce9ae229641d02e472b34abfd9f1c99b0d505,1920,1080,RGB,2026-11-21,181,83.297,2,,24,0,prototype telemetry
+R04:182,annotated_replay,R04,images/replay/R04/00182.jpg,e424ef15f98df68eccf03f20f187ff2b137fdc1e5506a547f3c29c31c3f5e802,1920,1080,RGB,2026-11-21,182,83.3456,2,,24,0,prototype telemetry
+R04:183,annotated_replay,R04,images/replay/R04/00183.jpg,f572a0e9461e1c91fa5013480e675772eb30797298ded49c5afdff968e3ab493,1920,1080,RGB,2026-11-21,183,83.3934,2,,24,0,prototype telemetry
+R04:184,annotated_replay,R04,images/replay/R04/00184.jpg,192086e2c205bf60525a30707d9350bb980615f77cf2f9cd4507ed6a457c1599,1920,1080,RGB,2026-11-21,184,83.4572,2,,24,0,prototype telemetry
+R04:185,annotated_replay,R04,images/replay/R04/00185.jpg,59298d690e14a40f61d1f22e12e477f04ad47be7c6d73273a96125ec899b7b45,1920,1080,RGB,2026-11-21,185,83.5051,2,,24,0,prototype telemetry
+R04:186,annotated_replay,R04,images/replay/R04/00186.jpg,3ca40c82e4700ce717126321093cfa3ca65657d36e802bf7b3db8f481db36d14,1920,1080,RGB,2026-11-21,186,83.553,2,,24,0,prototype telemetry
+R04:354,annotated_replay,R04,images/replay/R04/00354.jpg,a74c0207c2856c22930fc951d4b6a361258dfdd3c09a9ba6fcbde69afd6e701e,1920,1080,RGB,2026-11-21,354,159.396,3,,24,13,prototype telemetry
+R04:355,annotated_replay,R04,images/replay/R04/00355.jpg,1347d0d40731e33d80f98fc844e69f9cdf8b60b3a830501fb10f1549f3ad1cf5,1920,1080,RGB,2026-11-21,355,159.9387,3,,24,13,prototype telemetry
+R04:356,annotated_replay,R04,images/replay/R04/00356.jpg,d20948397a02d9c0c42b61e0aa1fa85bff749c46e2e2e2485195e3771d181dde,1920,1080,RGB,2026-11-21,356,160.5466,3,,24,13,prototype telemetry
+R04:357,annotated_replay,R04,images/replay/R04/00357.jpg,d98a688c280d33d369ac91da1ea0b4ff001ff95f4e26e5a1cc5f6c68a9d2261f,1920,1080,RGB,2026-11-21,357,161.0927,3,,24,13,prototype telemetry
+R04:358,annotated_replay,R04,images/replay/R04/00358.jpg,acad70b7066cea4e375a3623b822c4e310814c21afffe72ab09b14b7f902e252,1920,1080,RGB,2026-11-21,358,161.7009,3,,24,12,prototype telemetry
+R04:359,annotated_replay,R04,images/replay/R04/00359.jpg,cb43ab0459c75139c0d8b845d35f68fe0244e7b42947e5103065a88f47c01125,1920,1080,RGB,2026-11-21,359,162.3075,3,,24,12,prototype telemetry
+R04:360,annotated_replay,R04,images/replay/R04/00360.jpg,a5e0e2fd12ba0d8bb97a40c472f65e3f30de3ea1af918969ed7155bc3c02f0d7,1920,1080,RGB,2026-11-21,360,162.8547,3,,24,13,prototype telemetry
+R04:361,annotated_replay,R04,images/replay/R04/00361.jpg,3750f3d91772980ffd445cb08b3e439ba98cc3c6e33eb03d5a2c44341201b5be,1920,1080,RGB,2026-11-21,361,163.4594,3,,24,13,prototype telemetry
+R04:362,annotated_replay,R04,images/replay/R04/00362.jpg,53e54531c9281511bbd249203434898cff51e27dc8b225b1e21011f60998e5d0,1920,1080,RGB,2026-11-21,362,164.0525,3,,24,13,prototype telemetry
+R04:363,annotated_replay,R04,images/replay/R04/00363.jpg,db21438e8cc413455b94d1f4d9e2dc621480b94b6be1dd4db41e319475ce2515,1920,1080,RGB,2026-11-21,363,164.66,3,,24,13,prototype telemetry
+R04:522,annotated_replay,R04,images/replay/R04/00522.jpg,90d2ac2f46454fc254ca3bb063434c2455fa3cc23b432b9fdb3413ef5a4003a9,1920,1080,RGB,2026-11-21,522,251.9259,4,,24,12,prototype telemetry
+R04:523,annotated_replay,R04,images/replay/R04/00523.jpg,754f466895b85f1db603f920236b83d6eb727ab9b5f57730cd96a4f8f91defa7,1920,1080,RGB,2026-11-21,523,252.5183,4,,24,13,prototype telemetry
+R04:524,annotated_replay,R04,images/replay/R04/00524.jpg,701048d8be93914e29fb089fbccd8323c04516f4cfdbe19c1468daae5b281a34,1920,1080,RGB,2026-11-21,524,253.1267,4,,24,13,prototype telemetry
+R04:525,annotated_replay,R04,images/replay/R04/00525.jpg,729251dab83a813890039cba5fe17c117af3048f070aae71940d6c75d170a67f,1920,1080,RGB,2026-11-21,525,253.7186,4,,24,13,prototype telemetry
+R04:526,annotated_replay,R04,images/replay/R04/00526.jpg,f5e4bb540ff1b4a5f556e328e6758c78c01e8aebdbc50082065a9d12524ae115,1920,1080,RGB,2026-11-21,526,254.3261,4,,24,13,prototype telemetry
+R04:527,annotated_replay,R04,images/replay/R04/00527.jpg,33bce5a0ce00da343a47f78d9d73f5b008e6c8aae2b5b2d75ba8cea9547a89e9,1920,1080,RGB,2026-11-21,527,254.8699,4,,24,13,prototype telemetry
+R04:528,annotated_replay,R04,images/replay/R04/00528.jpg,eed6bcedd67c67c115f3b3a0fb3b5cea60fa4d0b4c1a8e8d806ca4638d483424,1920,1080,RGB,2026-11-21,528,255.4303,4,,24,13,prototype telemetry
+R04:529,annotated_replay,R04,images/replay/R04/00529.jpg,2fdeffb04732d0e266cbfe1a9e889efeb6601fd59804d3a5c0b1d82d9a4d0dc0,1920,1080,RGB,2026-11-21,529,255.9741,4,,24,12,prototype telemetry
+R04:530,annotated_replay,R04,images/replay/R04/00530.jpg,ef715fc0fa7ba6878fac814e99274dcd1199cb19fe2cb7f969047ae36e5a391d,1920,1080,RGB,2026-11-21,530,256.5339,4,,24,12,prototype telemetry
+R04:531,annotated_replay,R04,images/replay/R04/00531.jpg,0a95cad26bb34bb822f78dcdb236fead33020ce2abbf92a0425e088623ab4726,1920,1080,RGB,2026-11-21,531,257.0317,4,,24,12,prototype telemetry
+R05:0,annotated_replay,R05,images/replay/R05/00000.jpg,068d06082197df3e39761afff481e6ab03e6584c58888bf9a3ad806226a2ff0e,1920,1080,RGB,2026-11-21,0,0.0,1,,24,0,prototype telemetry
+R05:1,annotated_replay,R05,images/replay/R05/00001.jpg,37fb31ad345d9262fd2394a33640b78dd6e0e3520846c95267ccc54e9f9e455a,1920,1080,RGB,2026-11-21,1,0.5899,1,,24,18,prototype telemetry
+R05:2,annotated_replay,R05,images/replay/R05/00002.jpg,a5a95e22331aae88999fbd17c1c9cc5523de154296f1d87d83fecd3c07f97eb2,1920,1080,RGB,2026-11-21,2,1.1028,1,,24,18,prototype telemetry
+R05:3,annotated_replay,R05,images/replay/R05/00003.jpg,f23000e414b70e9ee989398c69d882cfcfa2868a61b8c5e3c7d75b8faa6e8991,1920,1080,RGB,2026-11-21,3,1.6952,1,,24,19,prototype telemetry
+R05:4,annotated_replay,R05,images/replay/R05/00004.jpg,d5b134cb1deaefa6a6de203de034f1cf4815f128f14e5f9aca36e21ad5779ec2,1920,1080,RGB,2026-11-21,4,2.2076,1,,24,19,prototype telemetry
+R05:5,annotated_replay,R05,images/replay/R05/00005.jpg,e116d60c007c8c08e9dad8f4ffb83a66e9ce85cfcec06d1774a4ccf05d4d4a59,1920,1080,RGB,2026-11-21,5,2.7976,1,,24,19,prototype telemetry
+R05:6,annotated_replay,R05,images/replay/R05/00006.jpg,8b14ba6ff93cb96c07094f6b5b873ef89bbc2c97ac50d80f9529430f2b776eec,1920,1080,RGB,2026-11-21,6,3.2951,1,,24,19,prototype telemetry
+R05:7,annotated_replay,R05,images/replay/R05/00007.jpg,ac739f4d9d118407026d0a61dbc025da36691432ce34f23fb3088e947dedfacc,1920,1080,RGB,2026-11-21,7,3.854,1,,24,19,prototype telemetry
+R05:8,annotated_replay,R05,images/replay/R05/00008.jpg,f88994591c1ae087d0c90bdd784b84532f4b3b526a24b5d1c0ef9e80fa6c1b38,1920,1080,RGB,2026-11-21,8,4.4005,1,,24,19,prototype telemetry
+R05:9,annotated_replay,R05,images/replay/R05/00009.jpg,6b1d9220167788d1124543b8d4ca6445d6670e0a82995f2a602a5faf242dce59,1920,1080,RGB,2026-11-21,9,4.9103,1,,24,19,prototype telemetry
+R05:148,annotated_replay,R05,images/replay/R05/00148.jpg,f764bf75971abf03d279963f6ae038afc51f7c6c8d4ad936aff3862be452d636,1920,1080,RGB,2026-11-21,148,78.6402,2,,24,18,prototype telemetry
+R05:149,annotated_replay,R05,images/replay/R05/00149.jpg,5e72e3da85b24654fa83af48b1c51f56795e3218f855daedd09859d6f98bb383,1920,1080,RGB,2026-11-21,149,79.152,2,,24,19,prototype telemetry
+R05:150,annotated_replay,R05,images/replay/R05/00150.jpg,b27fecef3545f49f86d98f0f956b3e1500085f8c6161d74f26d04c0b2d786084,1920,1080,RGB,2026-11-21,150,79.648,2,,24,18,prototype telemetry
+R05:151,annotated_replay,R05,images/replay/R05/00151.jpg,44950cd9c3322e674d6632b7f3d95aad651a51925c5694c9befe35cc965d1fe6,1920,1080,RGB,2026-11-21,151,80.1433,2,,24,18,prototype telemetry
+R05:152,annotated_replay,R05,images/replay/R05/00152.jpg,56dbbba5e6986aa6cc34ceb6bbedfbdbc21a80579c9f82950ea52c098be4e9fc,1920,1080,RGB,2026-11-21,152,80.6565,2,,24,18,prototype telemetry
+R05:153,annotated_replay,R05,images/replay/R05/00153.jpg,c4d5aab74639152f71b74b9e2435a142ca5e0c52214de90becc4b211af17e9ea,1920,1080,RGB,2026-11-21,153,81.1516,2,,24,19,prototype telemetry
+R05:154,annotated_replay,R05,images/replay/R05/00154.jpg,44bc6b46e31b84345e2f67928f22aa60d43b0ee81affdc046f274fc5746d8f52,1920,1080,RGB,2026-11-21,154,81.6495,2,,24,19,prototype telemetry
+R05:155,annotated_replay,R05,images/replay/R05/00155.jpg,ff1b97f6ecd03209a6a7879f00395983397cf95562a17770d08b25a64f9fea52,1920,1080,RGB,2026-11-21,155,82.1451,2,,24,19,prototype telemetry
+R05:156,annotated_replay,R05,images/replay/R05/00156.jpg,3ccd9bcdc42f25ca95499875c587477d638796545949fd9b57fcefa49d6f8471,1920,1080,RGB,2026-11-21,156,82.6552,2,,24,19,prototype telemetry
+R05:157,annotated_replay,R05,images/replay/R05/00157.jpg,98f232e5664c1ff292368611b55a6bd25483dcddaa29e53f83485ab0721db493,1920,1080,RGB,2026-11-21,157,83.1524,2,,24,19,prototype telemetry
+R05:297,annotated_replay,R05,images/replay/R05/00297.jpg,dd3817e5472e0e6066718287a0d7e4aca553d242f30cd6c580f822f652d161f1,1920,1080,RGB,2026-11-21,297,152.5305,3,,24,20,prototype telemetry
+R05:298,annotated_replay,R05,images/replay/R05/00298.jpg,d91bdcbca311c075971f4bc9ba836808bbf157bcbc8687f2bf6899a336b29261,1920,1080,RGB,2026-11-21,298,152.995,3,,24,20,prototype telemetry
+R05:299,annotated_replay,R05,images/replay/R05/00299.jpg,97e315cbdfb6d349c801015667ce93efa46b21021537efdf553b422318ec64a2,1920,1080,RGB,2026-11-21,299,153.4899,3,,24,20,prototype telemetry
+R05:300,annotated_replay,R05,images/replay/R05/00300.jpg,a44adefdc82581ea8929fa57d07a8b98a8a04b29e67fe7614a8c4c3f08830a99,1920,1080,RGB,2026-11-21,300,153.9855,3,,24,20,prototype telemetry
+R05:301,annotated_replay,R05,images/replay/R05/00301.jpg,020cc4993d17cfc8450512f34f0c9378eab303fcfb9f7411dd1d88df93b650e5,1920,1080,RGB,2026-11-21,301,154.4347,3,,24,20,prototype telemetry
+R05:302,annotated_replay,R05,images/replay/R05/00302.jpg,3241c5f07c506a76ebdfccca3ff9a0347e7cca7b04315ee2206e4e6f9b5bdccd,1920,1080,RGB,2026-11-21,302,154.9453,3,,24,20,prototype telemetry
+R05:303,annotated_replay,R05,images/replay/R05/00303.jpg,84caab0fea8e1c5d4de62f0c96d5e50073485874a9db605224cbb31442f343c0,1920,1080,RGB,2026-11-21,303,155.4415,3,,24,20,prototype telemetry
+R05:304,annotated_replay,R05,images/replay/R05/00304.jpg,ab5b3cf934d1c621cc500a40da1dfb1750c74c1117231ffc871a6ba9a8fdf6c2,1920,1080,RGB,2026-11-21,304,155.9393,3,,24,20,prototype telemetry
+R05:305,annotated_replay,R05,images/replay/R05/00305.jpg,ed5c341b9d87184b8a428093b4e955d2ef784b5660290a329c07e7fa62a28a0f,1920,1080,RGB,2026-11-21,305,156.4031,3,,24,20,prototype telemetry
+R05:306,annotated_replay,R05,images/replay/R05/00306.jpg,b6d3cd9e6f89115ce10b2c94ea7fda53ca6c4d6d8971aae06c0d1a445b96c5fe,1920,1080,RGB,2026-11-21,306,156.8984,3,,24,20,prototype telemetry
+R05:436,annotated_replay,R05,images/replay/R05/00436.jpg,464dc9b7692dffcb84b5a86edc44f5ffe99e4137c0eef1c5dd67459621017f0a,1920,1080,RGB,2026-11-21,436,222.0678,4,,24,20,prototype telemetry
+R05:437,annotated_replay,R05,images/replay/R05/00437.jpg,c85526b6e986268e0cd86aad0150ac357da3b1ce90a5cbb46ac450969768aa28,1920,1080,RGB,2026-11-21,437,222.5648,4,,24,20,prototype telemetry
+R05:438,annotated_replay,R05,images/replay/R05/00438.jpg,eb76094482b0029d7683ae40cbda835282213e985ee9f3c4485329b3170e25a4,1920,1080,RGB,2026-11-21,438,223.0125,4,,24,20,prototype telemetry
+R05:439,annotated_replay,R05,images/replay/R05/00439.jpg,177dead420dfee13c58dff592be667a3134ac57b716842d5aee17ed4b3af70e2,1920,1080,RGB,2026-11-21,439,223.5227,4,,24,20,prototype telemetry
+R05:440,annotated_replay,R05,images/replay/R05/00440.jpg,b9b82f58f4ea8e7997f49701ad5dfa30aa80bbfa78f122ed8ce373eab2fb6946,1920,1080,RGB,2026-11-21,440,224.0198,4,,24,20,prototype telemetry
+R05:441,annotated_replay,R05,images/replay/R05/00441.jpg,ac96443d36eea2732271012e78180ee52348031ad533880b9d184c3866314931,1920,1080,RGB,2026-11-21,441,224.564,4,,24,20,prototype telemetry
+R05:442,annotated_replay,R05,images/replay/R05/00442.jpg,04b9179d9b56711633eb84a5b4fa2099cb9ff6b86b8b7954b0f89ad9a60b49d1,1920,1080,RGB,2026-11-21,442,225.0285,4,,24,20,prototype telemetry
+R05:443,annotated_replay,R05,images/replay/R05/00443.jpg,815be10105cc7dab9438bf5ed63e286b3dc07362ccd6176d897d7f4cf74cc9b1,1920,1080,RGB,2026-11-21,443,225.5252,4,,24,20,prototype telemetry
+R05:444,annotated_replay,R05,images/replay/R05/00444.jpg,e31e088b583318ab6e62b15c52d32868902a45993f5942ec7eb3aee3975555c8,1920,1080,RGB,2026-11-21,444,226.0199,4,,24,20,prototype telemetry
+R05:445,annotated_replay,R05,images/replay/R05/00445.jpg,29e5b9d922b9382f38cd47de128b87f1ebbdd456b9f8505b066c08973508d31e,1920,1080,RGB,2026-11-21,445,226.5308,4,,24,20,prototype telemetry

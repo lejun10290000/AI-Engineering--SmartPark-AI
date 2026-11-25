@@ -1,95 +1,92 @@
 # SmartPark AI Week 4 Data Quality, Bias and Responsible Data Report
 
-**Scope.** This review covers the six prepared synthetic shape images from SmartPark AI's Topic 3 Computer Vision pathway. Part B provides the candidate image and labels for each source. Part C provides a second prepared path and independent manifest entries for comparison. The audited Git revision is [a674686](https://github.com/lejun10290000/AI-Engineering--SmartPark-AI/commit/a674686f55874905d7b24f4c9f4eee189a62a816).
+**Quality gate: GO for offline prototype development and replay.** This review uses the project owner's FYP miniature-parking evidence. The detector pilot supplies car-image annotations for development. Indexed camera recordings supply bay and track observations for replay and debugging. Independent accuracy, tracking and safety evaluation is later work.
 
 ## 1. Data Quality Scorecard
 
-Ratings use 1 for a blocking failure and 5 for fully evidenced fitness for the stated scope. N.V. means Not Verified. Uniqueness is rated for the six practice records. Application readiness is evaluated separately in Section 8.
+Ratings use a 1–5 scale, where 5 means the dimension is fully evidenced for the stated development scope. N.V. means Not Verified.
 
-| Dimension | Rating | Evidence | Action or limitation |
-|---|---|---|---|
-| Completeness | 1/5 | All six practice labels and mappings are present. The dataset contains zero labelled parking-bay frames and zero annotated tracking sequences. | Collect miniature parking footage and task annotations. |
-| Consistency | 1/5 | Six Part B fingerprints and six Part C sizes differ from their manifests. The six PNG headers declare palette mode P under an RGB contract. | Restore or re-export from the approved originals, then verify images and regenerated manifests together. |
-| Accuracy | N.V. | Five images are readable and their shape/colour labels appear plausible on visual inspection. One failed integrity verification. Parking labels and independent ground truth are absent. | Recheck practice labels against the course source. Independently annotate real miniature parking scenes before judging accuracy. |
-| Timeliness | N.V. | The pipeline manifest records a preparation date. The source archive version and capture date are unverified. | Obtain a source release date/version. Record capture sessions and layout versions for actual project footage. |
-| Uniqueness | 4/5 | Six distinct Part B file hashes and no exact match among five decodable RGB pixel arrays. The six Part B/C pairs were traced to the same six sources. | Repeat the pixel check after recovering the corrupt image. Review near duplicates and scene overlap before splitting project data. |
+| Dimension | Rating | Evidence | Limit or action |
+|---|---:|---|---|
+| Completeness | 5 | 85 detector images and 200 replay frames from five sessions. All 24 bay IDs appear in every replay frame. All 20 windows preserve ten consecutive indexed frames. | Keep complete sessions for future tests and add capture conditions. |
+| Consistency | 5 | All 285 images passed decoding and SHA-256 checks. Box schema, bay coverage, timestamps, tracks and alignment abstention passed. | Revalidate when the camera view, index or application schema changes. |
+| Accuracy | N.V. | The annotation records satisfy the structural contract and the pilot's boxes were visually reviewed. Source-frame inspection confirmed real parking and obstruction scenarios. | Independently label bay states and whole-clip track IDs to measure physical accuracy. |
+| Timeliness | 4 | Sessions are dated 19–21 November 2026 and the audited manifest has a stable SHA-256. Replay preserves elapsed time and source order. | Verify the configuration and refresh footage when the board or camera changes. |
+| Uniqueness | 4 | Zero exact file or pixel duplicates across 285 records. The historical detector splits share zero source IDs. | Adjacent frames and derived crops can still share evidence. Group by recording session. |
 
 ## 2. Validation and Data-Defect Findings
 
-The notebook applies nine Pandera rules across six source records. Counts are per rule, so a record can appear several times. The [validation failures CSV](week4_validation_failures.csv) records the evidence, classification, action and follow-up for each flag.
+Pandera ran seven checks. The denominators are the number of records to which each rule applies.
 
-| Rule | Observable condition | Failures | Action |
-|---|---|---:|---|
-| Files present | Both prepared paths refer to existing files. | 0/6 (0%) | Hard fail if missing. |
-| Label vocabulary | Shape is circle or square and colour is red or blue, as documented in Week 3. | 0/6 (0%) | Hard fail if absent or outside the vocabulary. |
-| Manifest lineage | Source path, original hash and Part B output path agree across the relevant manifests. | 0/6 (0%) | Hard fail if inconsistent. |
-| Image integrity | Pillow can verify and fully decode both PNGs. | 1/6 (16.7%) | Quarantine. Both copies of shape_02 fail at the PNG IDAT checksum. |
-| Image contract | Both headers match PNG, RGB and the declared 224 × 224 dimensions. | 6/6 (100%) | Quarantine. Both paths declare P mode for every record. The dimensions match. |
-| Part B fingerprint | Observed SHA-256 equals the hash in the lineage manifest. | 6/6 (100%) | Quarantine pending verified bytes. |
-| Part C file size | Observed size equals the size recorded in the pipeline manifest. | 6/6 (100%) | Quarantine pending verified export. |
-| Source version | Traceable source version or date recorded. | 6/6 (100%) | Review. Source version is unverified for all six. |
-| Access rights record | Lineage record explicitly marks rights verified. | 6/6 (100%) | Review and verify permitted use with the course provider. |
+| Rule | Your condition | Why this rule? / Failure detected | Failures | Decision |
+|---|---|---|---:|---|
+| Unique identity and source | Unique record and relative image path, recognised type and recorded source. | Detects duplicate or untraceable index entries. | 0/285 | Quarantine failures. |
+| Image integrity | SHA-256 matches and the RGB JPEG verifies and decodes. | Detects missing, altered, corrupt or incompatible images. | 0/285 | Quarantine failures. |
+| Detector labels | Class 0. Label count matches, and all boxes have finite coordinates and are inside the image. Approved negatives can have zero boxes. | Detects wrong classes, detached counts and malformed coordinates. The 0.000001 boundary tolerance allows for decimal rounding. | 0/85 | Quarantine failures. |
+| Replay bay coverage | All 24 distinct bay IDs have a reason and an occupied, vacant or unknown state per frame. | Detects missing or invented states that would undermine replay. | 0/200 | Quarantine failures. |
+| Replay time linkage | Bay and track elapsed times match the indexed frame within 0.1 ms. | The tolerance covers the export precision and exposes wrong frame-to-log joins. | 0/200 | Quarantine failures. |
+| Track record integrity | Each track ID occurs at most once in a frame and has finite coordinates. | Detects ambiguous identities or unusable positions in replay. | 0/200 | Quarantine failures. |
+| Unaligned frames abstain | Every bay is unknown when alignment is invalid. | Detects known occupancy claims from an unusable view. | 0/200 | Quarantine failures. |
 
-The checks produced **31 flags**, including **19 hard failures** and **12 governance review flags**. There were no missing prepared files, empty class labels or missing source mappings in the hand-off. One source pair has measurable corruption. Staleness is uncertain because the source date is unknown. No noise was confirmed by visual inspection of the five decodable images. Padding and differences in foreground size were observed, and the Topic 3 pipeline explicitly documents padding. Visual inspection gives limited evidence about label plausibility and cannot establish a trusted processing history.
+No missing files, unreadable JPEGs, invalid indexed values or exact duplicates were found. No stale records were confirmed for this selection. The failure CSV has a header and zero entries. The validation summary records the rules and counts.
 
-| Triaged example | Evidence and interpretation | Decision |
+| Reviewed case | Evidence | Classification and action |
 |---|---|---|
-| shape_01.png | Red circle with white padding is visually plausible. File appears at both prepared paths with identical bytes, but the Part B SHA-256 differs and observed Part C size is 1,895 bytes against 5,490 recorded. The cause of the discrepancy is unresolved. | Quarantine and compare with an authorised Topic 3 export. |
-| shape_02.png | Both prepared copies fail verification with a bad checksum in the IDAT chunk. The image data cannot be verified. | Quarantine as a confirmed defect and regenerate from the authorised original. |
-| shape_04.png | Red square appears consistent with the annotation. P mode conflicts with the RGB encoding recorded for the source. The palette could preserve visible colour, but the lineage also fails. | Quarantine while checking when the encoding changed and whether the file can be traced to the source. |
-| shape_06.png | Blue square with a substantial white margin. Padding is a valid documented transformation for this practice image. The preparation fingerprint mismatch remains unresolved. | Record the visual exception and quarantine the file pending verified lineage. |
+| R01 frame 224 and R04 frame 177 | Sampled previews show alignment loss, and the logs mark all bays unknown. | Valid uncertainty cases. Retain for replay and abstention checks. |
+| R03 frame 81 | The aligned scene shows cars in bays and lanes. The prototype can keep a bay unknown while dwell is pending. | Valid timing-dependent observation. Retain the source frame and time. |
+| R05 frame 297 | A hand moves a toy car and partly obscures the board. | Valid obstruction case. Retain for qualitative tracking review. |
+| Nine detector negatives | The manifest identifies these as negatives. They have zero boxes and passed validation. | Valid exception. Keep empty areas and board states in the pilot set. |
 
 ## 3. Duplicate and Anomaly Findings
 
-The six canonical Part B records have distinct file fingerprints. The five decodable images have distinct RGB pixel fingerprints. Each Part C copy is byte-identical to its corresponding Part B image. The [duplicate review CSV](week4_duplicate_review.csv) preserves both paths and each observed SHA-256. Each cross-stage pair represents one source record. There were zero exact duplicate groups across the six sources under the checks run, and zero records removed by deduplication.
+Exact byte and decoded-pixel hashes yielded **0 duplicate records**. Detector records carry the original split, source alias and base-frame ID. Replay records preserve the session alias, camera size, original frame index, elapsed time and ten-frame window. Nearby video frames and crops from the same source can look similar. Future dataset splits should group whole recordings.
 
-Near duplicates were outside this exact-hash check. Pixel-level equivalence involving the corrupt image remains N.V. There was no conflicting label found between exact duplicates of independently sourced images. The cause of the repository-versus-manifest anomalies needs independent confirmation. Replacing the manifest hashes with the repository hashes would record the current bytes without explaining their lineage.
+The **23 unaligned frames**, **1,972 unknown bay observations** and **9 detector negatives** were retained with their context. The telemetry was checked for alignment and linkage. Its physical accuracy still requires an independent reference.
 
-## 4. Representation, Coverage, and Bias Assessment
+## 4. Representation, Coverage and Bias Assessment
 
-All six candidates come from the course's synthetic shape subset. The recorded labels include three circles and three squares, and three red and three blue images. The shape/colour counts are red circles 2, blue circles 1, red squares 1 and blue squares 2. These are practice annotations. The [coverage plot](week4_coverage_by_source.png) shows candidate counts and the number admitted by the gate.
-
-| Required area | Expected evidence | Actual evidence and conclusion |
+| Needed area | Expected evidence | Observed evidence and limitation |
 |---|---|---|
-| Bay occupancy and safe guidance | Labelled occupied and vacant bays, uncertain cases, bay IDs and boundaries across lighting conditions. | Zero parking scenes or occupancy labels. This is a coverage gap for FR1 and RAI1. |
-| Tracking and uncertainty handling | Ordered clips with timestamps/frame IDs, persistent vehicle identities and locations, plus occlusion and close passes. | Zero ordered sequences or vehicle IDs. This is a coverage gap for FR2 and RAI2. |
-| Repeatability after changes | Capture dates, layout and camera versions, and coverage of current and superseded setups. | Classroom archive version is unverified. There are no miniature footage sessions to compare. |
+| FR1 and RAI1 occupancy and abstention | All bays, both definite states, unknown states and alignment loss. | 4,800 observations across 24 bays. 1,220 occupied, 1,608 vacant, 1,972 unknown. All 23 unaligned frames abstained. These are prototype outputs. |
+| FR2 and RAI2 tracking | Ordered observations from multiple recordings and hard cases. | Five recordings across three dates. Twenty complete ten-frame windows. 2,977 track observations in 170 replay frames. Obstruction, alignment loss and shared-bay reports are represented. |
+| Detector development | Actual toy-car images and negative examples. | 85 pilot images, 573 reviewed car boxes and 9 negatives. The 80/2/3 historical split is useful for provenance. The entire pilot is development evidence for this review. |
 
-| Risk | Propagation path | Mitigation and later test |
+| Risk | Propagation | Mitigation and later test |
 |---|---|---|
-| Potential representation bias | Synthetic still shapes and one source → corpus has no bay, vehicle, lighting, movement or occlusion examples → a later vision stage has no evidence for those situations and a retrieval index would have no relevant records → incorrect or unavailable guidance for affected parking scenes. | Collect representative miniature scenarios. Test held-out occupancy and track association under uneven lighting and occlusion. If retrieval is required later, check that queries for these scenarios return relevant evidence. |
-| Potential measurement bias | Shape/colour labels and fixed-size padded images → geometry and colours are recorded without occupancy, motion or annotation coordinates → later inference or retrieval could reward background or size cues → vehicles with different colours, sizes or lighting may be missed. | Use manually verified occupancy and identity labels. Apply geometric transforms to annotations and retain transform parameters. Measure false-vacant events and association errors for small and partially occluded vehicles. |
-| Historical bias N.V. | The version of the practice set is unknown and it has no temporal parking evidence. Spatial or temporal historical bias in project footage cannot yet be assessed. | Compare captured sessions across time and equipment/layout revisions after recording them. Test held-out footage after a material change. |
+| Representation | One board and overhead setup produce related frames and crops. Models or retrieved examples could overrepresent familiar lighting, vehicles and camera angles, reducing reliability on a changed setup. | Collect varied sessions and evaluate by held-out session and capture condition. Check any later evidence index for coverage of session and setup. |
+| Measurement | Boxes originated from model proposals. Bay and track logs use alignment, dwell and position proxies. Supervised learning or retrieved summaries could reinforce underlying misses and wrong vacancy claims. | Preserve label origin. Independently check labels during tag loss, occlusion and near bay boundaries. |
+| Historical | Earlier and later recordings may describe different settings. Pooling them could make earlier results appear to describe the current prototype. | Retain provenance and compare within known camera or tracker versions. |
 
-SmartPark plans a vision and guidance workflow. Any course retrieval or generation demonstration requires separate authorised evidence. If built later, test whether relevant, current evidence is retrieved and whether generated guidance abstains when evidence is missing or uncertain. These data findings do not measure system-level fairness.
+System-level fairness, model performance and any later retrieval or generation accuracy remain unevaluated.
 
-## 5. Privacy, Consent, Rights/Access, and Data Governance
+## 5. Privacy, Consent, Rights/Access and Data Governance
 
-| Question | Evidence and status | Required action and proposed owner |
+| Question | Evidence and status | Action and owner |
 |---|---|---|
-| Is source provenance traceable? | The Week 3 inventory identifies the course as provider. The original source paths and hashes are recorded. Archive date and version are N.V., and the prepared bytes cannot be reconciled to the manifests. | Project owner confirms the archive release and candidate lineage with the course provider. |
-| Are rights for use and sharing known? | The inventory records course access and no verified separate licence. Publication and reuse rights are to be verified. | Project owner requests the applicable terms from the lecturer and restricts use accordingly. The Week 4 evidence files carry only aggregate results, labels, paths and fingerprints. |
-| Are personal or sensitive data present? | The five viewable images show simple shapes and no apparent personal data. The damaged image was unavailable for visual review. The practice source is described as synthetic. | Project owner rechecks any restored file. Frame future footage to exclude identifiable people and real number plates. |
-| Is consent or another collection basis needed? | The synthetic shape exercise does not involve known collection from individuals. For future footage, the appropriate basis depends on the planned scene and any identifiable data captured. | Capture lead confirms site permission and applicable consent/disclosure requirements before collecting footage that could identify a person. |
-| Who maintains updates, retention and removal? | The source has recorded pipeline versions. Ownership, retention dates and removal procedures for project footage are pending. | Project owner assigns a data steward before collection and documents version change, access, retention and deletion procedures. |
+| Source provenance | Project owner directed use of their local FYP recordings. The review sampled indexed archives and preserved session, elapsed time and pilot source aliases. | Project owner retains the original archives and private manifest. |
+| Internal use and access | Project owner approved use for this lab and publication of the lab deliverables. The FYP documents specify local footage storage. | Use an approved runtime. GitHub carries the notebook, aggregate evidence and pseudonymous cleaned metadata. The private input bundle holds the images and source mapping. |
+| Personal information and consent | The subject is the miniature board and toy vehicle tags. Sampled frames may show hands or hair. The private bundle contains no audio. | Keep frames private. Verify permissions and inspect any footage intended for broader sharing. |
+| Version and retention | The review manifest hash, source IDs and capture dates identify the reviewed snapshot. Public redistribution rights were not assessed for the private recordings. | Project owner controls access, refreshes the version when collection changes and reviews retention. |
+
+Reviewed manifest SHA-256: 11b270f4d4fb7c97cb81463505881cab037f497c514ad2a2f0e2a3af95d83612.
 
 ## 6. Mitigation Plan and Residual Risk
 
-| Issue | Evidence | Action | Proposed owner and timing | Residual risk |
+| Issue | Evidence | Action | Owner and timing | Residual risk |
 |---|---|---|---|---|
-| Reproducible hand-off | 6/6 fingerprint, size and mode discrepancies and one corrupt source pair. | Obtain the approved originals, regenerate both outputs, match hashes, verify CRC/decoding and rerun this notebook. | Project owner before clearing the practice gate. | Future exports can diverge again if the build and verification are performed separately. |
-| Domain coverage and measurement | 0 parking frames, 0 occupancy annotations and 0 tracking clips. | Record a miniature layout with known bays, capture normal and difficult scenarios, review the annotations independently and split by capture session. | Data collection and annotation leads before model development and held-out testing. | Controlled miniature results may not transfer to public car parks. |
-| Access, versions and consent | 6/6 source rights and versions are unverified. | Confirm teaching-use terms, catalogue approved versions, document future collection basis and minimise personal data. | Project owner with the course provider and capture lead before reuse or collection. | Some material may remain restricted or require removal. |
-| Near duplicates and leakage | Exact hashes cover identical bytes or decoded pixels. | Compare adjacent frames or visually similar scenes and keep recording sessions together when splitting data. | Evaluation lead before building hold-out data. | Subtle repeated scenes can still inflate results. |
+| Model-related measurement bias | Visually reviewed box proposals and prototype-generated telemetry. | Independently label new test sessions including ID switches and uncertain states. | Project owner before formal evaluation. | Development footage can miss unusual failures. |
+| Related frames and limited coverage | Same board, adjacent frames and overlapping crops. | Split by whole capture session and add varied lighting, obstacles and placements. | Project owner before selecting held-out examples. | Miniature results have limited transfer to public car parks. |
+| Uncertainty handling | 23 unaligned frames and 1,972 logged unknown observations. | Preserve unknown states and test whether application guidance abstains. | Project owner during integration and test. | Unknown-heavy scenes can reduce guidance availability. |
+| Privacy and retention | Operators can enter the camera frame. | Keep footage in approved storage and inspect new captures before sharing. | Project owner during collection. | Future captures may have incidental identifiers. |
 
 ## 7. Impact on Topic 2 Requirements and Evaluation Criteria
 
-- **FR1, NFR2 and RAI1.** There are no labelled bays for the proposed macro-F1 target of **≥ 0.90** or the required **zero false-vacant events** across at least 100 labelled occupied-bay observations. The source also cannot test withholding recommendations for occupied or uncertain bays.
-- **FR2, NFR3 and RAI2.** The target of **≥ 90% correct track association** and zero guidance events from incorrect, mismatched or unconfirmed tracks needs at least 20 annotated clips with relevant motion and occlusion. The six still images provide no tracking evidence.
-- **FR3–FR5 and RAI3.** Availability and guidance scenarios need labelled layout transitions and ground-truth guidance outcomes. The privacy requirement needs a documented future capture and retention review. None of the project performance targets were measured by this quality lab.
+- **FR1, NFR2 and RAI1.** Detector images and replay support occupancy and safe-guidance development. The **macro-F1 ≥ 0.90** and **zero false-vacant events** targets still require independent labels, including at least 100 occupied-bay observations.
+- **FR2, NFR3 and RAI2.** Consecutive windows and vehicle logs support debugging. The **≥ 90% correct track association** and **zero guidance based on an incorrect or unconfirmed identity** targets require the independently labelled clips from the Week 2 test plan.
+- **FR3–FR5 and RAI3.** Replay can expose state transitions and bay conflicts. Availability, guidance and latency thresholds require scenario ground truth, measurements and a privacy review.
 
 ## 8. Topic 4 Quality Gate Decision
 
-**HOLD.** The file-quality gate quarantined all six candidates due to integrity and preparation-contract failures. Source version and rights remain unverified. Project scope additionally requires labelled miniature parking data. Both [cleaned JSONL](../data/prepared_chunks_clean.jsonl) and [cleaned pickle](../data/chunks_clean.pkl) were reloaded and matched at **0 eligible records**.
+**GO for offline SmartPark prototype development and replay.** All **285** candidates passed their applicable file, provenance and metadata rules. The data covers the 24 bays, has intact consecutive windows, preserves both definite and unknown states, and includes reviewed detector-pilot annotations. The cleaned JSONL and pickle matched at **285 records** on reload. These are the reviewed development inputs for the next stage. Use newly held-out, independently labelled sessions for the formal Week 2 performance and safety tests.
 
-To lift the practice-data hold, confirm the archive version and permissions, restore traceable prepared files and rerun the notebook. To lift the project-data hold, acquire compliant, representative parking footage, verify occupancy and tracking annotations, and approve the reviewed dataset against the Topic 2 requirements. Keep Topic 7 downstream ingestion on hold until the applicable gate is cleared. Once cleared, select the reviewed outputs and retain the source revision and validation evidence.
+See the [Week 3 lineage manifest](../data/week3_manifest.json), [clean JSONL](../data/prepared_chunks_clean.jsonl), [clean pickle](../data/chunks_clean.pkl), [validation summary](week4_validation_summary.csv) and [coverage plot](week4_coverage_by_source.png).

@@ -1,7 +1,1 @@
-review_type,fingerprint,filename,source_path,canonical,same_file_bytes,decision
-Part B/C counterparts,31298799da3e3a4fb4035d5e414c2b4ad9e51f9583aea801f5e23a9bbc2d4aa4,shape_01.png,data/pipeline_v1/images/prepared_001.png,data/processed/images/shape_01_17a1e2828014.png,True,Record both paths for one source; exclude Part C copy from counts
-Part B/C counterparts,c9fdf6049b6e1f58411f113058769e8a99d541adaf83634cb1f3a0dce668938f,shape_02.png,data/pipeline_v1/images/prepared_002.png,data/processed/images/shape_02_dfa0925ff27b.png,True,Record both paths for one source; exclude Part C copy from counts
-Part B/C counterparts,8745802444798ef5be3ef931bd9ec4eb6e3a59e6758a742fb26472989cdaabfc,shape_03.png,data/pipeline_v1/images/prepared_003.png,data/processed/images/shape_03_bb10030d1f0b.png,True,Record both paths for one source; exclude Part C copy from counts
-Part B/C counterparts,1868af6dafbe2a80493f507201b081ebd9f385a2e40396189d6b565b445df191,shape_04.png,data/pipeline_v1/images/prepared_004.png,data/processed/images/shape_04_2514fccc54d1.png,True,Record both paths for one source; exclude Part C copy from counts
-Part B/C counterparts,bf58a1d80c4d16f48b2d87af7c3cda40c0d49a24489808ee081e9dfd3f89daea,shape_05.png,data/pipeline_v1/images/prepared_005.png,data/processed/images/shape_05_94d4f1150747.png,True,Record both paths for one source; exclude Part C copy from counts
-Part B/C counterparts,27fb6dfffb28ca8d8f93ba6fe37568865fcb9bbc72b18b13ac809820fa3114b6,shape_06.png,data/pipeline_v1/images/prepared_006.png,data/processed/images/shape_06_5908f2d0dabc.png,True,Record both paths for one source; exclude Part C copy from counts
+kept_record,duplicate_record,same_file_bytes,pixel_sha256

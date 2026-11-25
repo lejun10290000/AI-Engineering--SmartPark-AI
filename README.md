@@ -1,8 +1,8 @@
 # SmartPark AI — AI Engineering Project
 
-> SmartPark AI is a proposed computer-vision prototype that detects parking-bay occupancy, tracks vehicles and provides basic parking guidance for drivers and parking operators.
+> SmartPark AI is a computer-vision project for parking-bay occupancy detection, vehicle tracking and basic parking guidance in a miniature parking layout.
 
-This repository contains the group evidence for Parts A and B, together with my individual Part C project scope and the supporting Week 2 and Week 3 engineering artefacts.
+This repository contains the group evidence for Parts A and B, my individual Part C project scope, and the engineering artefacts through Week 4.
 
 ## Problem Statement
 
@@ -62,8 +62,8 @@ Prepare a labelled set of parking images or video frames. Evaluate occupancy-det
 |------|-------|-------------|--------|
 | W1 | Project framing and system map | Part A observation evidence, Part B system map and individual Part C project scope | Complete |
 | W2 | Requirements, evaluation and V1 architecture | Requirements specification, evaluation criteria, architecture diagram, ADR and traceability | Complete |
-| W3 | Data inventory, preparation and V1 pipeline | Executed notebook, inventory, decisions, diagram, Part B and Part C manifests, and prepared image outputs | Complete |
-| W4 | Data quality and responsible data practices | Executed Colab-compatible notebook, validation and duplicate evidence, coverage plot, cleaned formats and quality report | FYP review complete. Offline development GO. |
+| W3 | FYP data inventory, preparation and V1 pipeline | Executed Colab notebook, inventory, decisions, diagram and verified data hand-off | 285 records prepared |
+| W4 | FYP data quality and responsible data practices | Executed Colab notebook, cleaned exports, validation evidence and quality report | GO for offline development and replay |
 
 ## Week 1 — Project Framing and System Map
 
@@ -86,94 +86,28 @@ The Week 2 documents connect the project objectives to functional, non-functiona
 
 ## Week 3 — Data Preparation and V1 Pipeline
 
-- [Data inventory and Part B/C execution record](docs/week3_data_inventory.md)
-- [V1 image preparation pipeline diagram (PNG)](docs/week3_pipeline_diagram.png)
-- [Editable V1 pipeline diagram (SVG)](docs/week3_pipeline_diagram.svg)
-- [Pipeline decisions, stage contracts and traceability](docs/week3_pipeline_decisions.md)
-- [Executed Week 3 pipeline notebook](notebooks/week3_pipeline.ipynb)
+The Computer Vision pathway prepares actual FYP miniature-parking data. It verified the image fingerprints and retained original JPEG geometry and time alignment for **85 detector-pilot images and 200 replay frames**. Repeating the pipeline reproduced all 285 ordered references.
 
-**Selected pathway:** C — Computer Vision / Images. The six lecturer-supplied synthetic shape images were inspected and prepared in Colab. The selected configuration converts images to RGB and uses aspect-ratio-preserving fit with white padding to produce 224 × 224 outputs. The notebook records the preparation comparison, validation, lineage registration, V1 pipeline execution and repeatability smoke check. Six Part B prepared images and six Part C pipeline outputs were produced; the repeatability check passed.
-
-**Manifest and output locations:**
-- Part B lineage manifest: `data/week3_manifest.json`
-- Part B prepared image manifest: `data/processed/image_manifest.csv`
-- Part B prepared images: `data/processed/images/`
-- Part C pipeline manifest: `data/pipeline_v1/images/pipeline_manifest.json`
-- Part C pipeline outputs: `data/pipeline_v1/images/`
-
-**Scope and data limitation:** The six supplied images are synthetic shape images used to demonstrate and validate the data-preparation workflow. They are not real parking-lot images and do not demonstrate SmartPark occupancy detection, vehicle tracking, number-plate recognition or model performance. The repeatability result is a smoke check in the supplied Colab runtime, not a claim of cross-environment reproducibility. The original course ZIP and raw source images were not committed because redistribution rights were not verified.
+- [Executed pipeline notebook](notebooks/week3_pipeline.ipynb) · [Open in Colab](https://colab.research.google.com/github/lejun10290000/AI-Engineering--SmartPark-AI/blob/main/notebooks/week3_pipeline.ipynb)
+- [Data inventory](docs/week3_data_inventory.md) and [pipeline decisions](docs/week3_pipeline_decisions.md)
+- [Pipeline diagram](docs/week3_pipeline_diagram.png) and [editable Draw.io source](docs/week3_pipeline_diagram.drawio)
+- [Prepared image index](data/processed/image_manifest.csv), [lineage manifest](data/week3_manifest.json) and [V1 pipeline run manifest](data/pipeline_v1/images/pipeline_manifest.json)
 
 ## Week 4 — Data Quality and Responsible Data Practices
 
-The [FYP data quality report](docs/week4_fyp_data_quality_report.md) records a **GO for offline prototype development and replay**. The review retained 285 records from the actual miniature parking project. Its scope includes detector development and replay of occupancy, tracking and uncertainty. Formal performance testing will use independent labels and new held-out sessions.
+The FYP review passed all seven applicable validation rules. The cleaned JSONL and pickle both reloaded with **285 records**. The decision is **GO for offline prototype development and replay**. Formal accuracy and safety evaluation requires independent labels and new held-out recordings.
 
-- [FYP Week 4 notebook](notebooks/week4_quality_fyp.ipynb)
-- [Validation rules and results](docs/week4_fyp_validation_summary.csv), [coverage chart](docs/week4_fyp_coverage.png) and [review summary](docs/week4_fyp_review_summary.json)
+- [Executed quality notebook](notebooks/week4_quality.ipynb) · [Open in Colab](https://colab.research.google.com/github/lejun10290000/AI-Engineering--SmartPark-AI/blob/main/notebooks/week4_quality.ipynb)
+- [Data quality and governance report](docs/week4_data_quality_report.md)
+- [Validation rules](docs/week4_validation_summary.csv), [validation failures](docs/week4_validation_failures.csv), [duplicate review](docs/week4_duplicate_review.csv) and [coverage chart](docs/week4_coverage_by_source.png)
+- [Cleaned JSONL](data/prepared_chunks_clean.jsonl), [cleaned pickle](data/chunks_clean.pkl) and [review summary](docs/week4_fyp_review_summary.json)
 
-The cleaned data files and indexed camera images are in the private submission bundle. Topic 7 development should use the reviewed FYP inputs within the stated scope.
+### Rerun the notebooks
 
-### Initial synthetic practice review
+Use the approved private **smartpark_fyp_review_input.zip** containing the project images and source mapping. Set **SMARTPARK_FYP_INPUT_ZIP** to its path or choose it in the notebook's Colab prompt. The image references in the prepared and cleaned metadata are relative to that ZIP. Load pickle files only from sources you trust.
 
-- [Open the Week 4 notebook in Google Colab](https://colab.research.google.com/github/lejun10290000/AI-Engineering--SmartPark-AI/blob/main/notebooks/week4_quality.ipynb) or [view it on GitHub](notebooks/week4_quality.ipynb).
-- [Quality, bias and governance report](docs/week4_data_quality_report.md)
-- [Validation failures](docs/week4_validation_failures.csv), [duplicate review](docs/week4_duplicate_review.csv) and [coverage plot](docs/week4_coverage_by_source.png)
-- [Reviewed JSONL format](data/prepared_chunks_clean.jsonl) and [reviewed pickle format](data/chunks_clean.pkl)
-
-Week 4 applies the Topic 4 checks to the six Week 3 Computer Vision image records. One image pair fails PNG verification. All six records failed the prepared-file contract and were quarantined. The cleaned formats use the assignment filenames and both contain zero eligible image records. The report records the unresolved data lineage and permissions, along with the miniature parking footage needed for project evaluation.
-
-The initial practice files document the synthetic-data HOLD. The FYP review above provides the development hand-off.
-
-## Repository Structure
-
-```text
-README.md
-notebooks/
-├── week3_pipeline.ipynb
-└── week4_quality.ipynb
-data/
-├── chunks_clean.pkl
-├── prepared_chunks_clean.jsonl
-├── week3_manifest.json
-├── processed/
-│   ├── image_manifest.csv
-│   └── images/
-│       ├── shape_01_17a1e2828014.png
-│       ├── shape_02_dfa0925ff27b.png
-│       ├── shape_03_bb10030d1f0b.png
-│       ├── shape_04_2514fccc54d1.png
-│       ├── shape_05_94d4f1150747.png
-│       └── shape_06_5908f2d0dabc.png
-└── pipeline_v1/
-    └── images/
-        ├── pipeline_manifest.json
-        ├── prepared_001.png
-        ├── prepared_002.png
-        ├── prepared_003.png
-        ├── prepared_004.png
-        ├── prepared_005.png
-        └── prepared_006.png
-docs/
-├── evidence/
-├── week1_observation_sheet.md
-├── week1_system_map.png
-├── week1_system_map.drawio
-├── week1_system_map_notes.md
-├── week1_project_scope.md
-├── week2_requirements.md
-├── week2_evaluation_criteria.md
-├── week2_architecture_decisions.md
-├── week2_architecture_v1.png
-├── week2_architecture.drawio
-├── week3_data_inventory.md
-├── week3_pipeline_diagram.png
-├── week3_pipeline_diagram.svg
-├── week3_pipeline_decisions.md
-├── week4_coverage_by_source.png
-├── week4_data_quality_report.md
-├── week4_duplicate_review.csv
-└── week4_validation_failures.csv
-```
+For Topic 7 use the reviewed FYP development records and the matching private image archive. Refer to the scope and limitations in the Week 4 report.
 
 ## Current Project Status
 
-The repository documents the project through Week 4. The reviewed FYP data can proceed to offline development and replay. Independent performance evaluation is planned.
+The FYP image hand-off is ready for offline SmartPark prototype development and replay. The independent evaluation described in the Week 2 criteria is planned separately.
